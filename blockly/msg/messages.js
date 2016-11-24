@@ -1151,6 +1151,29 @@ Blockly.Msg.ARD_DIGITALWRITE_TIP = 'Write digital value HIGH or LOW to a specifi
 Blockly.Msg.ARD_BUILTIN_LED = 'set built-in LED';
 Blockly.Msg.ARD_BUILTIN_LED_TIP = 'Light on or off for the built-in LED of the Arduino';
 Blockly.Msg.ARD_DEFINE = 'Define';
+
+/// jwc for infrared.js >>
+Blockly.Msg.ARD_INFRARED_READ_BLOCK_NAME =              "Comms: Infrared Rx";
+Blockly.Msg.ARD_INFRARED_READ_FROM_PIN =                "   * Input: Read PIN#";
+Blockly.Msg.ARD_INFRARED_READ_AS_LARGE_NUMBER_AS_LONG = "   * Output: 8-HEX-Digits as Type: Large-Number-as-LONG";
+Blockly.Msg.ARD_INFRARED_READ_AS_TEXT_AS_STRING =       "   * Output: 8-HEX-Digits as Type: Text-as-STRING";
+Blockly.Msg.ARD_INFRARED_READ_DEBUG_ON = "DEBUG_ON";
+Blockly.Msg.ARD_INFRARED_READ_DEBUG_OFF = "DEBUG_OFF";
+Blockly.Msg.ARD_INFRARED_READ_WITH_DEBUG_PROMPT_01 =    "   * Optional Debug:";
+/// Obsolete: Blockly.Msg.ARD_INFRARED_READ_WITH_DEBUG_PROMPT_01A=                         "(May Re-Position This Block to Commit Checkbox)";
+Blockly.Msg.ARD_INFRARED_READ_WITH_DEBUG_PROMPT_02 =    "      * Use 'Comms: Setup Serial' Block @9600bps+";
+Blockly.Msg.ARD_INFRARED_READ_WITH_DEBUG_PROMPT_03 =    "      * Set 'prompt_ForSerialMonitor' (i.e. \">\"):";
+Blockly.Msg.ARD_INFRARED_READ_WITH_DEBUG_PROMPT_04 =    "      * Later Set Serial-Monitor @[SAME]bps";
+Blockly.Msg.ARD_INFRARED_READ_TIP_AS_LARGE_NUMBER_AS_LONG = "Read 'commsInfrared_Rx' for KeyCode as Type: Large-Number-as-LONG";
+Blockly.Msg.ARD_INFRARED_READ_TIP_AS_TEXT_AS_STRING =       "Read 'commsInfrared_Rx' for KeyCode as Type: Text-as-STRING";
+Blockly.Msg.ARD_INFRARED_READ_HELPURL = "https://www.arduino.cc/en/Tutorial/RobotRemoteControl";
+
+Blockly.Msg.ARD_INFRARED_READ_FROM_PIN_BASIC =                "Read Infrared Rx from PIN#";
+Blockly.Msg.ARD_INFRARED_READ_AS_LARGE_NUMBER_AS_LONG_BASIC = " with HEX-ouput as: Large-Number-as-LONG";
+Blockly.Msg.ARD_INFRARED_READ_AS_TEXT_AS_STRING_BASIC =       " with HEX-output as: Text-as-STRING";
+Blockly.Msg.ARD_INFRARED_READ_WITH_DEBUG_PROMPT_01_BASIC =    " Note: Use 'Comms: Setup Serial' Block @9600bps+";
+/// jwc for infrared.js <<
+
 Blockly.Msg.ARD_TONE_PIN = 'Tone PIN#';
 Blockly.Msg.ARD_TONE_FREQ = 'frequency';
 Blockly.Msg.ARD_TONE_PIN_TIP = 'Generate audio tones on a pin';
@@ -1171,6 +1194,7 @@ Blockly.Msg.ARD_SERIAL_PRINT = 'print';
 Blockly.Msg.ARD_SERIAL_PRINT_NEWLINE = 'add new line';
 Blockly.Msg.ARD_SERIAL_PRINT_TIP = 'Prints data to the console/serial port as human-readable ASCII text.';
 Blockly.Msg.ARD_SERIAL_PRINT_WARN = 'A setup block for %1 must be added to the workspace to use this block!'
+
 Blockly.Msg.ARD_SERVO_WRITE = 'set SERVO from Pin';
 Blockly.Msg.ARD_SERVO_WRITE_TO = 'to';
 Blockly.Msg.ARD_SERVO_WRITE_DEG_180 = 'Degrees (0~180)';
