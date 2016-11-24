@@ -224,7 +224,6 @@ Ardublockly.TOOLBOX_XML =
 '        <block type="text"></block>' +
 '      </value>' +
 '    </block>' +
-
 // * Seems that naming must be broken with '_', especially for ArduBlockly-Browser to work 
 /// jwc 2016-0703-1700 >>>
 /// jwc good: '    <block type="text_prompt_ext_IrTxRx_Jwc">' +
