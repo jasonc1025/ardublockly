@@ -202,23 +202,6 @@ Ardublockly.TOOLBOX_XML =
 '      </value>' +
 '    </block>' +
 /// jwc <<
-// * Seems that naming must be broken with '_', especially for ArduBlockly-Browser to work 
-/// jwc 2016-0703-1700 >>>
-/// jwc good: '    <block type="text_prompt_ext_IrTxRx_Jwc">' +
-/// 2016-0709-1234 jwc desktop good but not browser:'    <block type="infraredComms_Rx">' +
-/// jwc browser:bad, desktop:good::'    <block type="text_prompt_ext_infraredComms_Rx">' +
-/// jwc browser:bad, desktop:bad:: '    <block type="text_prompt_ext_infraredComms">' +
-/// jwc good both browser & windows: '    <block type="infrared_Comms_Rx">' +
-/// jwc good both: '    <block type="infrared12345_Comms_Rx">' +
-/// jwc good both: '    <block type="commsInfrared_Rx">' +
-/// jwc good both: '    <block type="infraredComms_Rx">' +
-/// jwc no: '    <block type="commsInfrared_Rx_BLOCK">' +
-'    <block type="commsInfrared_Rx_BLOCK">' +
-'      <value name="PROMPT_TEXT_FIELD_ID">' +
-'        <block type="text">' +
-'        </block>' +
-'      </value>' +
-'    </block>' +
 '    <block type="servo_read"></block>' +
 '    <block type="stepper_config">' +
 '      <field name="STEPPER_PIN1">1</field>' +
