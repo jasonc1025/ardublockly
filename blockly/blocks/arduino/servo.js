@@ -32,14 +32,15 @@ Blockly.Blocks['servo_write'] = {
     this.appendDummyInput()
         .appendField(Blockly.Msg.ARD_SERVO_WRITE)
         .appendField(new Blockly.FieldDropdown(
-            Blockly.Arduino.Boards.selected.digitalPins), 'SERVO_PIN');
+            Blockly.Arduino.Boards.selected.pwmPins), 'SERVO_PIN');
     this.setInputsInline(false);
     this.appendValueInput('SERVO_ANGLE')
         .setCheck(Blockly.Types.NUMBER.checkList)
         .appendField(Blockly.Msg.ARD_SERVO_WRITE_TO);
     this.appendDummyInput()
         .appendField(Blockly.Msg.ARD_SERVO_WRITE_DEG_180);
-    this.setInputsInline(true);
+/// jwc 2016-0608-0850    this.setInputsInline(true);
+    this.setInputsInline(false);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setTooltip(Blockly.Msg.ARD_SERVO_WRITE_TIP);
@@ -49,6 +50,42 @@ Blockly.Blocks['servo_write'] = {
    * @this Blockly.Block
    */
   updateFields: function() {
+    Blockly.Arduino.Boards.refreshBlockFieldDropdown(
+        this, 'SERVO_PIN', 'pwmPins');
+  }
+};
+
+Blockly.Blocks['servo_write_jwc'] = {
+  /**
+   * Block for writing an angle value into a servo PWM pin.
+   * @this Blockly.Block
+   */
+  init: function() {
+    this.setHelpUrl('http://arduino.cc/en/Reference/ServoWrite');
+    this.setColour(Blockly.Blocks.servo.HUE);
+    this.appendDummyInput()
+        .appendField(Blockly.Msg.ARD_SERVO_WRITE)
+        .appendField(new Blockly.FieldDropdown(
+/// 2016-0704-1840 jwc:             Blockly.Arduino.Boards.selected.pwmPins), 'SERVO_PIN');
+            Blockly.Arduino.Boards.selected.digitalPins), 'SERVO_PIN');
+    this.setInputsInline(false);
+    this.appendValueInput('SERVO_ANGLE')
+        .setCheck(Blockly.Types.NUMBER.checkList)
+        .appendField(Blockly.Msg.ARD_SERVO_WRITE_TO);
+    this.appendDummyInput()
+        .appendField(Blockly.Msg.ARD_SERVO_WRITE_DEG_180);
+    // jwc 2016-0608: this.setInputsInline(true);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setTooltip(Blockly.Msg.ARD_SERVO_WRITE_TIP);
+  },
+  /**
+   * Updates the content of the the pin related fields.
+   * @this Blockly.Block
+   */
+  updateFields: function() {
+/// 2016-0704-1840 jwc    Blockly.Arduino.Boards.refreshBlockFieldDropdown(
+/// 2016-0704-1840 jwc        this, 'SERVO_PIN', 'pwmPins');
     Blockly.Arduino.Boards.refreshBlockFieldDropdown(
         this, 'SERVO_PIN', 'digitalPins');
   }
