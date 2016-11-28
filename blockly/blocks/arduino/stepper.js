@@ -69,6 +69,55 @@ Blockly.Blocks['stepper_config'] = {
   }
 };
 
+
+Blockly.Blocks['stepper_config_jwc'] = {
+  /**
+   * Block for for the stepper generator configuration including creating
+   * an object instance and setting up the speed. Info in the setHelpUrl link.
+   * @this Blockly.Block
+   */
+  init: function() {
+    this.setHelpUrl('http://arduino.cc/en/Reference/StepperConstructor');
+    this.setColour(Blockly.Blocks.stepper.HUE);
+    this.appendDummyInput()
+        .appendField(Blockly.Msg.ARD_STEPPER_SETUP)
+        .appendField(
+            new Blockly.FieldInstance('Stepper',
+                                      Blockly.Msg.ARD_STEPPER_DEFAULT_NAME,
+                                      true, true, false),
+            'STEPPER_NAME')
+        .appendField(Blockly.Msg.ARD_STEPPER_MOTOR);
+    this.appendDummyInput()
+        .setAlign(Blockly.ALIGN_RIGHT)
+        .appendField(Blockly.Msg.ARD_STEPPER_PIN1)
+        .appendField(new Blockly.FieldDropdown(
+            Blockly.Arduino.Boards.selected.digitalPins), 'STEPPER_PIN1')
+        .appendField(Blockly.Msg.ARD_STEPPER_PIN2)
+        .appendField(new Blockly.FieldDropdown(
+            Blockly.Arduino.Boards.selected.digitalPins), 'STEPPER_PIN2');
+    this.appendValueInput('STEPPER_STEPS')
+        .setCheck(Blockly.Types.NUMBER.checkList)
+        .setAlign(Blockly.ALIGN_RIGHT)
+        .appendField(Blockly.Msg.ARD_STEPPER_REVOLVS);
+    this.appendValueInput('STEPPER_SPEED')
+        .setCheck(Blockly.Types.NUMBER.checkList)
+        .setAlign(Blockly.ALIGN_RIGHT)
+        .appendField(Blockly.Msg.ARD_STEPPER_SPEED);
+    this.setTooltip(Blockly.Msg.ARD_STEPPER_SETUP_TIP);
+  },
+  /**
+   * Updates the content of the the pin related fields.
+   * @this Blockly.Block
+   */
+  updateFields: function() {
+    Blockly.Boards.refreshBlockFieldDropdown(
+        this, 'STEPPER_PIN1', 'digitalPins');
+    Blockly.Boards.refreshBlockFieldDropdown(
+        this, 'STEPPER_PIN2', 'digitalPins');
+  }
+};
+
+
 Blockly.Blocks['stepper_step'] = {
   /**
    * Block for for the stepper 'step()' function.
