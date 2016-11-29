@@ -70,7 +70,8 @@ Blockly.Blocks['stepper_config'] = {
 };
 
 
-Blockly.Blocks['stepper_config_jwc'] = {
+// // Blockly.Blocks['stepper_config_jwc'] = {
+Blockly.Blocks['lcd_config_jwc'] = {
   /**
    * Block for for the stepper generator configuration including creating
    * an object instance and setting up the speed. Info in the setHelpUrl link.
@@ -100,7 +101,8 @@ Blockly.Blocks['stepper_config_jwc'] = {
             // instanceType, instanceName, uniqueName, opt_lockNew, opt_lockRename,
             // opt_editDropdownData, opt_validator) {        
         .appendField(
-            new Blockly.FieldInstance('Stepper',
+            // // new Blockly.FieldInstance('Stepper',
+            new Blockly.FieldInstance('Lcd',
                                       Blockly.Msg.ARD_STEPPER_DEFAULT_NAME,
                                       true, true, false),
             'STEPPER_NAME')
@@ -181,7 +183,8 @@ Blockly.Blocks['stepper_step'] = {
 };
 
 
-Blockly.Blocks['stepper_step_jwc'] = {
+// // Blockly.Blocks['stepper_step_jwc'] = {
+Blockly.Blocks['lcd_write_jwc'] = {
   /**
    * Block for for the stepper 'step()' function.
    * @this Blockly.Block
@@ -192,7 +195,8 @@ Blockly.Blocks['stepper_step_jwc'] = {
     this.appendDummyInput()
         .appendField(Blockly.Msg.ARD_STEPPER_STEP)
         .appendField(
-            new Blockly.FieldInstance('Stepper',
+            // // new Blockly.FieldInstance('Stepper',
+            new Blockly.FieldInstance('Lcd',
                                       Blockly.Msg.ARD_STEPPER_DEFAULT_NAME,
                                       false, true, false),
             'STEPPER_NAME');
@@ -213,7 +217,8 @@ Blockly.Blocks['stepper_step_jwc'] = {
     if (!this.workspace) return;  // Block has been deleted.
 
     var instanceName = this.getFieldValue('STEPPER_NAME')
-    if (Blockly.Instances.isInstancePresent(instanceName, 'Stepper', this)) {
+    // // if (Blockly.Instances.isInstancePresent(instanceName, 'Stepper', this)) {
+    if (Blockly.Instances.isInstancePresent(instanceName, 'Lcd', this)) {
       this.setWarningText(null);
     } else {
       // Set a warning to select a valid stepper config block
