@@ -240,6 +240,15 @@ Ardublockly.TOOLBOX_XML =
 '        </block>' +
 '      </value>' +
 '    </block>' +
+/// jwc 2016-1128-2045 >>
+'    <block type="stepper_step_jwc">' +
+'      <value name="STEPPER_STEPS">' +
+'        <block type="math_number">' +
+'          <field name="NUM">10</field>' +
+'        </block>' +
+'      </value>' +
+'    </block>' +
+/// jwc <<
 '  </category>' +
 '  <sep></sep>' +
 '  <category id="catComms" name="Comms">' +
