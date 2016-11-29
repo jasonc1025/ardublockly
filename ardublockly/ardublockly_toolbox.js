@@ -226,17 +226,25 @@ Ardublockly.TOOLBOX_XML =
 '    </block>' +
 /// jwc 2016-1128-1545 >>
 // // '    <block type="stepper_config_jwc">' +
-'    <block type="lcd_config_jwc">' +
-'      <field name="STEPPER_PIN1">1</field>' +
-'      <field name="STEPPER_PIN2">2</field>' +
-'      <value name="STEPPER_STEPS">' +
+// // '    <block type="lcd_config_jwc">' +
+// // '      <field name="STEPPER_PIN1">1</field>' +
+// // '      <field name="STEPPER_PIN2">2</field>' +
+// // '      <value name="STEPPER_STEPS">' +
+// // '        <block type="math_number">' +
+// // '          <field name="NUM">100</field>' +
+// // '        </block>' +
+// // '      </value>' +
+// // '      <value name="STEPPER_SPEED">' +
+// // '        <block type="math_number">' +
+// // '          <field name="NUM">10</field>' +
+// // '        </block>' +
+// // '      </value>' +
+// // '    </block>' +
+'    <block type="lcd_setup_BLOCK">' +
+'      <value name="I2C_CONTROLLER_DEC_ADDRESS_FIELD_ID">' +
 '        <block type="math_number">' +
-'          <field name="NUM">100</field>' +
-'        </block>' +
-'      </value>' +
-'      <value name="STEPPER_SPEED">' +
-'        <block type="math_number">' +
-'          <field name="NUM">10</field>' +
+'          <field name="NUM">39' +
+'          </field>' +
 '        </block>' +
 '      </value>' +
 '    </block>' +
