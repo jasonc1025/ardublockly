@@ -217,7 +217,6 @@ Ardublockly.TOOLBOX_XML =
 '        </block>' +
 '      </value>' +
 '    </block>' +
-
 '    <block type="stepper_step">' +
 '      <value name="STEPPER_STEPS">' +
 '        <block type="math_number">' +
