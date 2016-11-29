@@ -217,6 +217,14 @@ Ardublockly.TOOLBOX_XML =
 '        </block>' +
 '      </value>' +
 '    </block>' +
+
+'    <block type="stepper_step">' +
+'      <value name="STEPPER_STEPS">' +
+'        <block type="math_number">' +
+'          <field name="NUM">10</field>' +
+'        </block>' +
+'      </value>' +
+'    </block>' +
 /// jwc 2016-1128-1545 >>
 // // '    <block type="stepper_config_jwc">' +
 '    <block type="lcd_config_jwc">' +
@@ -244,13 +252,6 @@ Ardublockly.TOOLBOX_XML =
 '      </value>' +
 '    </block>' +
 /// jwc <<
-'    <block type="stepper_step">' +
-'      <value name="STEPPER_STEPS">' +
-'        <block type="math_number">' +
-'          <field name="NUM">10</field>' +
-'        </block>' +
-'      </value>' +
-'    </block>' +
 '  </category>' +
 '  <sep></sep>' +
 '  <category id="catComms" name="Comms">' +
