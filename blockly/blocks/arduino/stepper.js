@@ -81,6 +81,24 @@ Blockly.Blocks['stepper_config_jwc'] = {
     this.setColour(Blockly.Blocks.stepper.HUE);
     this.appendDummyInput()
         .appendField(Blockly.Msg.ARD_STEPPER_SETUP)
+        // /**
+        // * Class for a specific type of instances' dropdown field.
+        // * @param {?string} instanceName The default name for the instance. If null,
+        // *     a unique instance name will be generated.
+        // * @param {!string} instanceType The type of instances for the dropdown.
+        // * @param {boolean} uniqueName
+        // * @param {boolean=} opt_lockNew Indicates a special case in which this
+        // *     dropdown can only rename the current name and each new block will always
+        // *     have a unique name.
+        // * @param {boolean=} opt_lockRename
+        // * @param {Function=} opt_validator A function that is executed when a new
+        // *     option is selected.  Its sole argument is the new option value.
+        // * @extends {Blockly.FieldDropdown}
+        // * @constructor
+        // */
+        // Blockly.FieldInstance = function(
+            // instanceType, instanceName, uniqueName, opt_lockNew, opt_lockRename,
+            // opt_editDropdownData, opt_validator) {        
         .appendField(
             new Blockly.FieldInstance('Stepper',
                                       Blockly.Msg.ARD_STEPPER_DEFAULT_NAME,
@@ -119,6 +137,51 @@ Blockly.Blocks['stepper_config_jwc'] = {
 
 
 Blockly.Blocks['stepper_step'] = {
+  /**
+   * Block for for the stepper 'step()' function.
+   * @this Blockly.Block
+   */
+  init: function() {
+    this.setHelpUrl('http://arduino.cc/en/Reference/StepperStep');
+    this.setColour(Blockly.Blocks.stepper.HUE);
+    this.appendDummyInput()
+        .appendField(Blockly.Msg.ARD_STEPPER_STEP)
+        .appendField(
+            new Blockly.FieldInstance('Stepper',
+                                      Blockly.Msg.ARD_STEPPER_DEFAULT_NAME,
+                                      false, true, false),
+            'STEPPER_NAME');
+    this.appendValueInput('STEPPER_STEPS')
+        .setCheck(Blockly.Types.NUMBER.checkList);
+    this.appendDummyInput()
+        .appendField(Blockly.Msg.ARD_STEPPER_STEPS);
+    this.setPreviousStatement(true);
+    this.setNextStatement(true);
+    this.setTooltip(Blockly.Msg.ARD_STEPPER_STEP_TIP);
+  },
+  /**
+   * Called whenever anything on the workspace changes.
+   * It checks/warns if the selected stepper instance has a config block.
+   * @this Blockly.Block
+   */
+  onchange: function() {
+    if (!this.workspace) return;  // Block has been deleted.
+
+    var instanceName = this.getFieldValue('STEPPER_NAME')
+    if (Blockly.Instances.isInstancePresent(instanceName, 'Stepper', this)) {
+      this.setWarningText(null);
+    } else {
+      // Set a warning to select a valid stepper config block
+      this.setWarningText(
+        Blockly.Msg.ARD_COMPONENT_WARN1.replace(
+            '%1', Blockly.Msg.ARD_STEPPER_COMPONENT).replace(
+                '%2', instanceName));
+    }
+  }
+};
+
+
+Blockly.Blocks['stepper_step_jwc'] = {
   /**
    * Block for for the stepper 'step()' function.
    * @this Blockly.Block
