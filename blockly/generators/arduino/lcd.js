@@ -7,9 +7,12 @@
  * @fileoverview Arduino code generator for the Stepper library blocks.
  *     The Arduino Stepper library docs: http://arduino.cc/en/Reference/Stepper
  */
+
+ // Based off of 'stepper.js'
+
 'use strict';
 
-goog.provide('Blockly.Arduino.stepper');
+goog.provide('Blockly.Arduino.lcd');
 
 goog.require('Blockly.Arduino');
 
@@ -24,7 +27,8 @@ goog.require('Blockly.Arduino');
  * @param {!Blockly.Block} block Block to generate the code from.
  * @return {string} Empty string as no code goes into 'loop()'.
  */
-Blockly.Arduino['stepper_config'] = function(block) {
+// // Blockly.Arduino['stepper_config_jwc'] = function(block) {
+Blockly.Arduino['lcd_config_jwc'] = function(block) {
   var pin1 = block.getFieldValue('STEPPER_PIN1');
   var pin2 = block.getFieldValue('STEPPER_PIN2');
   var pinType = Blockly.Arduino.PinTypes.STEPPER;
@@ -63,8 +67,10 @@ Blockly.Arduino['stepper_config'] = function(block) {
  * @param {!Blockly.Block} block Block to generate the code from.
  * @return {array} Completed code with order of operation.
  */
-Blockly.Arduino['stepper_step'] = function(block) {
-  var stepperInstanceName = 'stepper_' + block.getFieldValue('STEPPER_NAME');
+// // Blockly.Arduino['stepper_step_jwc'] = function(block) {
+Blockly.Arduino['lcd_write_jwc'] = function(block) {
+  // // var stepperInstanceName = 'stepper_' + block.getFieldValue('STEPPER_NAME');
+  var stepperInstanceName = 'lcd_' + block.getFieldValue('STEPPER_NAME');
   var stepperSteps = Blockly.Arduino.valueToCode(block, 'STEPPER_STEPS',
       Blockly.Arduino.ORDER_ATOMIC) || '0';
   var code = stepperInstanceName + '.step(' + stepperSteps + ');\n';
