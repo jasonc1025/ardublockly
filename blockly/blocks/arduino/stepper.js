@@ -81,7 +81,7 @@ Blockly.Blocks['lcd_config_jwc'] = {
     this.setHelpUrl('http://arduino.cc/en/Reference/StepperConstructor');
     this.setColour(Blockly.Blocks.stepper.HUE);
     this.appendDummyInput()
-        .appendField(Blockly.Msg.ARD_STEPPER_SETUP)
+        .appendField(Blockly.Msg.ARD_LCD_SETUP)
         // /**
         // * Class for a specific type of instances' dropdown field.
         // * @param {?string} instanceName The default name for the instance. If null,
@@ -103,27 +103,27 @@ Blockly.Blocks['lcd_config_jwc'] = {
         .appendField(
             // // new Blockly.FieldInstance('Stepper',
             new Blockly.FieldInstance('Lcd',
-                                      Blockly.Msg.ARD_STEPPER_DEFAULT_NAME,
+                                      Blockly.Msg.ARD_LCD_DEFAULT_NAME,
                                       true, true, false),
             'STEPPER_NAME')
-        .appendField(Blockly.Msg.ARD_STEPPER_MOTOR);
+        .appendField(Blockly.Msg.ARD_LCD_MOTOR);
     this.appendDummyInput()
         .setAlign(Blockly.ALIGN_RIGHT)
-        .appendField(Blockly.Msg.ARD_STEPPER_PIN1)
+        .appendField(Blockly.Msg.ARD_LCD_PIN1)
         .appendField(new Blockly.FieldDropdown(
             Blockly.Arduino.Boards.selected.digitalPins), 'STEPPER_PIN1')
-        .appendField(Blockly.Msg.ARD_STEPPER_PIN2)
+        .appendField(Blockly.Msg.ARD_LCD_PIN2)
         .appendField(new Blockly.FieldDropdown(
             Blockly.Arduino.Boards.selected.digitalPins), 'STEPPER_PIN2');
     this.appendValueInput('STEPPER_STEPS')
         .setCheck(Blockly.Types.NUMBER.checkList)
         .setAlign(Blockly.ALIGN_RIGHT)
-        .appendField(Blockly.Msg.ARD_STEPPER_REVOLVS);
+        .appendField(Blockly.Msg.ARD_LCD_REVOLVS);
     this.appendValueInput('STEPPER_SPEED')
         .setCheck(Blockly.Types.NUMBER.checkList)
         .setAlign(Blockly.ALIGN_RIGHT)
-        .appendField(Blockly.Msg.ARD_STEPPER_SPEED);
-    this.setTooltip(Blockly.Msg.ARD_STEPPER_SETUP_TIP);
+        .appendField(Blockly.Msg.ARD_LCD_SPEED);
+    this.setTooltip(Blockly.Msg.ARD_LCD_SETUP_TIP);
   },
   /**
    * Updates the content of the the pin related fields.
@@ -193,20 +193,20 @@ Blockly.Blocks['lcd_write_jwc'] = {
     this.setHelpUrl('http://arduino.cc/en/Reference/StepperStep');
     this.setColour(Blockly.Blocks.stepper.HUE);
     this.appendDummyInput()
-        .appendField(Blockly.Msg.ARD_STEPPER_STEP)
+        .appendField(Blockly.Msg.ARD_LCD_STEP)
         .appendField(
             // // new Blockly.FieldInstance('Stepper',
             new Blockly.FieldInstance('Lcd',
-                                      Blockly.Msg.ARD_STEPPER_DEFAULT_NAME,
+                                      Blockly.Msg.ARD_LCD_DEFAULT_NAME,
                                       false, true, false),
             'STEPPER_NAME');
     this.appendValueInput('STEPPER_STEPS')
         .setCheck(Blockly.Types.NUMBER.checkList);
     this.appendDummyInput()
-        .appendField(Blockly.Msg.ARD_STEPPER_STEPS);
+        .appendField(Blockly.Msg.ARD_LCD_STEPS);
     this.setPreviousStatement(true);
     this.setNextStatement(true);
-    this.setTooltip(Blockly.Msg.ARD_STEPPER_STEP_TIP);
+    this.setTooltip(Blockly.Msg.ARD_LCD_STEP_TIP);
   },
   /**
    * Called whenever anything on the workspace changes.
@@ -224,7 +224,7 @@ Blockly.Blocks['lcd_write_jwc'] = {
       // Set a warning to select a valid stepper config block
       this.setWarningText(
         Blockly.Msg.ARD_COMPONENT_WARN1.replace(
-            '%1', Blockly.Msg.ARD_STEPPER_COMPONENT).replace(
+            '%1', Blockly.Msg.ARD_LCD_COMPONENT).replace(
                 '%2', instanceName));
     }
   }

@@ -1208,6 +1208,21 @@ Blockly.Msg.ARD_STEPPER_STEP = 'move stepper';
 Blockly.Msg.ARD_STEPPER_STEPS = 'steps';
 Blockly.Msg.ARD_STEPPER_STEP_TIP = 'Turns the stepper motor a specific number of steps.';
 Blockly.Msg.ARD_STEPPER_COMPONENT = 'stepper';
+
+// LCD
+Blockly.Msg.ARD_LCD_SETUP = 'Setup LCD';
+Blockly.Msg.ARD_LCD_MOTOR = 'lcd:';
+Blockly.Msg.ARD_LCD_DEFAULT_NAME = 'MyLcd';
+Blockly.Msg.ARD_LCD_PIN1 = 'pin1#';
+Blockly.Msg.ARD_LCD_PIN2 = 'pin2#';
+Blockly.Msg.ARD_LCD_REVOLVS = 'how many steps per revolution';
+Blockly.Msg.ARD_LCD_SPEED = 'set speed (rpm) to';
+Blockly.Msg.ARD_LCD_SETUP_TIP = 'Configures a lcd motor pinout and other settings.';
+Blockly.Msg.ARD_LCD_STEP = 'move lcd';
+Blockly.Msg.ARD_LCD_STEPS = 'steps';
+Blockly.Msg.ARD_LCD_STEP_TIP = 'Turns the lcd motor a specific number of steps.';
+Blockly.Msg.ARD_LCD_COMPONENT = 'lcd';
+
 Blockly.Msg.ARD_COMPONENT_WARN1 = 'A %1 configuration block with the same %2 name must be added to use this block!';
 Blockly.Msg.ARD_TIME_DELAY = 'wait';
 Blockly.Msg.ARD_TIME_MS = 'milliseconds';
