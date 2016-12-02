@@ -224,33 +224,33 @@ Ardublockly.TOOLBOX_XML =
 '        </block>' +
 '      </value>' +
 '    </block>' +
-/// jwc 2016-1128-1545 >>
-// // '    <block type="stepper_config_jwc">' +
-'    <block type="lcd_config_jwc">' +
-'      <field name="STEPPER_PIN1">1</field>' +
-'      <field name="STEPPER_PIN2">2</field>' +
-'      <value name="STEPPER_STEPS">' +
-'        <block type="math_number">' +
-'          <field name="NUM">100</field>' +
-'        </block>' +
-'      </value>' +
-'      <value name="STEPPER_SPEED">' +
-'        <block type="math_number">' +
-'          <field name="NUM">10</field>' +
-'        </block>' +
-'      </value>' +
-'    </block>' +
-/// jwc <<
+// // /// jwc 2016-1128-1545 >>
+// // // // '    <block type="stepper_config_jwc">' +
+// // '    <block type="lcd_config_jwc">' +
+// // '      <field name="STEPPER_PIN1">1</field>' +
+// // '      <field name="STEPPER_PIN2">2</field>' +
+// // '      <value name="STEPPER_STEPS">' +
+// // '        <block type="math_number">' +
+// // '          <field name="NUM">100</field>' +
+// // '        </block>' +
+// // '      </value>' +
+// // '      <value name="STEPPER_SPEED">' +
+// // '        <block type="math_number">' +
+// // '          <field name="NUM">10</field>' +
+// // '        </block>' +
+// // '      </value>' +
+// // '    </block>' +
+// // /// jwc <<
 /// jwc 2016-1128-2045 >>
-// // '    <block type="stepper_step_jwc">' +
-'    <block type="lcd_write_jwc">' +
-'      <value name="STEPPER_STEPS">' +
-'        <block type="math_number">' +
-'          <field name="NUM">20</field>' +
-'        </block>' +
-'      </value>' +
-'    </block>' +
-/// jwc <<
+// // // // '    <block type="stepper_step_jwc">' +
+// // '    <block type="lcd_write_jwc">' +
+// // '      <value name="STEPPER_STEPS">' +
+// // '        <block type="math_number">' +
+// // '          <field name="NUM">20</field>' +
+// // '        </block>' +
+// // '      </value>' +
+// // '    </block>' +
+// // /// jwc <<
 '  </category>' +
 '  <sep></sep>' +
 '  <category id="catComms" name="Comms">' +
@@ -261,6 +261,20 @@ Ardublockly.TOOLBOX_XML =
 '        <block type="text"></block>' +
 '      </value>' +
 '    </block>' +
+
+/// jwc 2016-1119-0030 >>
+'    <block type="lcd_setup_BLOCK">' +
+'      <value name="I2C_CONTROLLER_DEC_ADDRESS_FIELD_ID">' +
+'        <block type="math_number">' +
+'          <field name="NUM">39' +
+'          </field>' +
+'        </block>' +
+'      </value>' +
+'    </block>' +
+
+'    <block type="lcd_print"></block>' +
+/// jwc <<
+
 '    <block type="spi_setup"></block>' +
 '    <block type="spi_transfer"></block>' +
 '    <block type="spi_transfer_return"></block>' +
