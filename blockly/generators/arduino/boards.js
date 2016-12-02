@@ -111,7 +111,9 @@ Blockly.Arduino.Boards.profiles.uno = {
   i2cPins: { Wire: [['SDA', 'A4'], ['SCL', 'A5']] },
   i2cSpeed: [['100kHz', '100000L'], ['400kHz', '400000L']],
   builtinLed: [['BUILTIN_1', '13']],
-  interrupt: [['interrupt0', '2'], ['interrupt1', '3']]
+  interrupt: [['interrupt0', '2'], ['interrupt1', '3']],
+  lcd: [['lcd', 'Lcd']]
+
 };
 
 /** Arduino Nano board profile (ATmega328p). */
