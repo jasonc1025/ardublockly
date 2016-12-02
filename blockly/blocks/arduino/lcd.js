@@ -37,24 +37,32 @@ Blockly.Blocks['lcd_setup_BLOCK'] = {
     this.setColour(Blockly.Blocks.lcd.HUE);
     
     this.appendDummyInput()
-        .appendField(Blockly.Msg.ARD_LCD_SETUP_BLOCK_NAME);
+        // // .appendField(Blockly.Msg.ARD_LCD_SETUP_BLOCK_NAME);
+        .appendField("Comms: LCD Setup");
 
     this.appendValueInput('I2C_CONTROLLER_DEC_ADDRESS_FIELD_ID')
         .setCheck(Blockly.Types.NUMBER.checkList)
-        .appendField(Blockly.Msg.ARD_LCD_SETUP_I2C_CONTROLLER_DEC_ADDRESS);
+        // // .appendField(Blockly.Msg.ARD_LCD_SETUP_I2C_CONTROLLER_DEC_ADDRESS);
+        .appendField("   * I2C Controller Address [0-127 Dec (39 Default)]");
 
     this.appendDummyInput()
-        .appendField(Blockly.Msg.ARD_LCD_SETUP_COLUMNS_MAX)
+        // // .appendField(Blockly.Msg.ARD_LCD_SETUP_COLUMNS_MAX)
+        .appendField("   * Columns Max:")
         .appendField(new Blockly.FieldDropdown(
-                [[Blockly.Msg.ARD_LCD_SETUP_COLUMNS_16, '16'],
-                 [Blockly.Msg.ARD_LCD_SETUP_COLUMNS_20, '20']]),
+                // // [[Blockly.Msg.ARD_LCD_SETUP_COLUMNS_16, '16'],
+                 // // [Blockly.Msg.ARD_LCD_SETUP_COLUMNS_20, '20']]),
+                [["16", '16'],
+                 ["20", '20']]),
                 'COLUMNS_MAX_FIELD_ID');
             
     this.appendDummyInput()
-        .appendField(Blockly.Msg.ARD_LCD_SETUP_ROWS_MAX)
+        // // .appendField(Blockly.Msg.ARD_LCD_SETUP_ROWS_MAX)
+        .appendField("   * Rows Max:")
         .appendField(new Blockly.FieldDropdown(
-                [[Blockly.Msg.ARD_LCD_SETUP_ROWS_2, '2'],
-                 [Blockly.Msg.ARD_LCD_SETUP_ROWS_4, '4']]),
+                // // [[Blockly.Msg.ARD_LCD_SETUP_ROWS_2, '2'],
+                 // // [Blockly.Msg.ARD_LCD_SETUP_ROWS_4, '4']]),
+                [["2", '2'],
+                 ["4", '4']]),
                 'ROWS_MAX_FIELD_ID');
 
         
@@ -64,7 +72,7 @@ Blockly.Blocks['lcd_setup_BLOCK'] = {
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     
-    this.setTooltip(Blockly.Msg.ARD_LCD_SETUP_TIP);
+    this.setTooltip('Setup for a LCD peripheral');
   },
   /**
    * Returns the lcd instance name.
