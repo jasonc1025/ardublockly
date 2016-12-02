@@ -101,16 +101,19 @@ Blockly.Blocks['lcd_print'] = {
     this.appendDummyInput()
         .appendField(new Blockly.FieldDropdown(
                 Blockly.Arduino.Boards.selected.lcd), 'LCD_ID')
-        .appendField(Blockly.Msg.ARD_LCD_PRINT);
+        // // .appendField(Blockly.Msg.ARD_LCD_PRINT);
+        .appendField('print');
     this.appendValueInput('CONTENT')
         .setCheck(Blockly.Types.TEXT.checkList);
     this.appendDummyInput()
         .appendField(new Blockly.FieldCheckbox('TRUE'), 'NEW_LINE')
-        .appendField(Blockly.Msg.ARD_LCD_PRINT_NEWLINE);
+        // // .appendField(Blockly.Msg.ARD_LCD_PRINT_NEWLINE);
+        .appendField('add new line');
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setTooltip(Blockly.Msg.ARD_LCD_PRINT_TIP);
+    // // this.setTooltip(Blockly.Msg.ARD_LCD_PRINT_TIP);
+    this.setTooltip('Prints data to the console/lcd port as human-readable ASCII text.');
   //// orig: ,
   }
 
