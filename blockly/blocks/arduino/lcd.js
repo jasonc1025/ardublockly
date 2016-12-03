@@ -41,7 +41,7 @@ Blockly.Blocks['lcd_setup_BLOCK'] = {
         .appendField("Comms: LCD Setup");
         .appendField(
             new Blockly.FieldDropdown(
-                Blockly.Arduino.Boards.selected.lcd), 'LCD_FIELD_ID')
+                Blockly.Arduino.Boards.selected.lcd), 'LCD_FIELD_ID');
 
     this.appendValueInput('I2C_CONTROLLER_DEC_ADDRESS_FIELD_ID')
         .setCheck(Blockly.Types.NUMBER.checkList)
