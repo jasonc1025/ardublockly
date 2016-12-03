@@ -24,7 +24,8 @@ goog.require('Blockly.Arduino');
  * @return {array} Completed code.
  */
 Blockly.Arduino['lcd_setup_BLOCK'] = function(block) {
-    
+  var lcdId = block.getFieldValue('LCD_FIELD_ID');  
+  
   // Convert from number to text
   var i2cControllerDecAddress = Blockly.Arduino.valueToCode(
       block, 'I2C_CONTROLLER_DEC_ADDRESS_FIELD_ID', Blockly.Arduino.ORDER_ATOMIC) || '39';
@@ -69,7 +70,7 @@ Blockly.Arduino['lcd_setup_BLOCK'] = function(block) {
  * @param {!Blockly.Block} block Block to generate the code from.
  * @return {string} Completed code.
  */
-Blockly.Arduino['lcd_print'] = function(block) {
+Blockly.Arduino['lcd_print_BLOCK'] = function(block) {
   var lcdId = block.getFieldValue('LCD_ID');
   var content = Blockly.Arduino.valueToCode(
       block, 'CONTENT', Blockly.Arduino.ORDER_ATOMIC) || '0';

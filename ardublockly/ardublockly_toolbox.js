@@ -272,7 +272,7 @@ Ardublockly.TOOLBOX_XML =
 '      </value>' +
 '    </block>' +
 
-'    <block type="lcd_print"></block>' +
+'    <block type="lcd_print_BLOCK"></block>' +
 /// jwc <<
 
 '    <block type="spi_setup"></block>' +

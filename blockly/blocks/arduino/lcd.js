@@ -39,6 +39,9 @@ Blockly.Blocks['lcd_setup_BLOCK'] = {
     this.appendDummyInput()
         // // .appendField(Blockly.Msg.ARD_LCD_SETUP_BLOCK_NAME);
         .appendField("Comms: LCD Setup");
+        .appendField(
+            new Blockly.FieldDropdown(
+                Blockly.Arduino.Boards.selected.lcd), 'LCD_FIELD_ID')
 
     this.appendValueInput('I2C_CONTROLLER_DEC_ADDRESS_FIELD_ID')
         .setCheck(Blockly.Types.NUMBER.checkList)
@@ -90,7 +93,7 @@ Blockly.Blocks['lcd_setup_BLOCK'] = {
   }
 };
 
-Blockly.Blocks['lcd_print'] = {
+Blockly.Blocks['lcd_print_BLOCK'] = {
   /**
    * Block for creating a write to lcd com function.
    * @this Blockly.Block

@@ -113,6 +113,7 @@ Blockly.Arduino.Boards.profiles.uno = {
   builtinLed: [['BUILTIN_1', '13']],
   interrupt: [['interrupt0', '2'], ['interrupt1', '3']],
   lcd: [['lcd', 'Lcd']]
+  lcdPins: { Lcd: [['SDA', 'A4'], ['SCL', 'A5']] },
 
 };
 
