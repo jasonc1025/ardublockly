@@ -112,8 +112,8 @@ Blockly.Arduino.Boards.profiles.uno = {
   i2cSpeed: [['100kHz', '100000L'], ['400kHz', '400000L']],
   builtinLed: [['BUILTIN_1', '13']],
   interrupt: [['interrupt0', '2'], ['interrupt1', '3']],
-  lcd: [['lcd', 'Lcd']]
-  lcdPins: { Lcd: [['SDA', 'A4'], ['SCL', 'A5']] },
+  lcd: [['lcd', 'Lcd']],
+  lcdPins: { Lcd: [['SDA', 'A4'], ['SCL', 'A5']] }
 
 };
 
