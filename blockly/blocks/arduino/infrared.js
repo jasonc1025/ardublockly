@@ -69,7 +69,8 @@ Blockly.Blocks['commsInfrared_Rx_BLOCK'] = {
 /// jwc ?:         .appendField(Blockly.Msg.ARD_INFRARED_READ)
 /// jwc good:         .appendField(Blockly.Msg.ARD_DIGITALREAD)
 /// jwc good:         .appendField('Read Infrared_Rx from Pin#')
-        .appendField(Blockly.Msg.ARD_INFRARED_READ_FROM_PIN)
+//// jwc Blockly.Msg not work:        .appendField(Blockly.Msg.ARD_INFRARED_READ_FROM_PIN)
+        .appendField("   * Input: Read PIN#")
         .appendField(new Blockly.FieldDropdown(
 /// 2016-0704-1840 jwc:             Blockly.Arduino.Boards.selected.pwmPins), 'SERVO_PIN');
             Blockly.Arduino.Boards.selected.digitalPins), 'SERVO_PIN_FIELD_ID');
@@ -109,7 +110,8 @@ Blockly.Blocks['commsInfrared_Rx_BLOCK'] = {
     /// jwc good:   .appendField(Blockly.Msg.ARD_INFRARED_READ_WITH_DEBUG_PROMPT_01A);
 
     this.appendDummyInput()
-        .appendField(Blockly.Msg.ARD_INFRARED_READ_WITH_DEBUG_PROMPT_01)
+//// jwc Blockly.Msg not work:        .appendField(Blockly.Msg.ARD_INFRARED_READ_WITH_DEBUG_PROMPT_01)
+        .appendField("   * Optional Debug:")
         .appendField(new Blockly.FieldDropdown(
 //// jwc Blockly.Msg not work:                [[Blockly.Msg.ARD_INFRARED_READ_DEBUG_OFF, 'DEBUG_OFF'],
 //// jwc Blockly.Msg not work:                 [Blockly.Msg.ARD_INFRARED_READ_DEBUG_ON, 'DEBUG_ON']]),
@@ -118,11 +120,14 @@ Blockly.Blocks['commsInfrared_Rx_BLOCK'] = {
                 'DEBUG_ON_FIELD_ID');
             
     this.appendDummyInput()
-      .appendField(Blockly.Msg.ARD_INFRARED_READ_WITH_DEBUG_PROMPT_02);  
+//// jwc Blockly.Msg not work:      .appendField(Blockly.Msg.ARD_INFRARED_READ_WITH_DEBUG_PROMPT_02);  
+      .appendField("      * Use 'Comms: Setup Serial' Block @9600bps+");  
     this.appendValueInput('PROMPT_TEXT_FIELD_ID')
-      .appendField(Blockly.Msg.ARD_INFRARED_READ_WITH_DEBUG_PROMPT_03);
+//// jwc Blockly.Msg not work:      .appendField(Blockly.Msg.ARD_INFRARED_READ_WITH_DEBUG_PROMPT_03);
+      .appendField("      * Set 'prompt_ForSerialMonitor' (i.e. \">\"):");
     this.appendDummyInput()
-      .appendField(Blockly.Msg.ARD_INFRARED_READ_WITH_DEBUG_PROMPT_04);  
+//// jwc Blockly.Msg not work:      .appendField(Blockly.Msg.ARD_INFRARED_READ_WITH_DEBUG_PROMPT_04);  
+      .appendField("      * Later Set Serial-Monitor @[SAME]bps");  
 
     this.setOutput(true, Blockly.Types.TEXT.output);
     this.setTooltip(function() {
