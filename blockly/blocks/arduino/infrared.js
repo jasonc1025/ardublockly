@@ -56,8 +56,7 @@ Blockly.Blocks['commsInfrared_Rx_BLOCK'] = {
     var thisBlock = this;
 
     this.setInputsInline(false);
-////     this.setHelpUrl(Blockly.Msg.ARD_INFRARED_READ_HELPURL);
-    this.setHelpUrl("https://www.arduino.cc/en/Tutorial/RobotRemoteControl");
+    this.setHelpUrl(Blockly.Msg.ARD_INFRARED_READ_HELPURL);
     this.setColour(Blockly.Blocks.texts.HUE);
     
     this.appendDummyInput()
