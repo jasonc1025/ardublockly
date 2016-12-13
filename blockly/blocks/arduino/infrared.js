@@ -125,8 +125,10 @@ Blockly.Blocks['commsInfrared_Rx_BLOCK'] = {
     this.setOutput(true, Blockly.Types.TEXT.output);
     this.setTooltip(function() {
       return (thisBlock.getFieldValue('OUTPUT_TYPE_FIELD_ID') == Blockly.Types.TEXT.output) ?
-        Blockly.Msg.ARD_INFRARED_READ_TIP_AS_TEXT_AS_STRING :
-        Blockly.Msg.ARD_INFRARED_READ_TIP_AS_LARGE_NUMBER_AS_LONG;
+//// jwc Blockly.Msg not work:        Blockly.Msg.ARD_INFRARED_READ_TIP_AS_TEXT_AS_STRING :
+//// jwc Blockly.Msg not work:        Blockly.Msg.ARD_INFRARED_READ_TIP_AS_LARGE_NUMBER_AS_LONG;
+        "Read 'commsInfrared_Rx' for KeyCode as Type: Text-as-STRING" :
+        "Read 'commsInfrared_Rx' for KeyCode as Type: Large-Number-as-LONG";
     });
   },
   /**
