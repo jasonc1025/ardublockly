@@ -61,7 +61,6 @@ Blockly.Blocks['commsInfrared_Rx_BLOCK'] = {
     
     this.appendDummyInput()
         .appendField(Blockly.Msg.ARD_INFRARED_READ_BLOCK_NAME);
-        .appendField(Blockly.Msg.ARD_INFRARED_READ_BLOCK_NAME);
     
     this.appendDummyInput()
 /// jwc good:         .appendField(Blockly.Msg.ARD_SERVO_WRITE)
