@@ -56,10 +56,12 @@ Blockly.Blocks['commsInfrared_Rx_BLOCK'] = {
     var thisBlock = this;
 
     this.setInputsInline(false);
-    this.setHelpUrl(Blockly.Msg.ARD_INFRARED_READ_HELPURL);
+////     this.setHelpUrl(Blockly.Msg.ARD_INFRARED_READ_HELPURL);
+    this.setHelpUrl("https://www.arduino.cc/en/Tutorial/RobotRemoteControl");
     this.setColour(Blockly.Blocks.texts.HUE);
     
     this.appendDummyInput()
+        .appendField(Blockly.Msg.ARD_INFRARED_READ_BLOCK_NAME);
         .appendField(Blockly.Msg.ARD_INFRARED_READ_BLOCK_NAME);
     
     this.appendDummyInput()
@@ -85,8 +87,10 @@ Blockly.Blocks['commsInfrared_Rx_BLOCK'] = {
 /// jwc yes:          [Blockly.Msg.TEXT_PROMPT_TYPE_TEXT, Blockly.Types.TEXT.output]];
 /// jwc yes:         [[Blockly.Msg.TEXT_PROMPT_TYPE_NUMBER_2, Blockly.Types.NUMBER.output],
 /// jwc yes:          [Blockly.Msg.TEXT_PROMPT_TYPE_TEXT_2, Blockly.Types.TEXT.output]];
-        [[Blockly.Msg.ARD_INFRARED_READ_AS_LARGE_NUMBER_AS_LONG, Blockly.Types.NUMBER.output],
-         [Blockly.Msg.ARD_INFRARED_READ_AS_TEXT_AS_STRING, Blockly.Types.TEXT.output]];
+////        [[Blockly.Msg.ARD_INFRARED_READ_AS_LARGE_NUMBER_AS_LONG, Blockly.Types.NUMBER.output],
+        [["Read 'commsInfrared_Rx' for KeyCode as Type: Large-Number-as-LONG", Blockly.Types.NUMBER.output],
+////         [Blockly.Msg.ARD_INFRARED_READ_AS_TEXT_AS_STRING, Blockly.Types.TEXT.output]];
+         ["Read 'commsInfrared_Rx' for KeyCode as Type: Text-as-STRING", Blockly.Types.TEXT.output]];
     var dropdown = new Blockly.FieldDropdown(TYPES, function(newOp) {
       thisBlock.updateType_(newOp);
     });
