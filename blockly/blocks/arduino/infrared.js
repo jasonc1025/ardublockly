@@ -85,9 +85,9 @@ Blockly.Blocks['commsInfrared_Rx_BLOCK'] = {
 /// jwc yes:          [Blockly.Msg.TEXT_PROMPT_TYPE_TEXT, Blockly.Types.TEXT.output]];
 /// jwc yes:         [[Blockly.Msg.TEXT_PROMPT_TYPE_NUMBER_2, Blockly.Types.NUMBER.output],
 /// jwc yes:          [Blockly.Msg.TEXT_PROMPT_TYPE_TEXT_2, Blockly.Types.TEXT.output]];
-////        [[Blockly.Msg.ARD_INFRARED_READ_AS_LARGE_NUMBER_AS_LONG, Blockly.Types.NUMBER.output],
+//// jwc Blockly.Msg not work:        [[Blockly.Msg.ARD_INFRARED_READ_AS_LARGE_NUMBER_AS_LONG, Blockly.Types.NUMBER.output],
         [["Read 'commsInfrared_Rx' for KeyCode as Type: Large-Number-as-LONG", Blockly.Types.NUMBER.output],
-////         [Blockly.Msg.ARD_INFRARED_READ_AS_TEXT_AS_STRING, Blockly.Types.TEXT.output]];
+//// jwc Blockly.Msg not work:        [Blockly.Msg.ARD_INFRARED_READ_AS_TEXT_AS_STRING, Blockly.Types.TEXT.output]];
          ["Read 'commsInfrared_Rx' for KeyCode as Type: Text-as-STRING", Blockly.Types.TEXT.output]];
     var dropdown = new Blockly.FieldDropdown(TYPES, function(newOp) {
       thisBlock.updateType_(newOp);
@@ -109,8 +109,10 @@ Blockly.Blocks['commsInfrared_Rx_BLOCK'] = {
     this.appendDummyInput()
         .appendField(Blockly.Msg.ARD_INFRARED_READ_WITH_DEBUG_PROMPT_01)
         .appendField(new Blockly.FieldDropdown(
-                [[Blockly.Msg.ARD_INFRARED_READ_DEBUG_OFF, 'DEBUG_OFF'],
-                 [Blockly.Msg.ARD_INFRARED_READ_DEBUG_ON, 'DEBUG_ON']]),
+//// jwc Blockly.Msg not work:                [[Blockly.Msg.ARD_INFRARED_READ_DEBUG_OFF, 'DEBUG_OFF'],
+//// jwc Blockly.Msg not work:                 [Blockly.Msg.ARD_INFRARED_READ_DEBUG_ON, 'DEBUG_ON']]),
+                [["DEBUG_OFF", 'DEBUG_OFF'],
+                 ["DEBUG_ON", 'DEBUG_ON']]),
                 'DEBUG_ON_FIELD_ID');
             
     this.appendDummyInput()
