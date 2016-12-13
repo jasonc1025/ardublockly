@@ -56,11 +56,13 @@ Blockly.Blocks['commsInfrared_Rx_BLOCK'] = {
     var thisBlock = this;
 
     this.setInputsInline(false);
-    this.setHelpUrl(Blockly.Msg.ARD_INFRARED_READ_HELPURL);
+//// jwc Blockly.Msg not work:    this.setHelpUrl(Blockly.Msg.ARD_INFRARED_READ_HELPURL);
+    this.setHelpUrl("https://www.arduino.cc/en/Tutorial/RobotRemoteControl");
     this.setColour(Blockly.Blocks.texts.HUE);
     
     this.appendDummyInput()
-        .appendField(Blockly.Msg.ARD_INFRARED_READ_BLOCK_NAME);
+//// jwc Blockly.Msg not work:        .appendField(Blockly.Msg.ARD_INFRARED_READ_BLOCK_NAME);
+        .appendField("Comms: Infrared Rx");
     
     this.appendDummyInput()
 /// jwc good:         .appendField(Blockly.Msg.ARD_SERVO_WRITE)
