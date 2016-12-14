@@ -39,7 +39,7 @@ Blockly.Blocks['lcd_setup_BLOCK'] = {
     this.appendDummyInput()
         // // .appendField(Blockly.Msg.ARD_LCD_SETUP_BLOCK_NAME);
 //// jwc Blockly.Msg not work: fix:        .appendField("Comms: LCD Setup")
-        .appendField(Blockly.Msg.ARD_LCD_SETUP_BLOCK_NAME);
+        .appendField(Blockly.Msg.ARD_LCD_SETUP_BLOCK_NAME)
         .appendField(
             new Blockly.FieldDropdown(
                 Blockly.Arduino.Boards.selected.lcd), 'LCD_FIELD_ID');
