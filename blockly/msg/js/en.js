@@ -505,3 +505,65 @@ Blockly.Msg.TEXT_APPEND_VARIABLE = Blockly.Msg.VARIABLES_DEFAULT_NAME;
 Blockly.Msg.TEXT_CREATE_JOIN_ITEM_TITLE_ITEM = Blockly.Msg.VARIABLES_DEFAULT_NAME;
 Blockly.Msg.LISTS_INDEX_OF_INPUT_IN_LIST = Blockly.Msg.LISTS_INLIST;
 Blockly.Msg.PROCEDURES_DEFRETURN_COMMENT = Blockly.Msg.PROCEDURES_DEFNORETURN_COMMENT;
+
+
+//
+//
+// EandE Customization: New Blocks
+//
+//
+
+/// jwc for infrared.js >>
+Blockly.Msg.ARD_INFRARED_READ_BLOCK_NAME =              "Comms: Infrared Rx";
+Blockly.Msg.ARD_INFRARED_READ_FROM_PIN =                "   * Input: Read PIN#";
+Blockly.Msg.ARD_INFRARED_READ_AS_LARGE_NUMBER_AS_LONG = "   * Output: 8-HEX-Digits as Type: Large-Number-as-LONG";
+Blockly.Msg.ARD_INFRARED_READ_AS_TEXT_AS_STRING =       "   * Output: 8-HEX-Digits as Type: Text-as-STRING";
+Blockly.Msg.ARD_INFRARED_READ_DEBUG_ON = "DEBUG_ON";
+Blockly.Msg.ARD_INFRARED_READ_DEBUG_OFF = "DEBUG_OFF";
+Blockly.Msg.ARD_INFRARED_READ_WITH_DEBUG_PROMPT_01 =    "   * Optional Debug:";
+/// Obsolete: Blockly.Msg.ARD_INFRARED_READ_WITH_DEBUG_PROMPT_01A=                         "(May Re-Position This Block to Commit Checkbox)";
+Blockly.Msg.ARD_INFRARED_READ_WITH_DEBUG_PROMPT_02 =    "      * Use 'Comms: Setup Serial' Block @9600bps+";
+Blockly.Msg.ARD_INFRARED_READ_WITH_DEBUG_PROMPT_03 =    "      * Set 'prompt_ForSerialMonitor' (i.e. \">\"):";
+Blockly.Msg.ARD_INFRARED_READ_WITH_DEBUG_PROMPT_04 =    "      * Later Set Serial-Monitor @[SAME]bps";
+Blockly.Msg.ARD_INFRARED_READ_TIP_AS_LARGE_NUMBER_AS_LONG = "Read 'commsInfrared_Rx' for KeyCode as Type: Large-Number-as-LONG";
+Blockly.Msg.ARD_INFRARED_READ_TIP_AS_TEXT_AS_STRING =       "Read 'commsInfrared_Rx' for KeyCode as Type: Text-as-STRING";
+Blockly.Msg.ARD_INFRARED_READ_HELPURL = "https://www.arduino.cc/en/Tutorial/RobotRemoteControl";
+
+Blockly.Msg.ARD_INFRARED_READ_FROM_PIN_BASIC =                "Read Infrared Rx from PIN#";
+Blockly.Msg.ARD_INFRARED_READ_AS_LARGE_NUMBER_AS_LONG_BASIC = " with HEX-ouput as: Large-Number-as-LONG";
+Blockly.Msg.ARD_INFRARED_READ_AS_TEXT_AS_STRING_BASIC =       " with HEX-output as: Text-as-STRING";
+Blockly.Msg.ARD_INFRARED_READ_WITH_DEBUG_PROMPT_01_BASIC =    " Note: Use 'Comms: Setup Serial' Block @9600bps+";
+
+/// jwc for infrared.js <<
+
+// LCD
+// // Not Needed Anymore
+// // Blockly.Msg.ARD_LCD_SETUP = 'Setup LCD';
+// // Blockly.Msg.ARD_LCD_MOTOR = 'lcd:';
+// // Blockly.Msg.ARD_LCD_DEFAULT_NAME = 'MyLcd';
+// // Blockly.Msg.ARD_LCD_PIN1 = 'pin1#';
+// // Blockly.Msg.ARD_LCD_PIN2 = 'pin2#';
+// // Blockly.Msg.ARD_LCD_REVOLVS = 'how many steps per revolution';
+// // Blockly.Msg.ARD_LCD_SPEED = 'set speed (rpm) to';
+// // Blockly.Msg.ARD_LCD_SETUP_TIP = 'Configures a lcd motor pinout and other settings.';
+// // Blockly.Msg.ARD_LCD_STEP = 'move lcd';
+// // Blockly.Msg.ARD_LCD_STEPS = 'steps';
+// // Blockly.Msg.ARD_LCD_STEP_TIP = 'Turns the lcd motor a specific number of steps.';
+// // Blockly.Msg.ARD_LCD_COMPONENT = 'lcd';
+
+/// jwc for lcd.js >> 
+Blockly.Msg.ARD_LCD_SETUP_BLOCK_NAME =                  "Comms: LCD Setup"; 
+Blockly.Msg.ARD_LCD_SETUP_I2C_CONTROLLER_DEC_ADDRESS =  "   * I2C Controller Address [0-127 Dec (39 Default)]"; 
+Blockly.Msg.ARD_LCD_SETUP_COLUMNS_16 = "16"; 
+Blockly.Msg.ARD_LCD_SETUP_COLUMNS_20 = "20"; 
+Blockly.Msg.ARD_LCD_SETUP_COLUMNS_MAX =                 "   * Columns Max:"; 
+Blockly.Msg.ARD_LCD_SETUP_ROWS_2 = "2"; 
+Blockly.Msg.ARD_LCD_SETUP_ROWS_4 = "4"; 
+Blockly.Msg.ARD_LCD_SETUP_ROWS_MAX =                    "   * Rows Max:"; 
+Blockly.Msg.ARD_LCD_SETUP_TIP = 'Setup for a LCD peripheral'; 
+ 
+Blockly.Msg.ARD_LCD_PRINT = 'print'; 
+Blockly.Msg.ARD_LCD_PRINT_NEWLINE = 'add new line'; 
+Blockly.Msg.ARD_LCD_PRINT_TIP = 'Prints data to the console/lcd port as human-readable ASCII text.'; 
+Blockly.Msg.ARD_LCD_PRINT_WARN = 'A setup block for %1 must be added to the workspace to use this block!' 
+/// jwc for lcd.js << 
