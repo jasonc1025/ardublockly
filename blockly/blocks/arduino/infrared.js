@@ -62,8 +62,9 @@ Blockly.Blocks['commsInfrared_Rx_BLOCK'] = {
     
     this.appendDummyInput()
 //// jwc Blockly.Msg not work:        .appendField(Blockly.Msg.ARD_INFRARED_READ_BLOCK_NAME);
-        .appendField("Comms: Infrared Rx");
-    
+//// jwc Blockly.Msg not work: fix:        .appendField("Comms: Infrared Rx");
+        .appendField(Blockly.Msg.ARD_INFRARED_READ_BLOCK_NAME);
+  
     this.appendDummyInput()
 /// jwc good:         .appendField(Blockly.Msg.ARD_SERVO_WRITE)
 /// jwc ?:         .appendField(Blockly.Msg.ARD_INFRARED_READ)
