@@ -38,7 +38,7 @@ Blockly.Blocks['lcd_setup_BLOCK'] = {
     
     this.appendDummyInput()
         // // .appendField(Blockly.Msg.ARD_LCD_SETUP_BLOCK_NAME);
-//// jwc Blockly.Msg not work: fix:        .appendField("Comms: LCD Setup")
+        //// jwc Blockly.Msg not work: fix:        .appendField("Comms: LCD Setup")
         .appendField(Blockly.Msg.ARD_LCD_SETUP_BLOCK_NAME)
         .appendField(
             new Blockly.FieldDropdown(
@@ -46,31 +46,29 @@ Blockly.Blocks['lcd_setup_BLOCK'] = {
 
     this.appendValueInput('I2C_CONTROLLER_DEC_ADDRESS_FIELD_ID')
         .setCheck(Blockly.Types.NUMBER.checkList)
-        // // .appendField(Blockly.Msg.ARD_LCD_SETUP_I2C_CONTROLLER_DEC_ADDRESS);
-        .appendField("   * I2C Controller Address [0-127 Dec (39 Default)]");
+        .appendField(Blockly.Msg.ARD_LCD_SETUP_I2C_CONTROLLER_DEC_ADDRESS);
+        //// jwc Blockly.Msg not work: fix:        .appendField("   * I2C Controller Address [0-127 Dec (39 Default)]");
 
     this.appendDummyInput()
-        // // .appendField(Blockly.Msg.ARD_LCD_SETUP_COLUMNS_MAX)
-        .appendField("   * Columns Max:")
+        .appendField(Blockly.Msg.ARD_LCD_SETUP_COLUMNS_MAX)
+        //// jwc Blockly.Msg not work: fix:        .appendField("   * Columns Max:")
         .appendField(new Blockly.FieldDropdown(
-                // // [[Blockly.Msg.ARD_LCD_SETUP_COLUMNS_16, '16'],
-                 // // [Blockly.Msg.ARD_LCD_SETUP_COLUMNS_20, '20']]),
-                [["16", '16'],
-                 ["20", '20']]),
+            [[Blockly.Msg.ARD_LCD_SETUP_COLUMNS_16, '16'],
+            [Blockly.Msg.ARD_LCD_SETUP_COLUMNS_20, '20']]),
+            //// jwc Blockly.Msg not work: fix:                [["16", '16'],
+            //// jwc Blockly.Msg not work: fix:                 ["20", '20']]),
                 'COLUMNS_MAX_FIELD_ID');
             
     this.appendDummyInput()
-        // // .appendField(Blockly.Msg.ARD_LCD_SETUP_ROWS_MAX)
-        .appendField("   * Rows Max:")
+        .appendField(Blockly.Msg.ARD_LCD_SETUP_ROWS_MAX)
+        //// jwc Blockly.Msg not work: fix:        .appendField("   * Rows Max:")
         .appendField(new Blockly.FieldDropdown(
-                // // [[Blockly.Msg.ARD_LCD_SETUP_ROWS_2, '2'],
-                 // // [Blockly.Msg.ARD_LCD_SETUP_ROWS_4, '4']]),
-                [["2", '2'],
-                 ["4", '4']]),
+            [[Blockly.Msg.ARD_LCD_SETUP_ROWS_2, '2'],
+            [Blockly.Msg.ARD_LCD_SETUP_ROWS_4, '4']]),
+            //// jwc Blockly.Msg not work: fix:                [["2", '2'],
+            //// jwc Blockly.Msg not work: fix:                 ["4", '4']]),
                 'ROWS_MAX_FIELD_ID');
-
-        
-    
+   
     // * jwc added to allow to fit within "Function: Run First, Loop Forever" Block
     //
     this.setPreviousStatement(true, null);
@@ -105,19 +103,19 @@ Blockly.Blocks['lcd_print_BLOCK'] = {
     this.appendDummyInput()
         .appendField(new Blockly.FieldDropdown(
                 Blockly.Arduino.Boards.selected.lcd), 'LCD_ID')
-        // // .appendField(Blockly.Msg.ARD_LCD_PRINT);
-        .appendField('print');
+        .appendField(Blockly.Msg.ARD_LCD_PRINT);
+        //// jwc Blockly.Msg not work: fix:        .appendField('print');
     this.appendValueInput('CONTENT')
         .setCheck(Blockly.Types.TEXT.checkList);
     this.appendDummyInput()
         .appendField(new Blockly.FieldCheckbox('TRUE'), 'NEW_LINE')
-        // // .appendField(Blockly.Msg.ARD_LCD_PRINT_NEWLINE);
-        .appendField('add new line');
+        .appendField(Blockly.Msg.ARD_LCD_PRINT_NEWLINE);
+        //// jwc Blockly.Msg not work: fix: .appendField('add new line');
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    // // this.setTooltip(Blockly.Msg.ARD_LCD_PRINT_TIP);
-    this.setTooltip('Prints data to the console/lcd port as human-readable ASCII text.');
+    this.setTooltip(Blockly.Msg.ARD_LCD_PRINT_TIP);
+    //// jwc Blockly.Msg not work: fix:this.setTooltip('Prints data to the console/lcd port as human-readable ASCII text.');
   //// orig: ,
   }
 

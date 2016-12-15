@@ -56,43 +56,43 @@ Blockly.Blocks['commsInfrared_Rx_BLOCK'] = {
     var thisBlock = this;
 
     this.setInputsInline(false);
-//// jwc Blockly.Msg not work:    this.setHelpUrl(Blockly.Msg.ARD_INFRARED_READ_HELPURL);
-    this.setHelpUrl("https://www.arduino.cc/en/Tutorial/RobotRemoteControl");
+    this.setHelpUrl(Blockly.Msg.ARD_INFRARED_READ_HELPURL);
+    //// jwc Blockly.Msg not work: fix: this.setHelpUrl("https://www.arduino.cc/en/Tutorial/RobotRemoteControl");
     this.setColour(Blockly.Blocks.texts.HUE);
     
     this.appendDummyInput()
-//// jwc Blockly.Msg not work:        .appendField(Blockly.Msg.ARD_INFRARED_READ_BLOCK_NAME);
-//// jwc Blockly.Msg not work: fix:        .appendField("Comms: Infrared Rx");
+        //// jwc Blockly.Msg not work:        .appendField(Blockly.Msg.ARD_INFRARED_READ_BLOCK_NAME);
+        //// jwc Blockly.Msg not work: fix:        .appendField("Comms: Infrared Rx");
         .appendField(Blockly.Msg.ARD_INFRARED_READ_BLOCK_NAME);
   
     this.appendDummyInput()
-/// jwc good:         .appendField(Blockly.Msg.ARD_SERVO_WRITE)
-/// jwc ?:         .appendField(Blockly.Msg.ARD_INFRARED_READ)
-/// jwc good:         .appendField(Blockly.Msg.ARD_DIGITALREAD)
-/// jwc good:         .appendField('Read Infrared_Rx from Pin#')
-//// jwc Blockly.Msg not work:        .appendField(Blockly.Msg.ARD_INFRARED_READ_FROM_PIN)
-        .appendField("   * Input: Read PIN#")
+        /// jwc good:         .appendField(Blockly.Msg.ARD_SERVO_WRITE)
+        /// jwc ?:         .appendField(Blockly.Msg.ARD_INFRARED_READ)
+        /// jwc good:         .appendField(Blockly.Msg.ARD_DIGITALREAD)
+        /// jwc good:         .appendField('Read Infrared_Rx from Pin#')
+        .appendField(Blockly.Msg.ARD_INFRARED_READ_FROM_PIN)
+        //// jwc Blockly.Msg not work: fix: .appendField("   * Input: Read PIN#")
         .appendField(new Blockly.FieldDropdown(
-/// 2016-0704-1840 jwc:             Blockly.Arduino.Boards.selected.pwmPins), 'SERVO_PIN');
+            /// 2016-0704-1840 jwc:             Blockly.Arduino.Boards.selected.pwmPins), 'SERVO_PIN');
             Blockly.Arduino.Boards.selected.digitalPins), 'SERVO_PIN_FIELD_ID');
 
     // Engine intelligently detects differences in text strings and utilizes such differences to form dropdown options        
     var TYPES =
-/// jwc good:         [[Blockly.Msg.TEXT_PROMPT_TYPE_TEXT, Blockly.Types.TEXT.output],
-/// jwc good:          [Blockly.Msg.TEXT_PROMPT_TYPE_NUMBER, Blockly.Types.NUMBER.output]];
-/// jwc ?:         [[Blockly.Msg.ARD_INFRARED_SERIAL_MONITOR_TAG_FOR_NUMBER, Blockly.Types.NUMBER.output],
-/// jwc ?:          [Blockly.Msg.ARD_INFRARED_SERIAL_MONITOR_TAG_FOR_TEXT, Blockly.Types.TEXT.output]];
-/// jwc ?:         [[Blockly.Msg.TEXT_PROMPT_TYPE_NUMBER_2, Blockly.Types.NUMBER.output],
-/// jwc ?:          [Blockly.Msg.TEXT_PROMPT_TYPE_TEXT_2, Blockly.Types.TEXT.output]];
-/// jwc yes:         [[Blockly.Msg.TEXT_PROMPT_TYPE_NUMBER_2, Blockly.Types.NUMBER.output],
-/// jwc yes:         [[Blockly.Msg.TEXT_PROMPT_TYPE_NUMBER, Blockly.Types.NUMBER.output],
-/// jwc yes:          [Blockly.Msg.TEXT_PROMPT_TYPE_TEXT, Blockly.Types.TEXT.output]];
-/// jwc yes:         [[Blockly.Msg.TEXT_PROMPT_TYPE_NUMBER_2, Blockly.Types.NUMBER.output],
-/// jwc yes:          [Blockly.Msg.TEXT_PROMPT_TYPE_TEXT_2, Blockly.Types.TEXT.output]];
-//// jwc Blockly.Msg not work:        [[Blockly.Msg.ARD_INFRARED_READ_AS_LARGE_NUMBER_AS_LONG, Blockly.Types.NUMBER.output],
-        [["Read 'commsInfrared_Rx' for KeyCode as Type: Large-Number-as-LONG", Blockly.Types.NUMBER.output],
-//// jwc Blockly.Msg not work:        [Blockly.Msg.ARD_INFRARED_READ_AS_TEXT_AS_STRING, Blockly.Types.TEXT.output]];
-         ["Read 'commsInfrared_Rx' for KeyCode as Type: Text-as-STRING", Blockly.Types.TEXT.output]];
+        /// jwc good:         [[Blockly.Msg.TEXT_PROMPT_TYPE_TEXT, Blockly.Types.TEXT.output],
+        /// jwc good:          [Blockly.Msg.TEXT_PROMPT_TYPE_NUMBER, Blockly.Types.NUMBER.output]];
+        /// jwc ?:         [[Blockly.Msg.ARD_INFRARED_SERIAL_MONITOR_TAG_FOR_NUMBER, Blockly.Types.NUMBER.output],
+        /// jwc ?:          [Blockly.Msg.ARD_INFRARED_SERIAL_MONITOR_TAG_FOR_TEXT, Blockly.Types.TEXT.output]];
+        /// jwc ?:         [[Blockly.Msg.TEXT_PROMPT_TYPE_NUMBER_2, Blockly.Types.NUMBER.output],
+        /// jwc ?:          [Blockly.Msg.TEXT_PROMPT_TYPE_TEXT_2, Blockly.Types.TEXT.output]];
+        /// jwc yes:         [[Blockly.Msg.TEXT_PROMPT_TYPE_NUMBER_2, Blockly.Types.NUMBER.output],
+        /// jwc yes:         [[Blockly.Msg.TEXT_PROMPT_TYPE_NUMBER, Blockly.Types.NUMBER.output],
+        /// jwc yes:          [Blockly.Msg.TEXT_PROMPT_TYPE_TEXT, Blockly.Types.TEXT.output]];
+        /// jwc yes:         [[Blockly.Msg.TEXT_PROMPT_TYPE_NUMBER_2, Blockly.Types.NUMBER.output],
+        /// jwc yes:          [Blockly.Msg.TEXT_PROMPT_TYPE_TEXT_2, Blockly.Types.TEXT.output]];
+        [[Blockly.Msg.ARD_INFRARED_READ_AS_LARGE_NUMBER_AS_LONG, Blockly.Types.NUMBER.output],
+        //// jwc Blockly.Msg not work: fix: [["Read 'commsInfrared_Rx' for KeyCode as Type: Large-Number-as-LONG", Blockly.Types.NUMBER.output],
+        [Blockly.Msg.ARD_INFRARED_READ_AS_TEXT_AS_STRING, Blockly.Types.TEXT.output]];
+        //// jwc Blockly.Msg not work: fix: ["Read 'commsInfrared_Rx' for KeyCode as Type: Text-as-STRING", Blockly.Types.TEXT.output]];
     var dropdown = new Blockly.FieldDropdown(TYPES, function(newOp) {
       thisBlock.updateType_(newOp);
     });
@@ -111,32 +111,32 @@ Blockly.Blocks['commsInfrared_Rx_BLOCK'] = {
     /// jwc good:   .appendField(Blockly.Msg.ARD_INFRARED_READ_WITH_DEBUG_PROMPT_01A);
 
     this.appendDummyInput()
-//// jwc Blockly.Msg not work:        .appendField(Blockly.Msg.ARD_INFRARED_READ_WITH_DEBUG_PROMPT_01)
-        .appendField("   * Optional Debug:")
+        .appendField(Blockly.Msg.ARD_INFRARED_READ_WITH_DEBUG_PROMPT_01)
+        //// jwc Blockly.Msg not work: fix: .appendField("   * Optional Debug:")
         .appendField(new Blockly.FieldDropdown(
-//// jwc Blockly.Msg not work:                [[Blockly.Msg.ARD_INFRARED_READ_DEBUG_OFF, 'DEBUG_OFF'],
-//// jwc Blockly.Msg not work:                 [Blockly.Msg.ARD_INFRARED_READ_DEBUG_ON, 'DEBUG_ON']]),
-                [["DEBUG_OFF", 'DEBUG_OFF'],
-                 ["DEBUG_ON", 'DEBUG_ON']]),
-                'DEBUG_ON_FIELD_ID');
+            [[Blockly.Msg.ARD_INFRARED_READ_DEBUG_OFF, 'DEBUG_OFF'],
+            [Blockly.Msg.ARD_INFRARED_READ_DEBUG_ON, 'DEBUG_ON']]),
+            //// jwc Blockly.Msg not work: fix: [["DEBUG_OFF", 'DEBUG_OFF'],
+            //// jwc Blockly.Msg not work: fix:  ["DEBUG_ON", 'DEBUG_ON']]),
+            'DEBUG_ON_FIELD_ID');
             
     this.appendDummyInput()
-//// jwc Blockly.Msg not work:      .appendField(Blockly.Msg.ARD_INFRARED_READ_WITH_DEBUG_PROMPT_02);  
-      .appendField("      * Use 'Comms: Setup Serial' Block @9600bps+");  
+        .appendField(Blockly.Msg.ARD_INFRARED_READ_WITH_DEBUG_PROMPT_02);  
+        //// jwc Blockly.Msg not work: fix: .appendField("      * Use 'Comms: Setup Serial' Block @9600bps+");  
     this.appendValueInput('PROMPT_TEXT_FIELD_ID')
-//// jwc Blockly.Msg not work:      .appendField(Blockly.Msg.ARD_INFRARED_READ_WITH_DEBUG_PROMPT_03);
-      .appendField("      * Set 'prompt_ForSerialMonitor' (i.e. \">\"):");
+        .appendField(Blockly.Msg.ARD_INFRARED_READ_WITH_DEBUG_PROMPT_03);
+        //// jwc Blockly.Msg not work: fix: .appendField("      * Set 'prompt_ForSerialMonitor' (i.e. \">\"):");
     this.appendDummyInput()
-//// jwc Blockly.Msg not work:      .appendField(Blockly.Msg.ARD_INFRARED_READ_WITH_DEBUG_PROMPT_04);  
-      .appendField("      * Later Set Serial-Monitor @[SAME]bps");  
+        .appendField(Blockly.Msg.ARD_INFRARED_READ_WITH_DEBUG_PROMPT_04);  
+        //// jwc Blockly.Msg not work: fix: .appendField("      * Later Set Serial-Monitor @[SAME]bps");  
 
     this.setOutput(true, Blockly.Types.TEXT.output);
     this.setTooltip(function() {
-      return (thisBlock.getFieldValue('OUTPUT_TYPE_FIELD_ID') == Blockly.Types.TEXT.output) ?
-//// jwc Blockly.Msg not work:        Blockly.Msg.ARD_INFRARED_READ_TIP_AS_TEXT_AS_STRING :
-//// jwc Blockly.Msg not work:        Blockly.Msg.ARD_INFRARED_READ_TIP_AS_LARGE_NUMBER_AS_LONG;
-        "Read 'commsInfrared_Rx' for KeyCode as Type: Text-as-STRING" :
-        "Read 'commsInfrared_Rx' for KeyCode as Type: Large-Number-as-LONG";
+        return (thisBlock.getFieldValue('OUTPUT_TYPE_FIELD_ID') == Blockly.Types.TEXT.output) ?
+            Blockly.Msg.ARD_INFRARED_READ_TIP_AS_TEXT_AS_STRING :
+            Blockly.Msg.ARD_INFRARED_READ_TIP_AS_LARGE_NUMBER_AS_LONG;
+            //// jwc Blockly.Msg not work: fix: "Read 'commsInfrared_Rx' for KeyCode as Type: Text-as-STRING" :
+            //// jwc Blockly.Msg not work: fix: "Read 'commsInfrared_Rx' for KeyCode as Type: Large-Number-as-LONG";
     });
   },
   /**
@@ -159,8 +159,8 @@ Blockly.Blocks['commsInfrared_Rx_BLOCK'] = {
    * @this Blockly.Block
    */
   updateFields: function() {
-/// 2016-0704-1840 jwc    Blockly.Arduino.Boards.refreshBlockFieldDropdown(
-/// 2016-0704-1840 jwc        this, 'SERVO_PIN', 'pwmPins');
+    /// 2016-0704-1840 jwc    Blockly.Arduino.Boards.refreshBlockFieldDropdown(
+    /// 2016-0704-1840 jwc        this, 'SERVO_PIN', 'pwmPins');
     Blockly.Arduino.Boards.refreshBlockFieldDropdown(
         this, 'SERVO_PIN_FIELD_ID', 'digitalPins');
   },
@@ -202,41 +202,41 @@ Blockly.Blocks['commsInfrared_Rx_BLOCK_BASIC'] = {
     var thisBlock = this;
 
     this.setInputsInline(false);
-//// jwc Blockly.Msg not work:    this.setHelpUrl(Blockly.Msg.ARD_INFRARED_READ_HELPURL);
-    this.setHelpUrl("https://www.arduino.cc/en/Tutorial/RobotRemoteControl");
+    this.setHelpUrl(Blockly.Msg.ARD_INFRARED_READ_HELPURL);
+    //// jwc Blockly.Msg not work: fix: this.setHelpUrl("https://www.arduino.cc/en/Tutorial/RobotRemoteControl");
     this.setColour(Blockly.Blocks.texts.HUE);
     // Assign 'this' to a variable for use in the closures below.
     
-/// jwc override:    this.appendDummyInput()
-/// jwc override:        .appendField(Blockly.Msg.ARD_INFRARED_READ_BLOCK_NAME);
+    this.appendDummyInput()
+        .appendField(Blockly.Msg.ARD_INFRARED_READ_BLOCK_NAME);
     
     this.appendDummyInput()
-/// jwc good:         .appendField(Blockly.Msg.ARD_SERVO_WRITE)
-/// jwc ?:         .appendField(Blockly.Msg.ARD_INFRARED_READ)
-/// jwc good:         .appendField(Blockly.Msg.ARD_DIGITALREAD)
-/// jwc good:         .appendField('Read Infrared_Rx from Pin#')
-//// jwc Blockly.Msg not work:        .appendField(Blockly.Msg.ARD_INFRARED_READ_FROM_PIN_BASIC)
-        .appendField("Read Infrared Rx from PIN#")
+        /// jwc good:         .appendField(Blockly.Msg.ARD_SERVO_WRITE)
+        /// jwc ?:         .appendField(Blockly.Msg.ARD_INFRARED_READ)
+        /// jwc good:         .appendField(Blockly.Msg.ARD_DIGITALREAD)
+        /// jwc good:         .appendField('Read Infrared_Rx from Pin#')
+        .appendField(Blockly.Msg.ARD_INFRARED_READ_FROM_PIN_BASIC)
+        //// jwc Blockly.Msg not work: fix: .appendField("Read Infrared Rx from PIN#")
         .appendField(new Blockly.FieldDropdown(
-/// 2016-0704-1840 jwc:             Blockly.Arduino.Boards.selected.pwmPins), 'SERVO_PIN');
+            /// 2016-0704-1840 jwc:             Blockly.Arduino.Boards.selected.pwmPins), 'SERVO_PIN');
             Blockly.Arduino.Boards.selected.digitalPins), 'SERVO_PIN_FIELD_ID');
 
     var TYPES =
-/// jwc good:         [[Blockly.Msg.TEXT_PROMPT_TYPE_TEXT, Blockly.Types.TEXT.output],
-/// jwc good:          [Blockly.Msg.TEXT_PROMPT_TYPE_NUMBER, Blockly.Types.NUMBER.output]];
-/// jwc ?:         [[Blockly.Msg.ARD_INFRARED_SERIAL_MONITOR_TAG_FOR_NUMBER, Blockly.Types.NUMBER.output],
-/// jwc ?:          [Blockly.Msg.ARD_INFRARED_SERIAL_MONITOR_TAG_FOR_TEXT, Blockly.Types.TEXT.output]];
-/// jwc ?:         [[Blockly.Msg.TEXT_PROMPT_TYPE_NUMBER_2, Blockly.Types.NUMBER.output],
-/// jwc ?:          [Blockly.Msg.TEXT_PROMPT_TYPE_TEXT_2, Blockly.Types.TEXT.output]];
-/// jwc yes:         [[Blockly.Msg.TEXT_PROMPT_TYPE_NUMBER_2, Blockly.Types.NUMBER.output],
-/// jwc yes:         [[Blockly.Msg.TEXT_PROMPT_TYPE_NUMBER, Blockly.Types.NUMBER.output],
-/// jwc yes:          [Blockly.Msg.TEXT_PROMPT_TYPE_TEXT, Blockly.Types.TEXT.output]];
-/// jwc yes:         [[Blockly.Msg.TEXT_PROMPT_TYPE_NUMBER_2, Blockly.Types.NUMBER.output],
-/// jwc yes:          [Blockly.Msg.TEXT_PROMPT_TYPE_TEXT_2, Blockly.Types.TEXT.output]];
-//// jwc Blockly.Msg not work:        [[Blockly.Msg.ARD_INFRARED_READ_AS_LARGE_NUMBER_AS_LONG_BASIC, Blockly.Types.NUMBER.output],
-//// jwc Blockly.Msg not work:         [Blockly.Msg.ARD_INFRARED_READ_AS_TEXT_AS_STRING_BASIC, Blockly.Types.TEXT.output]];
-        [[" with HEX-ouput as: Large-Number-as-LONG", Blockly.Types.NUMBER.output],
-         [" with HEX-output as: Text-as-STRING", Blockly.Types.TEXT.output]];
+        /// jwc good:         [[Blockly.Msg.TEXT_PROMPT_TYPE_TEXT, Blockly.Types.TEXT.output],
+        /// jwc good:          [Blockly.Msg.TEXT_PROMPT_TYPE_NUMBER, Blockly.Types.NUMBER.output]];
+        /// jwc ?:         [[Blockly.Msg.ARD_INFRARED_SERIAL_MONITOR_TAG_FOR_NUMBER, Blockly.Types.NUMBER.output],
+        /// jwc ?:          [Blockly.Msg.ARD_INFRARED_SERIAL_MONITOR_TAG_FOR_TEXT, Blockly.Types.TEXT.output]];
+        /// jwc ?:         [[Blockly.Msg.TEXT_PROMPT_TYPE_NUMBER_2, Blockly.Types.NUMBER.output],
+        /// jwc ?:          [Blockly.Msg.TEXT_PROMPT_TYPE_TEXT_2, Blockly.Types.TEXT.output]];
+        /// jwc yes:         [[Blockly.Msg.TEXT_PROMPT_TYPE_NUMBER_2, Blockly.Types.NUMBER.output],
+        /// jwc yes:         [[Blockly.Msg.TEXT_PROMPT_TYPE_NUMBER, Blockly.Types.NUMBER.output],
+        /// jwc yes:          [Blockly.Msg.TEXT_PROMPT_TYPE_TEXT, Blockly.Types.TEXT.output]];
+        /// jwc yes:         [[Blockly.Msg.TEXT_PROMPT_TYPE_NUMBER_2, Blockly.Types.NUMBER.output],
+        /// jwc yes:          [Blockly.Msg.TEXT_PROMPT_TYPE_TEXT_2, Blockly.Types.TEXT.output]];
+        [[Blockly.Msg.ARD_INFRARED_READ_AS_LARGE_NUMBER_AS_LONG_BASIC, Blockly.Types.NUMBER.output],
+         [Blockly.Msg.ARD_INFRARED_READ_AS_TEXT_AS_STRING_BASIC, Blockly.Types.TEXT.output]];
+        //// jwc Blockly.Msg not work: fix: [[" with HEX-ouput as: Large-Number-as-LONG", Blockly.Types.NUMBER.output],
+        //// jwc Blockly.Msg not work: fix:  [" with HEX-output as: Text-as-STRING", Blockly.Types.TEXT.output]];
     var dropdown = new Blockly.FieldDropdown(TYPES, function(newOp) {
       thisBlock.updateType_(newOp);
     });
@@ -254,28 +254,28 @@ Blockly.Blocks['commsInfrared_Rx_BLOCK_BASIC'] = {
     /// jwc good:   .appendField(new Blockly.FieldCheckbox('FALSE'), 'DEBUG_ON_FIELD_ID')
     /// jwc good:   .appendField(Blockly.Msg.ARD_INFRARED_READ_WITH_DEBUG_PROMPT_01A);
 
-    this.appendDummyInput()
-//// jwc Blockly.Msg not work:        .appendField(Blockly.Msg.ARD_INFRARED_READ_WITH_DEBUG_PROMPT_01_BASIC);
-        .appendField(" Note: Use 'Comms: Setup Serial' Block @9600bps+");
-/// jwc override:         .appendField(new Blockly.FieldDropdown(
-/// jwc override:                 [[Blockly.Msg.ARD_INFRARED_READ_DEBUG_OFF, 'DEBUG_OFF'],
-/// jwc override:                  [Blockly.Msg.ARD_INFRARED_READ_DEBUG_ON, 'DEBUG_ON']]),
-/// jwc override:                 'DEBUG_ON_FIELD_ID');
-            
-/// jwc override:     this.appendDummyInput()
-/// jwc override:       .appendField(Blockly.Msg.ARD_INFRARED_READ_WITH_DEBUG_PROMPT_02);  
-/// jwc override:     this.appendValueInput('PROMPT_TEXT_FIELD_ID')
-/// jwc override:       .appendField(Blockly.Msg.ARD_INFRARED_READ_WITH_DEBUG_PROMPT_03);
-/// jwc override:     this.appendDummyInput()
-/// jwc override:       .appendField(Blockly.Msg.ARD_INFRARED_READ_WITH_DEBUG_PROMPT_04);  
+    /// jwc override: this.appendDummyInput()
+        /// jwc override:        .appendField(Blockly.Msg.ARD_INFRARED_READ_WITH_DEBUG_PROMPT_01_BASIC);
+        /// jwc override:        //// jwc Blockly.Msg not work: fix: .appendField(" Note: Use 'Comms: Setup Serial' Block @9600bps+");
+        /// jwc override:         .appendField(new Blockly.FieldDropdown(
+        /// jwc override:                 [[Blockly.Msg.ARD_INFRARED_READ_DEBUG_OFF, 'DEBUG_OFF'],
+        /// jwc override:                  [Blockly.Msg.ARD_INFRARED_READ_DEBUG_ON, 'DEBUG_ON']]),
+        /// jwc override:                 'DEBUG_ON_FIELD_ID');
+                    
+        /// jwc override:     this.appendDummyInput()
+        /// jwc override:       .appendField(Blockly.Msg.ARD_INFRARED_READ_WITH_DEBUG_PROMPT_02);  
+        /// jwc override:     this.appendValueInput('PROMPT_TEXT_FIELD_ID')
+        /// jwc override:       .appendField(Blockly.Msg.ARD_INFRARED_READ_WITH_DEBUG_PROMPT_03);
+        /// jwc override:     this.appendDummyInput()
+        /// jwc override:       .appendField(Blockly.Msg.ARD_INFRARED_READ_WITH_DEBUG_PROMPT_04);  
 
     this.setOutput(true, Blockly.Types.TEXT.output);
     this.setTooltip(function() {
-      return (thisBlock.getFieldValue('OUTPUT_TYPE_FIELD_ID') == Blockly.Types.TEXT.output) ?
-//// jwc Blockly.Msg not work:        Blockly.Msg.ARD_INFRARED_READ_TIP_AS_TEXT_AS_STRING :
-//// jwc Blockly.Msg not work:        Blockly.Msg.ARD_INFRARED_READ_TIP_AS_LARGE_NUMBER_AS_LONG;
-        "Read 'commsInfrared_Rx' for KeyCode as Type: Text-as-STRING" :
-        "Read 'commsInfrared_Rx' for KeyCode as Type: Large-Number-as-LONG";
+        return (thisBlock.getFieldValue('OUTPUT_TYPE_FIELD_ID') == Blockly.Types.TEXT.output) ?
+            Blockly.Msg.ARD_INFRARED_READ_TIP_AS_TEXT_AS_STRING :
+            Blockly.Msg.ARD_INFRARED_READ_TIP_AS_LARGE_NUMBER_AS_LONG;
+            //// jwc Blockly.Msg not work: fix: "Read 'commsInfrared_Rx' for KeyCode as Type: Text-as-STRING" :
+            //// jwc Blockly.Msg not work: fix: "Read 'commsInfrared_Rx' for KeyCode as Type: Large-Number-as-LONG";
     });
   },
   /**
