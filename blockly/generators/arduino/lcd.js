@@ -41,22 +41,22 @@ Blockly.Arduino['lcd_setup_BLOCK'] = function(block) {
   Blockly.Arduino.addInclude('lcd_TAG_02', '#include <LiquidCrystal_I2C.h>');
 
   Blockly.Arduino.addDeclaration('lcd_TAG_00', '// * For:: ' + Blockly.Msg.ARD_LCD_SETUP_BLOCK_NAME);
-  Blockly.Arduino.addDeclaration('lcd_TAG_01', 'LiquidCrystal_I2C lcd(' + i2cControllerDecAddress + ',' + columnsMax + ',' + rowsMax + ');');
-  Blockly.Arduino.addDeclaration('lcd_TAG_02', 'String    lcd_OneRow_StringObject;');
-  Blockly.Arduino.addDeclaration('lcd_TAG_03', 'const int lcd_OneRow_Columns_MAX = ' + columnsMax + ';');
+  Blockly.Arduino.addDeclaration('lcd_TAG_01', 'LiquidCrystal_I2C myLcd(' + i2cControllerDecAddress + ',' + columnsMax + ',' + rowsMax + ');');
+  Blockly.Arduino.addDeclaration('lcd_TAG_02', 'String    myLcd_OneRow_StringObject;');
+  Blockly.Arduino.addDeclaration('lcd_TAG_03', 'const int myLcd_OneRow_Columns_MAX = ' + columnsMax + ';');
 
   // Allow overwrite by setting last arguement as 'true'
   Blockly.Arduino.addSetup('lcd_TAG_00', '// * For:: ' + Blockly.Msg.ARD_LCD_SETUP_BLOCK_NAME, true);
-  Blockly.Arduino.addSetup('lcd_TAG_01', 'lcd.init();', true);
-  Blockly.Arduino.addSetup('lcd_TAG_02', 'lcd.backlight();', true);
-  Blockly.Arduino.addSetup('lcd_TAG_03', 'lcd.clear();', true);
-  Blockly.Arduino.addSetup('lcd_TAG_04', 'lcd.setCursor(0,0);', true);
-  Blockly.Arduino.addSetup('lcd_TAG_05', 'lcd.print("TACHnology Bot");', true);
+  Blockly.Arduino.addSetup('lcd_TAG_01', 'myLcd.init();', true);
+  Blockly.Arduino.addSetup('lcd_TAG_02', 'myLcd.backlight();', true);
+  Blockly.Arduino.addSetup('lcd_TAG_03', 'myLcd.clear();', true);
+  Blockly.Arduino.addSetup('lcd_TAG_04', 'myLcd.setCursor(0,0);', true);
+  Blockly.Arduino.addSetup('lcd_TAG_05', 'myLcd.print("TACHnology Bot");', true);
 
   // Add the code
   var code = [];
-  code.push('lcd.setCursor(1,0);');
-  code.push('lcd.print("Robotics");');
+  code.push('myLcd.setCursor(1,0);');
+  code.push('myLcd.print("Robotics");');
 
   //// orig: return code.join('\n') + '\n';
   return code.join('\n');
