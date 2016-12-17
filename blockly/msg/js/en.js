@@ -563,6 +563,7 @@ Blockly.Msg.ARD_LCD_SETUP_ROWS_MAX =                    "   * Rows Max:";
 Blockly.Msg.ARD_LCD_SETUP_TIP = 'Setup for a LCD peripheral'; 
  
 Blockly.Msg.ARD_LCD_PRINT = 'print'; 
+Blockly.Msg.ARD_LCD_PRINT_PROMPT = 'Print this data as ASCII text:'; 
 Blockly.Msg.ARD_LCD_PRINT_COLUMN_NUM_BASE0 = 'COLUMN # (BASE-0):'; 
 Blockly.Msg.ARD_LCD_PRINT_ROW_NUM_BASE0 = 'ROW # (BASE-0):'; 
 Blockly.Msg.ARD_LCD_PRINT_NEWLINE = 'add new line'; 
