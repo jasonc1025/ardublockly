@@ -106,7 +106,7 @@ Blockly.Blocks['lcd_print_BLOCK'] = {
         .appendField(Blockly.Msg.ARD_LCD_PRINT);
         //// jwc Blockly.Msg not work: fix:        .appendField('print');
     this.appendValueInput('CONTENT')
-        .appendField(Blockly.Msg.ARD_LCD_PRINT_PROMPT);
+        .appendField(Blockly.Msg.ARD_LCD_PRINT_PROMPT)
         //// this.appendValueInput('CONTENT')
         .setCheck(Blockly.Types.TEXT.checkList);
     this.appendDummyInput()
