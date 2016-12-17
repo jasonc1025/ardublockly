@@ -111,7 +111,15 @@ Blockly.Blocks['lcd_print_BLOCK'] = {
         .appendField(new Blockly.FieldCheckbox('TRUE'), 'NEW_LINE')
         .appendField(Blockly.Msg.ARD_LCD_PRINT_NEWLINE);
         //// jwc Blockly.Msg not work: fix: .appendField('add new line');
-    this.setInputsInline(true);
+    this.appendValueInput('COLUMN_NUM_BASE0_FIELD_ID')
+        .setCheck(Blockly.Types.NUMBER.checkList)
+        .setAlign(Blockly.ALIGN_RIGHT)
+        .appendField(Blockly.Msg.ARD_LCD_PRINT_COLUMN_NUM_BASE0);
+    this.appendValueInput('ROW_NUM_BASE0_FIELD_ID')
+        .setCheck(Blockly.Types.NUMBER.checkList)
+        .setAlign(Blockly.ALIGN_RIGHT)
+        .appendField(Blockly.Msg.ARD_LCD_PRINT_ROW_NUM_BASE0);
+    this.setInputsInline(false);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setTooltip(Blockly.Msg.ARD_LCD_PRINT_TIP);

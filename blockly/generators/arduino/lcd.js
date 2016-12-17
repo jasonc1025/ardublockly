@@ -74,6 +74,10 @@ Blockly.Arduino['lcd_print_BLOCK'] = function(block) {
   var lcdId = block.getFieldValue('LCD_ID');
   var content = Blockly.Arduino.valueToCode(
       block, 'CONTENT', Blockly.Arduino.ORDER_ATOMIC) || '0';
+  var stepperSteps = Blockly.Arduino.valueToCode(block, 'COLUMN_NUM_BASE0_FIELD_ID',
+      Blockly.Arduino.ORDER_ATOMIC) || '0';
+  var stepperSpeed = Blockly.Arduino.valueToCode(block, 'ROW_NUM_BASE0_FIELD_ID',
+      Blockly.Arduino.ORDER_ATOMIC) || '0';
   var checkbox_name = (block.getFieldValue('NEW_LINE') == 'TRUE');
 
   var lcdPins = Blockly.Arduino.Boards.selected.lcdPins[lcdId];
@@ -83,9 +87,11 @@ Blockly.Arduino['lcd_print_BLOCK'] = function(block) {
   }
 
   if (checkbox_name) {
-    var code = lcdId + '.println(' + content + ');\n';
+    var code = 'myLcd.setCursor(' + COLUMN_NUM_BASE0_FIELD_ID + ',' + ROW_NUM_BASE0_FIELD_ID + ');\n' +
+               lcdId + '.println(' + content + ');\n';
   } else {
-    var code = lcdId + '.print(' + content + ');\n';
+    var code = 'myLcd.setCursor(' + COLUMN_NUM_BASE0_FIELD_ID + ',' + ROW_NUM_BASE0_FIELD_ID + ');\n' +
+               lcdId + '.print(' + content + ');\n';
   }
   return code;
 };

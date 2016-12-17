@@ -1287,7 +1287,7 @@ Blockly.Msg.ARD_INFRARED_READ_WITH_DEBUG_PROMPT_01_BASIC =    " Note: Use 'Comms
 
 /// jwc for lcd.js >> 
 Blockly.Msg.ARD_LCD_SETUP_BLOCK_NAME =                  "Comms: LCD Setup"; 
-Blockly.Msg.ARD_LCD_SETUP_I2C_CONTROLLER_DEC_ADDRESS =  "   * I2C Controller Address [0-127 Dec (39 Default)]"; 
+Blockly.Msg.ARD_LCD_SETUP_I2C_CONTROLLER_DEC_ADDRESS =  "   * I2C Controller Address (0-127 Dec [39])"; 
 Blockly.Msg.ARD_LCD_SETUP_COLUMNS_16 = "16"; 
 Blockly.Msg.ARD_LCD_SETUP_COLUMNS_20 = "20"; 
 Blockly.Msg.ARD_LCD_SETUP_COLUMNS_MAX =                 "   * Columns Max:"; 
@@ -1297,6 +1297,8 @@ Blockly.Msg.ARD_LCD_SETUP_ROWS_MAX =                    "   * Rows Max:";
 Blockly.Msg.ARD_LCD_SETUP_TIP = 'Setup for a LCD peripheral'; 
  
 Blockly.Msg.ARD_LCD_PRINT = 'print'; 
+Blockly.Msg.ARD_LCD_PRINT_COLUMN_NUM_BASE0 = 'COLUMN # (BASE-0):'; 
+Blockly.Msg.ARD_LCD_PRINT_ROW_NUM_BASE0 = 'ROW # (BASE-0):'; 
 Blockly.Msg.ARD_LCD_PRINT_NEWLINE = 'add new line'; 
 Blockly.Msg.ARD_LCD_PRINT_TIP = 'Prints data to the console/lcd port as human-readable ASCII text.'; 
 Blockly.Msg.ARD_LCD_PRINT_WARN = 'A setup block for %1 must be added to the workspace to use this block!' 
