@@ -104,7 +104,7 @@ Blockly.Arduino['lcd_print_BLOCK'] = function(block) {
              '  lcd_OneRow_StringObject.concat(" ");\n' +
              '}\n' +
              'myLcd.setCursor(' + columnNum_Base0_FieldId + ',' + rowNum_Base0_FieldId + ');\n' +
-             lcdId + '.print(' + myLcd_OneRow_StringObject + ');\n';
+             lcdId + '.print(myLcd_OneRow_StringObject);\n';
 
   return code;
 };
