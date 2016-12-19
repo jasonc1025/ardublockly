@@ -101,18 +101,18 @@ Blockly.Blocks['lcd_print_BLOCK'] = {
     this.setHelpUrl('https://www.arduino.cc/en/Reference/LiquidCrystal');
     this.setColour(Blockly.Blocks.lcd.HUE);
     this.appendDummyInput()
-        .appendField(new Blockly.FieldDropdown(
-                Blockly.Arduino.Boards.selected.lcd), 'LCD_ID')
         .appendField(Blockly.Msg.ARD_LCD_PRINT);
         //// jwc Blockly.Msg not work: fix:        .appendField('print');
-    this.appendValueInput('CONTENT')
+        .appendField(new Blockly.FieldDropdown(Blockly.Arduino.Boards.selected.lcd), 'LCD_ID')
+    // // this.appendValueInput('CONTENT')
+    this.appendValueInput('PRINT_TEXT_AS_STRING_FIELD_ID')
         .appendField(Blockly.Msg.ARD_LCD_PRINT_PROMPT)
         //// this.appendValueInput('CONTENT')
         .setCheck(Blockly.Types.TEXT.checkList);
-    this.appendDummyInput()
-        .appendField(new Blockly.FieldCheckbox('TRUE'), 'NEW_LINE')
-        .appendField(Blockly.Msg.ARD_LCD_PRINT_NEWLINE);
-        //// jwc Blockly.Msg not work: fix: .appendField('add new line');
+    // // this.appendDummyInput()
+        // // .appendField(new Blockly.FieldCheckbox('TRUE'), 'NEW_LINE')
+        // // .appendField(Blockly.Msg.ARD_LCD_PRINT_NEWLINE);
+        // // //// jwc Blockly.Msg not work: fix: .appendField('add new line');
     this.appendValueInput('COLUMN_NUM_BASE0_FIELD_ID')
         .setCheck(Blockly.Types.NUMBER.checkList)
         .setAlign(Blockly.ALIGN_RIGHT)
@@ -121,6 +121,10 @@ Blockly.Blocks['lcd_print_BLOCK'] = {
         .setCheck(Blockly.Types.NUMBER.checkList)
         .setAlign(Blockly.ALIGN_RIGHT)
         .appendField(Blockly.Msg.ARD_LCD_PRINT_ROW_NUM_BASE0);
+    this.appendValueInput('TEXT_AS_STRING_LEN_MAX_BASE1_FIELD_ID')
+        .setCheck(Blockly.Types.NUMBER.checkList)
+        .setAlign(Blockly.ALIGN_RIGHT)
+        .appendField(Blockly.Msg.ARD_LCD_PRINT_TEXT_AS_STRING_LEN_MAX_BASE1);
     this.setInputsInline(false);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);

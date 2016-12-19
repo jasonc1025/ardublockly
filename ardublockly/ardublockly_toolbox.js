@@ -272,7 +272,30 @@ Ardublockly.TOOLBOX_XML =
 '      </value>' +
 '    </block>' +
 
-'    <block type="lcd_print_BLOCK"></block>' +
+'    <block type="lcd_print_BLOCK">' +
+'      <value name="PRINT_TEXT_AS_STRING_FIELD_ID">' +
+'        <block type="text">' +
+'        </block>' +
+'      </value>' +
+'      <value name="COLUMN_NUM_BASE0_FIELD_ID">' +
+'        <block type="math_number">' +
+'          <field name="NUM">0' +
+'          </field>' +
+'        </block>' +
+'      </value>' +
+'      <value name="ROW_NUM_BASE0_FIELD_ID">' +
+'        <block type="math_number">' +
+'          <field name="NUM">0' +
+'          </field>' +
+'        </block>' +
+'      </value>' +
+'      <value name="TEXT_AS_STRING_LEN_MAX_BASE1_FIELD_ID">' +
+'        <block type="math_number">' +
+'          <field name="NUM">0' +
+'          </field>' +
+'        </block>' +
+'      </value>' +
+'    </block>' +
 /// jwc <<
 
 // * Seems that naming must be broken with '_', especially for ArduBlockly-Browser to work 

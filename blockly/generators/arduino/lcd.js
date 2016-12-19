@@ -72,26 +72,39 @@ Blockly.Arduino['lcd_setup_BLOCK'] = function(block) {
  */
 Blockly.Arduino['lcd_print_BLOCK'] = function(block) {
   var lcdId = block.getFieldValue('LCD_ID');
-  var content = Blockly.Arduino.valueToCode(
-      block, 'CONTENT', Blockly.Arduino.ORDER_ATOMIC) || '0';
+  // // var content = Blockly.Arduino.valueToCode(
+  var printTextAsString_FieldId = Blockly.Arduino.valueToCode(
+      // // block, 'CONTENT', Blockly.Arduino.ORDER_ATOMIC) || '0';
+      block, 'PRINT_TEXT_AS_STRING_FIELD_ID', Blockly.Arduino.ORDER_ATOMIC) || '0';
   var columnNum_Base0_FieldId = Blockly.Arduino.valueToCode(block, 'COLUMN_NUM_BASE0_FIELD_ID',
       Blockly.Arduino.ORDER_ATOMIC) || '0';
   var rowNum_Base0_FieldId = Blockly.Arduino.valueToCode(block, 'ROW_NUM_BASE0_FIELD_ID',
       Blockly.Arduino.ORDER_ATOMIC) || '0';
-  var checkbox_name = (block.getFieldValue('NEW_LINE') == 'TRUE');
+  var textAsString_LenMax_Base1_FieldId = Blockly.Arduino.valueToCode(block, 'TEXT_AS_STRING_LEN_MAX_BASE1_FIELD_ID',
+      Blockly.Arduino.ORDER_ATOMIC) || '0';
+  // // var checkbox_name = (block.getFieldValue('NEW_LINE') == 'TRUE');
 
+      
+      
   var lcdPins = Blockly.Arduino.Boards.selected.lcdPins[lcdId];
   for (var i = 0; i < lcdPins.length; i++) {
     Blockly.Arduino.reservePin(block, lcdPins[i][1],
         Blockly.Arduino.PinTypes.LCD, 'LCD ' + lcdPins[i][0]);
   }
 
-  if (checkbox_name) {
-    var code = 'myLcd.setCursor(' + columnNum_Base0_FieldId + ',' + rowNum_Base0_FieldId + ');\n' +
-               lcdId + '.println(' + content + ');\n';
-  } else {
-    var code = 'myLcd.setCursor(' + columnNum_Base0_FieldId + ',' + rowNum_Base0_FieldId + ');\n' +
-               lcdId + '.print(' + content + ');\n';
-  }
+  // // if (checkbox_name) {
+    // // var code = 'myLcd.setCursor(' + columnNum_Base0_FieldId + ',' + rowNum_Base0_FieldId + ');\n' +
+               // // lcdId + '.println(' + content + ');\n';
+  // // } else {
+    // // var code = 'myLcd.setCursor(' + columnNum_Base0_FieldId + ',' + rowNum_Base0_FieldId + ');\n' +
+               // // lcdId + '.print(' + content + ');\n';
+  // // }
+  var code = 'myLcd_OneRow_StringObject = String(' + printTextAsString_FieldId + ');\n' +
+             'while( lcd_OneRow_StringObject.length() < ' + textAsString_LenMax_Base1_FieldId + ' ){\n' +
+             '  lcd_OneRow_StringObject.concat(" ");\n' +
+             '}\n' +
+             'myLcd.setCursor(' + columnNum_Base0_FieldId + ',' + rowNum_Base0_FieldId + ');\n' +
+             lcdId + '.print(' + myLcd_OneRow_StringObject + ');\n';
+
   return code;
 };
