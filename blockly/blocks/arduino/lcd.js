@@ -101,9 +101,9 @@ Blockly.Blocks['lcd_print_BLOCK'] = {
     this.setHelpUrl('https://www.arduino.cc/en/Reference/LiquidCrystal');
     this.setColour(Blockly.Blocks.lcd.HUE);
     this.appendDummyInput()
-        .appendField(Blockly.Msg.ARD_LCD_PRINT);
+        .appendField(Blockly.Msg.ARD_LCD_PRINT)
         //// jwc Blockly.Msg not work: fix:        .appendField('print');
-        .appendField(new Blockly.FieldDropdown(Blockly.Arduino.Boards.selected.lcd), 'LCD_ID')
+        .appendField(new Blockly.FieldDropdown(Blockly.Arduino.Boards.selected.lcd), 'LCD_ID');
     // // this.appendValueInput('CONTENT')
     this.appendValueInput('PRINT_TEXT_AS_STRING_FIELD_ID')
         .appendField(Blockly.Msg.ARD_LCD_PRINT_PROMPT)
