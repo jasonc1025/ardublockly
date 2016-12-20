@@ -312,7 +312,7 @@ Ardublockly.TOOLBOX_XML =
 '    <block type="commsInfrared_Rx_BLOCK">' +
 '      <value name="PROMPT_TEXT_FIELD_ID">' +
 '        <block type="text">' +
-'          <field name="TEXT">abc</field>' +
+'          <field name="TEXT">></field>' +
 '        </block>' +
 '      </value>' +
 '    </block>' +
