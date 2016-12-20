@@ -311,7 +311,8 @@ Ardublockly.TOOLBOX_XML =
 /// jwc no: '    <block type="commsInfrared_Rx_BLOCK">' +
 '    <block type="commsInfrared_Rx_BLOCK">' +
 '      <value name="PROMPT_TEXT_FIELD_ID">' +
-'        <block type="text">*' +
+'        <block type="text">' +
+'          <field name="TEXT">abc</field>' +
 '        </block>' +
 '      </value>' +
 '    </block>' +
