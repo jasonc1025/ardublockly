@@ -562,12 +562,12 @@ Blockly.Msg.ARD_LCD_SETUP_ROWS_4 = "4";
 Blockly.Msg.ARD_LCD_SETUP_ROWS_MAX =                    "   * Rows Max (Base 1):"; 
 Blockly.Msg.ARD_LCD_SETUP_TIP = 'Setup for a LCD peripheral'; 
  
-Blockly.Msg.ARD_LCD_PRINT =                                     'Comms: LCD Print'; 
-Blockly.Msg.ARD_LCD_PRINT_PROMPT =                              '   * Print for Text(String) & Character(char):'; 
-Blockly.Msg.ARD_LCD_PRINT_COLUMN_NUM_BASE0 =                    '      * @ Column# (Base 0):'; 
-Blockly.Msg.ARD_LCD_PRINT_ROW_NUM_BASE0 =                       '      * @ Row# (Base 0):'; 
-Blockly.Msg.ARD_LCD_PRINT_ERASE_PREP_W_NUM_OF_BLANKS_BASE1 =    '      * Prep Erase w/ # Blanks (Base 1):'; 
-Blockly.Msg.ARD_LCD_PRINT_TIP_CONVERSION_TO_TEXT_OR_CHARACTER = '      * TIP: Can Convert w/ Block: 'Variables: <Sets Value> as Text/Character';
-Blockly.Msg.ARD_LCD_PRINT_TIP = 'Prints data to the console/lcd port as human-readable ASCII text.'; 
-Blockly.Msg.ARD_LCD_PRINT_WARN = 'A setup block for %1 must be added to the workspace to use this block!' 
+Blockly.Msg.ARD_LCD_PRINT =                                     "Comms: LCD Print"; 
+Blockly.Msg.ARD_LCD_PRINT_PROMPT =                              "   * Print for Text(String) & Character(char):"; 
+Blockly.Msg.ARD_LCD_PRINT_COLUMN_NUM_BASE0 =                    "      * @ Column# (Base 0):"; 
+Blockly.Msg.ARD_LCD_PRINT_ROW_NUM_BASE0 =                       "      * @ Row# (Base 0):"; 
+Blockly.Msg.ARD_LCD_PRINT_ERASE_PREP_W_NUM_OF_BLANKS_BASE1 =    "      * Prep Erase w/ # Blanks (Base 1):"; 
+Blockly.Msg.ARD_LCD_PRINT_TIP_CONVERSION_TO_TEXT_OR_CHARACTER = "      * TIP: Can Convert w/ Block: 'Variables: <Sets Value> as Text/Character'";
+Blockly.Msg.ARD_LCD_PRINT_TIP = "Prints data to the console/lcd port as human-readable ASCII text."; 
+Blockly.Msg.ARD_LCD_PRINT_WARN = "A setup block for %1 must be added to the workspace to use this block!" 
 /// jwc for lcd.js << 
