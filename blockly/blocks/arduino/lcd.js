@@ -37,8 +37,6 @@ Blockly.Blocks['lcd_setup_BLOCK'] = {
     this.setColour(Blockly.Blocks.lcd.HUE);
     
     this.appendDummyInput()
-        // // .appendField(Blockly.Msg.ARD_LCD_SETUP_BLOCK_NAME);
-        //// jwc Blockly.Msg not work: fix:        .appendField("Comms: LCD Setup")
         .appendField(Blockly.Msg.ARD_LCD_SETUP_BLOCK_NAME)
         .appendField(
             new Blockly.FieldDropdown(
@@ -47,26 +45,19 @@ Blockly.Blocks['lcd_setup_BLOCK'] = {
     this.appendValueInput('I2C_CONTROLLER_DEC_ADDRESS_FIELD_ID')
         .setCheck(Blockly.Types.NUMBER.checkList)
         .appendField(Blockly.Msg.ARD_LCD_SETUP_I2C_CONTROLLER_DEC_ADDRESS);
-        //// jwc Blockly.Msg not work: fix:        .appendField("   * I2C Controller Address [0-127 Dec (39 Default)]");
 
     this.appendDummyInput()
         .appendField(Blockly.Msg.ARD_LCD_SETUP_COLUMNS_MAX)
-        //// jwc Blockly.Msg not work: fix:        .appendField("   * Columns Max:")
         .appendField(new Blockly.FieldDropdown(
             [[Blockly.Msg.ARD_LCD_SETUP_COLUMNS_16, '16'],
             [Blockly.Msg.ARD_LCD_SETUP_COLUMNS_20, '20']]),
-            //// jwc Blockly.Msg not work: fix:                [["16", '16'],
-            //// jwc Blockly.Msg not work: fix:                 ["20", '20']]),
                 'COLUMNS_MAX_FIELD_ID');
             
     this.appendDummyInput()
         .appendField(Blockly.Msg.ARD_LCD_SETUP_ROWS_MAX)
-        //// jwc Blockly.Msg not work: fix:        .appendField("   * Rows Max:")
         .appendField(new Blockly.FieldDropdown(
             [[Blockly.Msg.ARD_LCD_SETUP_ROWS_2, '2'],
             [Blockly.Msg.ARD_LCD_SETUP_ROWS_4, '4']]),
-            //// jwc Blockly.Msg not work: fix:                [["2", '2'],
-            //// jwc Blockly.Msg not work: fix:                 ["4", '4']]),
                 'ROWS_MAX_FIELD_ID');
    
     // * jwc added to allow to fit within "Function: Run First, Loop Forever" Block
@@ -102,79 +93,26 @@ Blockly.Blocks['lcd_print_BLOCK'] = {
     this.setColour(Blockly.Blocks.lcd.HUE);
     this.appendDummyInput()
         .appendField(Blockly.Msg.ARD_LCD_PRINT)
-        //// jwc Blockly.Msg not work: fix:        .appendField('print');
         .appendField(new Blockly.FieldDropdown(Blockly.Arduino.Boards.selected.lcd), 'LCD_ID');
-    // // this.appendValueInput('CONTENT')
-    this.appendValueInput('PRINT_TEXT_AS_STRING_FIELD_ID')
+    this.appendValueInput('PRINT_FOR_STRING_AND_CHAR_FIELD_ID')
         .appendField(Blockly.Msg.ARD_LCD_PRINT_PROMPT)
-        //// this.appendValueInput('CONTENT')
         .setCheck(Blockly.Types.TEXT.checkList);
-    // // this.appendDummyInput()
-        // // .appendField(new Blockly.FieldCheckbox('TRUE'), 'NEW_LINE')
-        // // .appendField(Blockly.Msg.ARD_LCD_PRINT_NEWLINE);
-        // // //// jwc Blockly.Msg not work: fix: .appendField('add new line');
+
     this.appendValueInput('COLUMN_NUM_BASE0_FIELD_ID')
         .setCheck(Blockly.Types.NUMBER.checkList)
-        .setAlign(Blockly.ALIGN_RIGHT)
         .appendField(Blockly.Msg.ARD_LCD_PRINT_COLUMN_NUM_BASE0);
     this.appendValueInput('ROW_NUM_BASE0_FIELD_ID')
         .setCheck(Blockly.Types.NUMBER.checkList)
-        .setAlign(Blockly.ALIGN_RIGHT)
         .appendField(Blockly.Msg.ARD_LCD_PRINT_ROW_NUM_BASE0);
-    this.appendValueInput('TEXT_AS_STRING_LEN_MAX_BASE1_FIELD_ID')
+    this.appendValueInput('ERASE_PREP_W_NUM_OF_BLANKS_BASE1_FIELD_ID')
         .setCheck(Blockly.Types.NUMBER.checkList)
-        .setAlign(Blockly.ALIGN_RIGHT)
-        .appendField(Blockly.Msg.ARD_LCD_PRINT_TEXT_AS_STRING_LEN_MAX_BASE1);
+        .appendField(Blockly.Msg.ARD_LCD_PRINT_ERASE_PREP_W_NUM_OF_BLANKS_BASE1);
+    this.appendDummyInput()
+        .appendField(Blockly.Msg.ARD_LCD_PRINT_TIP_CONVERSION_TO_TEXT_OR_CHARACTER);
     this.setInputsInline(false);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setTooltip(Blockly.Msg.ARD_LCD_PRINT_TIP);
-    //// jwc Blockly.Msg not work: fix:this.setTooltip('Prints data to the console/lcd port as human-readable ASCII text.');
-  //// orig: ,
   }
-
-  // TODO: COMMENT OUT UNTIL FURTHER NOTICE
-  //
-  // /**
-   // * Called whenever anything on the workspace changes.
-   // * It checks the instances of lcd and attaches a warning to this
-   // * block if not valid data is found.
-   // * @this Blockly.Block
-   // */
-  // onchange: function() {
-    // if (!this.workspace) { return; }  // Block has been deleted.
-
-    // // Get the Lcd instance from this block
-    // var thisInstanceName = this.getFieldValue('LCD_ID');
-
-    // // Iterate through top level blocks to find setup instance for the lcd id
-    // var blocks = Blockly.mainWorkspace.getTopBlocks();
-    // var setupInstancePresent = false;
-    // for (var x = 0; x < blocks.length; x++) {
-      // var func = blocks[x].getLcdSetupInstance;
-      // if (func) {
-        // var setupBlockInstanceName = func.call(blocks[x]);
-        // if (thisInstanceName == setupBlockInstanceName) {
-          // setupInstancePresent = true;
-        // }
-      // }
-    // }
-
-    // if (!setupInstancePresent) {
-      // this.setWarningText(Blockly.Msg.ARD_LCD_PRINT_WARN.replace('%1', 
-			    // thisInstanceName), 'lcd_setup');
-    // } else {
-      // this.setWarningText(null, 'lcd_setup');
-    // }
-  // },
-  // /**
-   // * Updates the content of the the lcd related fields.
-   // * @this Blockly.Block
-   // */
-  // updateFields: function() {
-    // Blockly.Arduino.Boards.refreshBlockFieldDropdown(
-        // this, 'LCD_ID', 'lcd');
-  // }
-  
   
 };
