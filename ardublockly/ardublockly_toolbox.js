@@ -273,7 +273,7 @@ Ardublockly.TOOLBOX_XML =
 '    </block>' +
 
 '    <block type="lcd_print_BLOCK">' +
-'      <value name="PRINT_TEXT_AS_STRING_FIELD_ID">' +
+'      <value name="PRINT_FOR_STRING_AND_CHAR_FIELD_ID">' +
 '        <block type="text">' +
 '        </block>' +
 '      </value>' +
@@ -289,7 +289,7 @@ Ardublockly.TOOLBOX_XML =
 '          </field>' +
 '        </block>' +
 '      </value>' +
-'      <value name="TEXT_AS_STRING_LEN_MAX_BASE1_FIELD_ID">' +
+'      <value name="ERASE_PREP_W_NUM_OF_BLANKS_BASE1_FIELD_ID">' +
 '        <block type="math_number">' +
 '          <field name="NUM">0' +
 '          </field>' +
