@@ -57,7 +57,7 @@ Blockly.Arduino['lcd_setup_BLOCK'] = function(block) {
   var code = [];
   code.push('myLcd.setCursor(0,1);');
   code.push('myLcd.print("Robotics");');
-  code.push('\n');
+//  code.push('\n');
   //// orig: return code.join('\n') + '\n';
   return code.join('\n');
   
