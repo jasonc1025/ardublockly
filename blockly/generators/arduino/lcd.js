@@ -57,7 +57,7 @@ Blockly.Arduino['lcd_setup_BLOCK'] = function(block) {
   var code = [];
   code.push('myLcd.setCursor(0,1);');
   code.push('myLcd.print("Robotics");');
-  // Join inbetween lines with '\n' and also end with '\n'
+  // Join inbetween lines with '.join('\n')' and also end with '\n'
   return code.join('\n') + '\n';
 
 };
