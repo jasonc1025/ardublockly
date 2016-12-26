@@ -78,5 +78,3 @@ Blockly.Blocks['rf2dot4ghz_setup_BLOCK'] = {
   }
 };
 
-  
-};
