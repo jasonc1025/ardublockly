@@ -191,7 +191,6 @@ Blockly.Arduino['rf2dot4ghz_Rx_BLOCK'] = function(block) {
   Blockly.Arduino.addInclude('rf2dot4ghz_TAG_01', '#include <IRremote.h>');
 
   Blockly.Arduino.addDeclaration('rf2dot4ghz_Rx' + '_00' + '_TAG', '// * For:: ' + Blockly.Msg.ARD_RF2DOT4GHZ_READ_BLOCK_NAME);
-  Blockly.Arduino.addDeclaration('rf2dot4ghz_Rx' + '_01' + '_TAG', 'const int       irRx_Pin_INT_CONST = ' + pinKey + ';');
   Blockly.Arduino.addDeclaration('rf2dot4ghz_Rx' + '_02' + '_TAG', 'IRrecv          irRx_Main_OBJECT( irRx_Pin_INT_CONST );');
 
   // Only overwrite the serial set up if not present already
