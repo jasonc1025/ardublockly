@@ -46,9 +46,10 @@ Blockly.Arduino['rf2dot4ghz_setup_BLOCK'] = function(block) {
   Blockly.Arduino.addDeclaration('rf2dot4ghz_TAG_03', 'node_TypeDef node_Type = ' + networkNodeType + ';');
   Blockly.Arduino.addDeclaration('rf2dot4ghz_TAG_04', 'unsigned int node_Type_AsInt = (unsigned int)( node_Type );');
   Blockly.Arduino.addDeclaration('rf2dot4ghz_TAG_05', 'int16_t joystick_Int[6];  // 6 element array holding Joystick reading and 4 buttons');
+  Blockly.Arduino.addDeclaration('rf2dot4ghz_TAG_06', 'uint8_t pipePortNum_Int;');
   
   // For 'node_Server_Bot'
-  Blockly.Arduino.addDeclaration('rf2dot4ghz_TAG_06', 'RF24 radio(6,7);');
+  Blockly.Arduino.addDeclaration('rf2dot4ghz_TAG_07', 'RF24 radio(6,7);');
 
   // For 'Node_Client_UI_Joystick'
   // // Blockly.Arduino.addDeclaration('rf2dot4ghz_TAG_06', 'RF24 radio(6,7);');
@@ -65,9 +66,8 @@ Blockly.Arduino['rf2dot4ghz_setup_BLOCK'] = function(block) {
   
   // Add the code
   var code = [];
-  code.push('uint8_t pipeNum_Local;');
   code.push('radio.read( &joystick_Int , sizeof(joystick_Int ) );');
-  code.push('radio.writeAckPayload( pipeNum_Local, &joystick_Int, sizeof(joystick_Int ));  // This can be commented out to send empty payloads.');
+  code.push('radio.writeAckPayload( pipePortNum_Int, &joystick_Int, sizeof(joystick_Int ));  // This can be commented out to send empty payloads.');
   
   // Join inbetween lines with '.join('\n')' and also end with '\n'
   return code.join('\n') + '\n';
