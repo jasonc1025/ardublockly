@@ -118,18 +118,10 @@ Blockly.Blocks['rf2dot4ghz_Rx_BLOCK'] = {
       thisBlock.updateType_(newOp);
     });
 
-    /// jwc good: this.appendValueInput('TEXT')
-    /// jwc good:     .appendField(dropdown, 'OUTPUT_TYPE_FIELD_ID');
-    /// jwc good: this.appendDummyInput()
     this.appendDummyInput()
 		/// jwc good yet redundant, 'Blockly.FieldDropdown' will parse pre/post redundant text to be static-text: .appendField('as a')
         .appendField(dropdown, 'OUTPUT_TYPE_FIELD_ID');
 	    /// jwc good yet redundant, 'Blockly.FieldDropdown' will parse pre/post redundant text to be static-text: .appendField('with outputPromptText as');
-
-    /// jwc good: this.appendDummyInput()
-    /// jwc good:   .appendField(Blockly.Msg.ARD_RF2DOT4GHZ_READ_WITH_DEBUG_PROMPT_01)
-    /// jwc good:   .appendField(new Blockly.FieldCheckbox('FALSE'), 'DEBUG_ON_FIELD_ID')
-    /// jwc good:   .appendField(Blockly.Msg.ARD_RF2DOT4GHZ_READ_WITH_DEBUG_PROMPT_01A);
 
     this.appendDummyInput()
         .appendField(Blockly.Msg.ARD_RF2DOT4GHZ_READ_WITH_DEBUG_PROMPT_01)
