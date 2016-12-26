@@ -1305,3 +1305,12 @@ Blockly.Msg.ARD_LCD_PRINT_TIP_CONVERSION_TO_TEXT_OR_CHARACTER = "      * Can Use
 Blockly.Msg.ARD_LCD_PRINT_TIP = "Prints data to the console/lcd port as human-readable ASCII text."; 
 Blockly.Msg.ARD_LCD_PRINT_WARN = "A setup block for %1 must be added to the workspace to use this block!" 
 /// jwc for lcd.js << 
+
+/// jwc for rf2dot4ghz.js >> 
+Blockly.Msg.ARD_RF2DOT4GHZ_SETUP_BLOCK_NAME =                      "Comms: RF2DOT4GHZ Setup"; 
+Blockly.Msg.ARD_RF2DOT4GHZ_SETUP_CHANNEL_AS_DEC =                  "   * Channel # (0-124 Dec [101])"; 
+Blockly.Msg.ARD_RF2DOT4GHZ_SETUP_NETWORK_NODE_TYPE =               "   * Network Node Type: "; 
+Blockly.Msg.ARD_RF2DOT4GHZ_SETUP_NETWORK_NODE_SERVER_BOT =         "Node_Server_Bot"; 
+Blockly.Msg.ARD_RF2DOT4GHZ_SETUP_NETWORK_NODE_CLIENT_UI_JOYSTICK = "Node_Client_UI_Joystick"; 
+Blockly.Msg.ARD_RF2DOT4GHZ_SETUP_TIP = 'Setup for a RF2DOT4GHZ peripheral'; 
+/// jwc for rf2dot4ghz.js << 
