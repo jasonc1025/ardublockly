@@ -51,9 +51,11 @@ Blockly.Blocks['rf2dot4ghz_setup_BLOCK'] = {
     this.appendDummyInput()
         .appendField(Blockly.Msg.ARD_RF2DOT4GHZ_SETUP_NETWORK_NODE_TYPE)
         .appendField(new Blockly.FieldDropdown(
-            [[Blockly.Msg.ARD_RF2DOT4GHZ_SETUP_NETWORK_NODE_SERVER_BOT, 'Node_Server_Bot'],
-            [Blockly.Msg.ARD_RF2DOT4GHZ_SETUP_NETWORK_NODE_CLIENT_UI_JOYSTICK, 'Node_Client_UI_Joystick']]),
-                'NETWORK_NODE_TYPE_FIELD_ID');
+            [
+            [Blockly.Msg.ARD_RF2DOT4GHZ_SETUP_NETWORK_NODE_SERVER_BOT, 'Node_Server_Bot'],
+            [Blockly.Msg.ARD_RF2DOT4GHZ_SETUP_NETWORK_NODE_CLIENT_UI_JOYSTICK, 'Node_Client_UI_Joystick']
+            ]),
+            'NETWORK_NODE_TYPE_FIELD_ID');
    
     // * jwc added to allow to fit within "Function: Run First, Loop Forever" Block
     //
@@ -78,3 +80,127 @@ Blockly.Blocks['rf2dot4ghz_setup_BLOCK'] = {
   }
 };
 
+
+
+// *
+// * Used 'text_prompt_ext' as template
+// * Used 'infrared_Rx_BLOCK' as template
+// *
+
+Blockly.Blocks['rf2dot4ghz_Rx_BLOCK'] = {
+  /**
+   * Block for prompt function (external message).
+   * @this Blockly.Block
+   */
+  init: function() {
+    // Assign 'this' to a variable for use in the closures below.
+    var thisBlock = this;
+
+    this.setInputsInline(false);
+    this.setHelpUrl(Blockly.Msg.ARD_RF2DOT4GHZ_READ_HELPURL);
+    this.setColour(Blockly.Blocks.texts.HUE);
+    
+    this.appendDummyInput()
+        .appendField(Blockly.Msg.ARD_RF2DOT4GHZ_READ_BLOCK_NAME);
+  
+
+    // Engine intelligently detects differences in text strings and utilizes such differences to form dropdown options        
+    var TYPES =
+        [
+        [Blockly.Msg.ARD_RF2DOT4GHZ_READ_AS_INT_0, 'joystick_Int_X'],
+        [Blockly.Msg.ARD_RF2DOT4GHZ_READ_AS_INT_1, 'joystick_Int_Y'],
+        [Blockly.Msg.ARD_RF2DOT4GHZ_READ_AS_INT_2, 'button_A_Value'],
+        [Blockly.Msg.ARD_RF2DOT4GHZ_READ_AS_INT_3, 'button_B_Value'],
+        [Blockly.Msg.ARD_RF2DOT4GHZ_READ_AS_INT_4, 'button_C_Value'],
+        [Blockly.Msg.ARD_RF2DOT4GHZ_READ_AS_INT_5, 'button_D_Value'],
+        ];
+    var dropdown = new Blockly.FieldDropdown(TYPES, function(newOp) {
+      thisBlock.updateType_(newOp);
+    });
+
+    /// jwc good: this.appendValueInput('TEXT')
+    /// jwc good:     .appendField(dropdown, 'OUTPUT_TYPE_FIELD_ID');
+    /// jwc good: this.appendDummyInput()
+    this.appendDummyInput()
+		/// jwc good yet redundant, 'Blockly.FieldDropdown' will parse pre/post redundant text to be static-text: .appendField('as a')
+        .appendField(dropdown, 'OUTPUT_TYPE_FIELD_ID');
+	    /// jwc good yet redundant, 'Blockly.FieldDropdown' will parse pre/post redundant text to be static-text: .appendField('with outputPromptText as');
+
+    /// jwc good: this.appendDummyInput()
+    /// jwc good:   .appendField(Blockly.Msg.ARD_RF2DOT4GHZ_READ_WITH_DEBUG_PROMPT_01)
+    /// jwc good:   .appendField(new Blockly.FieldCheckbox('FALSE'), 'DEBUG_ON_FIELD_ID')
+    /// jwc good:   .appendField(Blockly.Msg.ARD_RF2DOT4GHZ_READ_WITH_DEBUG_PROMPT_01A);
+
+    this.appendDummyInput()
+        .appendField(Blockly.Msg.ARD_RF2DOT4GHZ_READ_WITH_DEBUG_PROMPT_01)
+        .appendField(new Blockly.FieldDropdown(
+            [[Blockly.Msg.ARD_RF2DOT4GHZ_READ_DEBUG_OFF, 'DEBUG_OFF'],
+            [Blockly.Msg.ARD_RF2DOT4GHZ_READ_DEBUG_ON, 'DEBUG_ON']]),
+            'DEBUG_ON_FIELD_ID');
+            
+    this.appendDummyInput()
+        .appendField(Blockly.Msg.ARD_RF2DOT4GHZ_READ_WITH_DEBUG_PROMPT_02);  
+    this.appendValueInput('PROMPT_TEXT_FIELD_ID')
+        .appendField(Blockly.Msg.ARD_RF2DOT4GHZ_READ_WITH_DEBUG_PROMPT_03);
+    this.appendDummyInput()
+        .appendField(Blockly.Msg.ARD_RF2DOT4GHZ_READ_WITH_DEBUG_PROMPT_04);  
+
+    this.setOutput(true, Blockly.Types.TEXT.output);
+    this.setTooltip(function() {
+        return (thisBlock.getFieldValue('OUTPUT_TYPE_FIELD_ID') == Blockly.Types.TEXT.output) ?
+            Blockly.Msg.ARD_RF2DOT4GHZ_READ_TIP_AS_TEXT_AS_STRING :
+            Blockly.Msg.ARD_RF2DOT4GHZ_READ_TIP_AS_LARGE_NUMBER_AS_LONG;
+
+    });
+  },
+  /**
+   * Modify this block to have the correct output type.
+   * @param {string} newOp Either 'TEXT' or 'NUMBER'.
+   * @private
+   * @this Blockly.Block
+   */
+  updateType_: function(newOp) {
+    if (newOp == Blockly.Types.NUMBER.output) {
+      this.outputConnection.setCheck(Blockly.Types.NUMBER.checkList);
+    } else {
+      this.outputConnection.setCheck(Blockly.Types.TEXT.checkList);
+    }
+  },
+  
+  /// 2016-0710-1700 jwc >>
+  /**
+   * Updates the content of the the 'Boards' related fields.
+   * @this Blockly.Block
+   */
+  updateFields: function() {
+    /// 2016-0704-1840 jwc    Blockly.Arduino.Boards.refreshBlockFieldDropdown(
+    /// 2016-0704-1840 jwc        this, 'SERVO_PIN', 'pwmPins');
+    Blockly.Arduino.Boards.refreshBlockFieldDropdown(
+        this, 'SERVO_PIN_FIELD_ID', 'digitalPins');
+  },
+  /// jwc <<<
+  
+  /**
+   * Create XML to represent the output type.
+   * @return {!Element} XML storage element.
+   * @this Blockly.Block
+   */
+  mutationToDom: function() {
+    var container = document.createElement('mutation');
+    container.setAttribute('type', this.getFieldValue('OUTPUT_TYPE_FIELD_ID'));
+    return container;
+  },
+  /**
+   * Parse XML to restore the output type.
+   * @param {!Element} xmlElement XML storage element.
+   * @this Blockly.Block
+   */
+  domToMutation: function(xmlElement) {
+    this.updateType_(xmlElement.getAttribute('type'));
+  },
+  /** @return {!string} Type of the block, prompt always returns a string. */
+  getBlockType: function() {
+    return (this.getFieldValue('OUTPUT_TYPE_FIELD_ID') == Blockly.Types.TEXT.output) ?
+        Blockly.Types.TEXT : Blockly.Types.NUMBER;
+  }
+};
