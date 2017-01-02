@@ -87,7 +87,7 @@ Blockly.Blocks['rf2dot4ghz_setup_BLOCK'] = {
 // * Used 'infrared_Rx_BLOCK' as template
 // *
 
-Blockly.Blocks['rf2dot4ghz_Rx_BLOCK'] = {
+Blockly.Blocks['rf2dot4ghz_rx_BLOCK'] = {
   /**
    * Block for prompt function (external message).
    * @this Blockly.Block
@@ -130,6 +130,8 @@ Blockly.Blocks['rf2dot4ghz_Rx_BLOCK'] = {
             [Blockly.Msg.ARD_RF2DOT4GHZ_READ_DEBUG_ON, 'DEBUG_ON']]),
             'DEBUG_ON_FIELD_ID');
             
+
+// // TODO
     this.appendDummyInput()
         .appendField(Blockly.Msg.ARD_RF2DOT4GHZ_READ_WITH_DEBUG_PROMPT_02);  
     this.appendValueInput('PROMPT_TEXT_FIELD_ID')
@@ -142,7 +144,6 @@ Blockly.Blocks['rf2dot4ghz_Rx_BLOCK'] = {
         return (thisBlock.getFieldValue('OUTPUT_TYPE_FIELD_ID') == Blockly.Types.TEXT.output) ?
             Blockly.Msg.ARD_RF2DOT4GHZ_READ_TIP_AS_TEXT_AS_STRING :
             Blockly.Msg.ARD_RF2DOT4GHZ_READ_TIP_AS_LARGE_NUMBER_AS_LONG;
-
     });
   },
   /**
