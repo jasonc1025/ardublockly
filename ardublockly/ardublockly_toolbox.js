@@ -306,7 +306,7 @@ Ardublockly.TOOLBOX_XML =
 '      </value>' +
 '    </block>' +
 
-'    <block type="rf2dot4ghz_Rx_BLOCK">' +
+'    <block type="rf2dot4ghz_rx_BLOCK">' +
 '    </block>' +
 /// jwc <<
 

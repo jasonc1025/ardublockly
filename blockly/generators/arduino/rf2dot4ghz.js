@@ -112,11 +112,6 @@ Blockly.Arduino['rf2dot4ghz_setup_BLOCK'] = function(block) {
 };
 
 
-/// jwc 2016-0703-1730
-
-// * Advance Educational Version
-//
-
 /**
  * Code generator to prompt the user with a string (X) and request input.
  * Serial info: http://arduino.cc/en/Reference/Serial
