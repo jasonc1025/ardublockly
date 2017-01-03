@@ -220,6 +220,7 @@ Blockly.Arduino['rf2dot4ghz_loop_stage02_rx_value_select_BLOCK'] = function(bloc
   // // var code = 'analogRead(' + pin + ')';
   // // return [code, Blockly.Arduino.ORDER_ATOMIC];
   
+  // IMPORTANT: Since a return function, no need to end with ';' since it will be added automatically
   if( block.getFieldValue('OUTPUT_TYPE_FIELD_ID') == 'joystick_Int_X' ){
     code.push('map(joystick_Int[0],0,1023,0,180); // turn value of 0-1023 to 0-180 degrees');
   } 
@@ -227,16 +228,16 @@ Blockly.Arduino['rf2dot4ghz_loop_stage02_rx_value_select_BLOCK'] = function(bloc
     code.push('map(joystick_Int[1],0,1023,0,180);  // turn value of 0-1023 to 0-180 degrees');      
   } 
   else if( block.getFieldValue('OUTPUT_TYPE_FIELD_ID') == 'button_A_Value' ){
-    code.push('joystick_Int[2];');
+    code.push('joystick_Int[2];  // Buttons are inverted-logic: 0 = Pressed, 1 = Not-Pressed');
   } 
   else if( block.getFieldValue('OUTPUT_TYPE_FIELD_ID') == 'button_B_Value' ){
-    code.push('joystick_Int[3];');
+    code.push('joystick_Int[3];  // Buttons are inverted-logic: 0 = Pressed, 1 = Not-Pressed');
   } 
   else if( block.getFieldValue('OUTPUT_TYPE_FIELD_ID') == 'button_C_Value' ){
-    code.push('joystick_Int[4];');
+    code.push('joystick_Int[4];  // Buttons are inverted-logic: 0 = Pressed, 1 = Not-Pressed');
   } 
   else if( block.getFieldValue('OUTPUT_TYPE_FIELD_ID') == 'button_D_Value' ){
-    code.push('joystick_Int[5];');
+    code.push('joystick_Int[5];  // Buttons are inverted-logic: 0 = Pressed, 1 = Not-Pressed');
   }
   else{
     code.push('Serial.print("Invalid <OUTPUT_TYPE_FIELD_ID> = ");');
