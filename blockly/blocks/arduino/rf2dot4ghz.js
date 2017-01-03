@@ -220,7 +220,14 @@ Blockly.Blocks['rf2dot4ghz_loop_stage01_rx_values_all_BLOCK'] = {
     this.appendDummyInput()
         .appendField(Blockly.Msg.ARD_RF2DOT4GHZ_READ_BLOCK_NAME);
    
-    // * jwc added to allow to fit within "Function: Run First, Loop Forever" Block
+    this.appendDummyInput()
+        .appendField(Blockly.Msg.ARD_RF2DOT4GHZ_READ_WITH_DEBUG_PROMPT_01)
+        .appendField(new Blockly.FieldDropdown(
+            [[Blockly.Msg.ARD_RF2DOT4GHZ_READ_DEBUG_OFF, 'DEBUG_OFF'],
+            [Blockly.Msg.ARD_RF2DOT4GHZ_READ_DEBUG_ON, 'DEBUG_ON']]),
+            'DEBUG_ON_FIELD_ID');
+
+            // * jwc added to allow to fit within "Function: Run First, Loop Forever" Block
     //
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
@@ -268,13 +275,6 @@ Blockly.Blocks['rf2dot4ghz_loop_stage02_rx_value_select_BLOCK'] = {
 		/// jwc good yet redundant, 'Blockly.FieldDropdown' will parse pre/post redundant text to be static-text: .appendField('as a')
         .appendField(dropdown, 'OUTPUT_TYPE_FIELD_ID');
 	    /// jwc good yet redundant, 'Blockly.FieldDropdown' will parse pre/post redundant text to be static-text: .appendField('with outputPromptText as');
-
-    this.appendDummyInput()
-        .appendField(Blockly.Msg.ARD_RF2DOT4GHZ_READ_WITH_DEBUG_PROMPT_01)
-        .appendField(new Blockly.FieldDropdown(
-            [[Blockly.Msg.ARD_RF2DOT4GHZ_READ_DEBUG_OFF, 'DEBUG_OFF'],
-            [Blockly.Msg.ARD_RF2DOT4GHZ_READ_DEBUG_ON, 'DEBUG_ON']]),
-            'DEBUG_ON_FIELD_ID');
 
     this.setOutput(true, Blockly.Types.NUMBER.output);
     this.setTooltip(Blockly.Msg.ARD_RF2DOT4GHZ_SETUP_TIP);
