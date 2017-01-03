@@ -109,6 +109,7 @@ Blockly.Blocks['lcd_print_BLOCK'] = {
         .appendField(Blockly.Msg.ARD_LCD_PRINT_ERASE_PREP_W_NUM_OF_BLANKS_BASE1);
     this.appendDummyInput()
         .appendField(Blockly.Msg.ARD_LCD_PRINT_TIP_CONVERSION_TO_TEXT_OR_CHARACTER);
+    
     this.setInputsInline(false);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);

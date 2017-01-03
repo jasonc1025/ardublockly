@@ -186,10 +186,10 @@ Blockly.Arduino['rf2dot4ghz_rx_BLOCK'] = function(block) {
     code.push('Serial.println(' + OUTPUT_TYPE_FIELD_ID + ');');      
   }
     
-  // // // Join inbetween lines with '.join('\n')' and also end with '\n'
-  // // return code.join('\n') + '\n';
-  // * Output Requested Value
-  return [code, Blockly.Arduino.ORDER_UNARY_POSTFIX];
+  // Join inbetween lines with '.join('\n')' and also end with '\n'
+  return code.join('\n') + '\n';
+  // // // * Output Requested Value
+  // // return [code, Blockly.Arduino.ORDER_UNARY_POSTFIX];
 
 };
 

@@ -139,12 +139,18 @@ Blockly.Blocks['rf2dot4ghz_rx_BLOCK'] = {
     this.appendDummyInput()
         .appendField(Blockly.Msg.ARD_RF2DOT4GHZ_READ_WITH_DEBUG_PROMPT_04);  
 
-    this.setOutput(true, Blockly.Types.TEXT.output);
-    this.setTooltip(function() {
-        return (thisBlock.getFieldValue('OUTPUT_TYPE_FIELD_ID') == Blockly.Types.TEXT.output) ?
-            Blockly.Msg.ARD_RF2DOT4GHZ_READ_TIP_AS_TEXT_AS_STRING :
-            Blockly.Msg.ARD_RF2DOT4GHZ_READ_TIP_AS_LARGE_NUMBER_AS_LONG;
-    });
+    // // this.setOutput(true, Blockly.Types.TEXT.output);
+    // // this.setTooltip(function() {
+        // // return (thisBlock.getFieldValue('OUTPUT_TYPE_FIELD_ID') == Blockly.Types.TEXT.output) ?
+            // // Blockly.Msg.ARD_RF2DOT4GHZ_READ_TIP_AS_TEXT_AS_STRING :
+            // // Blockly.Msg.ARD_RF2DOT4GHZ_READ_TIP_AS_LARGE_NUMBER_AS_LONG;
+    // // });
+    
+    this.setInputsInline(false);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setTooltip(Blockly.Msg.ARD_RF2DOT4GHZ_SETUP_TIP);
+    
   },
   /**
    * Modify this block to have the correct output type.
