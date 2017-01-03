@@ -160,7 +160,7 @@ Blockly.Arduino['rf2dot4ghz_rx_BLOCK'] = function(block) {
   code.push('  lcd.setCursor(0,0);');
   code.push('  lcd.print(lcd_OneRow_StringObject);');  
   code.push('');
-  code.push('  }');
+  code.push('}');
   code.push('');
     
   // // if( block.getFieldValue('OUTPUT_TYPE_FIELD_ID') == 'joystick_Int_X' ){
