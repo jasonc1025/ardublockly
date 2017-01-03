@@ -270,12 +270,13 @@ Blockly.Blocks['rf2dot4ghz_loop_stage02_rx_value_select_BLOCK'] = {
   getBlockType: function() {
     return Blockly.Types.NUMBER;
   },
+  
   /**
    * Updates the content of the the pin related fields.
    * @this Blockly.Block
    */
   updateFields: function() {
-  }
+  },
   
   
    /**
