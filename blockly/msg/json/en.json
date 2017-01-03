@@ -508,7 +508,7 @@
 	"ARD_INFRARED_READ_HELPURL": "https://www.arduino.cc/en/Tutorial/RobotRemoteControl";
 
 	"ARD_INFRARED_READ_FROM_PIN_BASIC":                "Read Infrared Rx from PIN#";
-	"ARD_INFRARED_READ_AS_LARGE_NUMBER_AS_LONG_BASIC": " with HEX-ouput as: Large-Number-as-LONG";
+	"ARD_INFRARED_READ_AS_LARGE_NUMBER_AS_LONG_BASIC": " with HEX-output as: Large-Number-as-LONG";
 	"ARD_INFRARED_READ_AS_TEXT_AS_STRING_BASIC":       " with HEX-output as: Text-as-STRING";
 	"ARD_INFRARED_READ_WITH_DEBUG_PROMPT_01_BASIC":    " Note: Use 'Comms: Setup Serial' Block @9600bps+";
 

@@ -123,9 +123,9 @@ Blockly.Arduino['rf2dot4ghz_setup_BLOCK'] = function(block) {
  
 Blockly.Arduino['rf2dot4ghz_rx_BLOCK'] = function(block) {
   // Get the first Serial peripheral of arduino board
-  var returnType = block.getFieldValue('OUTPUT_TYPE_FIELD_ID');
+  // // var returnType = block.getFieldValue('OUTPUT_TYPE_FIELD_ID');
     
-  var debugOn_Flag = (block.getFieldValue('DEBUG_ON_FIELD_ID') == 'DEBUG_ON');  
+  // // var debugOn_Flag = (block.getFieldValue('DEBUG_ON_FIELD_ID') == 'DEBUG_ON');  
   
   // Add the code
   var code = [];
@@ -163,28 +163,28 @@ Blockly.Arduino['rf2dot4ghz_rx_BLOCK'] = function(block) {
   code.push('  }');
   code.push('');
     
-  if( block.getFieldValue('OUTPUT_TYPE_FIELD_ID') == 'joystick_Int_X' ){
-    code.push('map(joystick_Int[0],0,1023,0,180); // turn value of 0-1023 to 0-180 degrees');
-  } 
-  else if( block.getFieldValue('OUTPUT_TYPE_FIELD_ID') == 'joystick_Int_Y' ){  
-    code.push('map(joystick_Int[1],0,1023,0,180);  // turn value of 0-1023 to 0-180 degrees');      
-  } 
-  else if( block.getFieldValue('OUTPUT_TYPE_FIELD_ID') == 'button_A_Value' ){
-    code.push('joystick_Int[2];');
-  } 
-  else if( block.getFieldValue('OUTPUT_TYPE_FIELD_ID') == 'button_B_Value' ){
-    code.push('joystick_Int[3];');
-  } 
-  else if( block.getFieldValue('OUTPUT_TYPE_FIELD_ID') == 'button_C_Value' ){
-    code.push('joystick_Int[4];');
-  } 
-  else if( block.getFieldValue('OUTPUT_TYPE_FIELD_ID') == 'button_D_Value' ){
-    code.push('joystick_Int[5];');
-  }
-  else{
-    code.push('Serial.print("Invalid <OUTPUT_TYPE_FIELD_ID> = ");');
-    code.push('Serial.println(' + OUTPUT_TYPE_FIELD_ID + ');');      
-  }
+  // // if( block.getFieldValue('OUTPUT_TYPE_FIELD_ID') == 'joystick_Int_X' ){
+    // // code.push('map(joystick_Int[0],0,1023,0,180); // turn value of 0-1023 to 0-180 degrees');
+  // // } 
+  // // else if( block.getFieldValue('OUTPUT_TYPE_FIELD_ID') == 'joystick_Int_Y' ){  
+    // // code.push('map(joystick_Int[1],0,1023,0,180);  // turn value of 0-1023 to 0-180 degrees');      
+  // // } 
+  // // else if( block.getFieldValue('OUTPUT_TYPE_FIELD_ID') == 'button_A_Value' ){
+    // // code.push('joystick_Int[2];');
+  // // } 
+  // // else if( block.getFieldValue('OUTPUT_TYPE_FIELD_ID') == 'button_B_Value' ){
+    // // code.push('joystick_Int[3];');
+  // // } 
+  // // else if( block.getFieldValue('OUTPUT_TYPE_FIELD_ID') == 'button_C_Value' ){
+    // // code.push('joystick_Int[4];');
+  // // } 
+  // // else if( block.getFieldValue('OUTPUT_TYPE_FIELD_ID') == 'button_D_Value' ){
+    // // code.push('joystick_Int[5];');
+  // // }
+  // // else{
+    // // code.push('Serial.print("Invalid <OUTPUT_TYPE_FIELD_ID> = ");');
+    // // code.push('Serial.println(' + OUTPUT_TYPE_FIELD_ID + ');');      
+  // // }
     
   // Join inbetween lines with '.join('\n')' and also end with '\n'
   return code.join('\n') + '\n';

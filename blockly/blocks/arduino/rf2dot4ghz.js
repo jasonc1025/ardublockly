@@ -87,7 +87,7 @@ Blockly.Blocks['rf2dot4ghz_setup_BLOCK'] = {
 // * Used 'infrared_Rx_BLOCK' as template
 // *
 
-Blockly.Blocks['rf2dot4ghz_rx_BLOCK'] = {
+Blockly.Blocks['rf2dot4ghz_rx_BLOCK_OLD'] = {
   /**
    * Block for prompt function (external message).
    * @this Blockly.Block
@@ -202,4 +202,35 @@ Blockly.Blocks['rf2dot4ghz_rx_BLOCK'] = {
     // // return (this.getFieldValue('OUTPUT_TYPE_FIELD_ID') == Blockly.Types.TEXT.output) ?
         // // Blockly.Types.TEXT : Blockly.Types.NUMBER;
   // // }
+};
+
+Blockly.Blocks['rf2dot4ghz_rx_BLOCK'] = {
+  /**
+   * Block for setting the lcd connection.
+   * @this Blockly.Block
+   */
+  init: function() {
+   // Assign 'this' to a variable for use in the closures below.
+   var thisBlock = this;
+
+    this.setInputsInline(false);
+    this.setHelpUrl(Blockly.Msg.ARD_RF2DOT4GHZ_READ_HELPURL);
+    this.setColour(Blockly.Blocks.rf2dot4ghz.HUE);
+    
+    this.appendDummyInput()
+        .appendField(Blockly.Msg.ARD_RF2DOT4GHZ_READ_BLOCK_NAME);
+   
+    // * jwc added to allow to fit within "Function: Run First, Loop Forever" Block
+    //
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    
+    this.setTooltip('Setup for a Rf2Dot4Ghz peripheral');
+  },
+  /**
+   * Updates the content of the the 'Boards' related fields.
+   * @this Blockly.Block
+   */
+  updateFields: function() {
+  }
 };

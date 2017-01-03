@@ -1264,7 +1264,7 @@ Blockly.Msg.ARD_INFRARED_READ_TIP_AS_TEXT_AS_STRING =       "Read 'commsInfrared
 Blockly.Msg.ARD_INFRARED_READ_HELPURL = "https://www.arduino.cc/en/Tutorial/RobotRemoteControl";
 
 Blockly.Msg.ARD_INFRARED_READ_FROM_PIN_BASIC =                "Read Infrared Rx from PIN#";
-Blockly.Msg.ARD_INFRARED_READ_AS_LARGE_NUMBER_AS_LONG_BASIC = " with HEX-ouput as: Large-Number-as-LONG";
+Blockly.Msg.ARD_INFRARED_READ_AS_LARGE_NUMBER_AS_LONG_BASIC = " with HEX-output as: Large-Number-as-LONG";
 Blockly.Msg.ARD_INFRARED_READ_AS_TEXT_AS_STRING_BASIC =       " with HEX-output as: Text-as-STRING";
 Blockly.Msg.ARD_INFRARED_READ_WITH_DEBUG_PROMPT_01_BASIC =    " Note: Use 'Comms: Setup Serial' Block @9600bps+";
 
