@@ -53,19 +53,15 @@ Blockly.Arduino['rf2dot4ghz_setup_BLOCK'] = function(block) {
   
   Blockly.Arduino.addDeclaration('rf2dot4ghz_TAG_06', 'int16_t joystick_Int[6];  // 6 element array holding Joystick reading and 4 buttons');
   Blockly.Arduino.addDeclaration('rf2dot4ghz_TAG_07', 'uint8_t pipePortNum_Int;');
-
-  Blockly.Arduino.addDeclaration('rf2dot4ghz_TAG_08', 'String    lcd_OneRow_StringObject;');
-  Blockly.Arduino.addDeclaration('rf2dot4ghz_TAG_09', 'const int lcd_OneRow_Columns_MAX = 16;');
-
   
   if( networkNodeType_Is_Server_Bot ){
     // For 'node_Server_Bot'
-    Blockly.Arduino.addDeclaration('rf2dot4ghz_TAG_10', 'RF24 radio(6,7);');
+    Blockly.Arduino.addDeclaration('rf2dot4ghz_TAG_08', 'RF24 radio(6,7);');
   }
   else if( networkNodeType_Is_Client_Ui_Joystick ){
     // For 'Node_Client_UI_Joystick'
 // // TODO    
-    Blockly.Arduino.addDeclaration('rf2dot4ghz_TAG_10', 'RF24 radio(6,7);');
+    Blockly.Arduino.addDeclaration('rf2dot4ghz_TAG_08', 'RF24 radio(6,7);');
   }
   
   // Allow overwrite by setting last (2nd) arguement as 'true'
@@ -124,9 +120,14 @@ Blockly.Arduino['rf2dot4ghz_setup_BLOCK'] = function(block) {
 Blockly.Arduino['rf2dot4ghz_loop_stage01_rx_values_all_BLOCK'] = function(block) {
   // Get the first Serial peripheral of arduino board
   // // var returnType = block.getFieldValue('OUTPUT_TYPE_FIELD_ID');
-    
-  // // var debugOn_Flag = (block.getFieldValue('DEBUG_ON_FIELD_ID') == 'DEBUG_ON');  
-  
+      
+  var debugOn_Flag = (block.getFieldValue('DEBUG_ON_FIELD_ID') == 'DEBUG_ON');
+
+  if( debugOn_Flag ){
+  Blockly.Arduino.addDeclaration('rf2dot4ghz_TAG_09', 'String    lcd_OneRow_StringObject;');
+  Blockly.Arduino.addDeclaration('rf2dot4ghz_TAG_10', 'const int lcd_OneRow_Columns_MAX = 16;');
+  }
+
   // Add the code
   var code = [];
   // // code.push('uint8_t pipeNum_Local;');
@@ -136,9 +137,10 @@ Blockly.Arduino['rf2dot4ghz_loop_stage01_rx_values_all_BLOCK'] = function(block)
   code.push('  radio.read( &joystick_Int , sizeof(joystick_Int ) );');
   code.push('  radio.writeAckPayload( pipePortNum_Int, &joystick_Int, sizeof(joystick_Int ));  // This can be commented out to send empty payloads.');
   code.push('');
+
+  if( debugOn_Flag ){
   code.push('  lcd_OneRow_StringObject = "<";');
   code.push('');
-
   code.push('  for( int i = 0; i < (sizeof(joystick_Int)/sizeof(uint16_t)); i++ ){');
   code.push('');
   code.push('    if( i <= 1 ){');
@@ -159,6 +161,8 @@ Blockly.Arduino['rf2dot4ghz_loop_stage01_rx_values_all_BLOCK'] = function(block)
   code.push('  Serial.println(lcd_OneRow_StringObject);');
   code.push('  lcd.setCursor(0,0);');
   code.push('  lcd.print(lcd_OneRow_StringObject);');  
+  }
+  
   code.push('');
   code.push('}');
   code.push('');
