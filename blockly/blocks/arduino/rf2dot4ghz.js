@@ -152,19 +152,19 @@ Blockly.Blocks['rf2dot4ghz_rx_BLOCK'] = {
     this.setTooltip(Blockly.Msg.ARD_RF2DOT4GHZ_SETUP_TIP);
     
   },
-  /**
-   * Modify this block to have the correct output type.
-   * @param {string} newOp Either 'TEXT' or 'NUMBER'.
-   * @private
-   * @this Blockly.Block
-   */
-  updateType_: function(newOp) {
-    if (newOp == Blockly.Types.NUMBER.output) {
-      this.outputConnection.setCheck(Blockly.Types.NUMBER.checkList);
-    } else {
-      this.outputConnection.setCheck(Blockly.Types.TEXT.checkList);
-    }
-  },
+  // // /**
+   // // * Modify this block to have the correct output type.
+   // // * @param {string} newOp Either 'TEXT' or 'NUMBER'.
+   // // * @private
+   // // * @this Blockly.Block
+   // // */
+  // // updateType_: function(newOp) {
+    // // if (newOp == Blockly.Types.NUMBER.output) {
+      // // this.outputConnection.setCheck(Blockly.Types.NUMBER.checkList);
+    // // } else {
+      // // this.outputConnection.setCheck(Blockly.Types.TEXT.checkList);
+    // // }
+  // // },
   
   /// 2016-0710-1700 jwc >>
   /**
@@ -172,34 +172,34 @@ Blockly.Blocks['rf2dot4ghz_rx_BLOCK'] = {
    * @this Blockly.Block
    */
   updateFields: function() {
-    /// 2016-0704-1840 jwc    Blockly.Arduino.Boards.refreshBlockFieldDropdown(
-    /// 2016-0704-1840 jwc        this, 'SERVO_PIN', 'pwmPins');
-    Blockly.Arduino.Boards.refreshBlockFieldDropdown(
-        this, 'SERVO_PIN_FIELD_ID', 'digitalPins');
+    // // /// 2016-0704-1840 jwc    Blockly.Arduino.Boards.refreshBlockFieldDropdown(
+    // // /// 2016-0704-1840 jwc        this, 'SERVO_PIN', 'pwmPins');
+    // // Blockly.Arduino.Boards.refreshBlockFieldDropdown(
+        // // this, 'SERVO_PIN_FIELD_ID', 'digitalPins');
   },
   /// jwc <<<
   
-  /**
-   * Create XML to represent the output type.
-   * @return {!Element} XML storage element.
-   * @this Blockly.Block
-   */
-  mutationToDom: function() {
-    var container = document.createElement('mutation');
-    container.setAttribute('type', this.getFieldValue('OUTPUT_TYPE_FIELD_ID'));
-    return container;
-  },
-  /**
-   * Parse XML to restore the output type.
-   * @param {!Element} xmlElement XML storage element.
-   * @this Blockly.Block
-   */
-  domToMutation: function(xmlElement) {
-    this.updateType_(xmlElement.getAttribute('type'));
-  },
-  /** @return {!string} Type of the block, prompt always returns a string. */
-  getBlockType: function() {
-    return (this.getFieldValue('OUTPUT_TYPE_FIELD_ID') == Blockly.Types.TEXT.output) ?
-        Blockly.Types.TEXT : Blockly.Types.NUMBER;
-  }
+  // // /**
+   // // * Create XML to represent the output type.
+   // // * @return {!Element} XML storage element.
+   // // * @this Blockly.Block
+   // // */
+  // // mutationToDom: function() {
+    // // var container = document.createElement('mutation');
+    // // container.setAttribute('type', this.getFieldValue('OUTPUT_TYPE_FIELD_ID'));
+    // // return container;
+  // // },
+  // // /**
+   // // * Parse XML to restore the output type.
+   // // * @param {!Element} xmlElement XML storage element.
+   // // * @this Blockly.Block
+   // // */
+  // // domToMutation: function(xmlElement) {
+    // // this.updateType_(xmlElement.getAttribute('type'));
+  // // },
+  // // /** @return {!string} Type of the block, prompt always returns a string. */
+  // // getBlockType: function() {
+    // // return (this.getFieldValue('OUTPUT_TYPE_FIELD_ID') == Blockly.Types.TEXT.output) ?
+        // // Blockly.Types.TEXT : Blockly.Types.NUMBER;
+  // // }
 };
