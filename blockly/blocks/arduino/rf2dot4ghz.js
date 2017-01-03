@@ -241,6 +241,9 @@ Blockly.Blocks['rf2dot4ghz_loop_stage02_rx_value_select_BLOCK'] = {
    * @this Blockly.Block
    */
   init: function() {
+
+    var thisBlock = this;
+
     this.setHelpUrl(Blockly.Msg.ARD_RF2DOT4GHZ_READ_HELPURL);
     this.setColour(Blockly.Blocks.rf2dot4ghz.HUE);
 

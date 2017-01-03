@@ -240,7 +240,6 @@ Blockly.Blocks['commsInfrared_Rx_BLOCK_BASIC'] = {
     var dropdown = new Blockly.FieldDropdown(TYPES, function(newOp) {
       thisBlock.updateType_(newOp);
     });
-
     /// jwc good: this.appendValueInput('TEXT')
     /// jwc good:     .appendField(dropdown, 'OUTPUT_TYPE_FIELD_ID');
     /// jwc good: this.appendDummyInput()
