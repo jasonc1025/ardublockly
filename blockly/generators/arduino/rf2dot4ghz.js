@@ -245,11 +245,13 @@ Blockly.Arduino['rf2dot4ghz_loop_stage02_rx_value_select_BLOCK'] = function(bloc
     
   // // // Join inbetween lines with '.join('\n')' and also end with '\n'
   // // return code.join('\n') + '\n';
-  // // // * Output Requested Value
   // // return [code, Blockly.Arduino.ORDER_UNARY_POSTFIX];
   // // return [code, Blockly.Arduino.ORDER_ATOMIC];
   // // GOOD: return [code, Blockly.Arduino.ORDER_UNARY_POSTFIX];
-  return [code, Blockly.Arduino.ORDER_ATOMIC];
+  // // GOOD: return [code, Blockly.Arduino.ORDER_ATOMIC];
+  // Output Requested Value
+  // Use 'ORDER_UNARY_POSTFIX' since 'spi_transfer_return' does
+  return [code, Blockly.Arduino.ORDER_UNARY_POSTFIX];
   
 };
 

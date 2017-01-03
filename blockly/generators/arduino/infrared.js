@@ -381,8 +381,10 @@ Blockly.Arduino['commsInfrared_Rx_BLOCK_BASIC'] = function(block) {
   /// jwc good:   var code = funcName + '(' + prompt_ForSerialMonitor_STRING + ')';
   /// jwc ok but not great since an input-block and not a complete statement: var code = '// * 2016-0711-1100 For \'commsInfrared_Rx_BLOCK\' \n' + 
   /// jwc ok but not great since an input-block and not a complete statement:    funcName + '(' + prompt_ForSerialMonitor_STRING + ')';
+  // IMPORTANT: Since a return function, no need to end with ';' since it will be added automatically
   var code = funcName + '(' + prompt_ForSerialMonitor_STRING + ')';
 
-  // * Output Requested Value
+  // Output Requested Value
+  // Use 'ORDER_UNARY_POSTFIX' since 'spi_transfer_return' does
   return [code, Blockly.Arduino.ORDER_UNARY_POSTFIX];
 };
