@@ -266,11 +266,21 @@ Blockly.Blocks['rf2dot4ghz_loop_stage02_rx_value_select_BLOCK'] = {
     this.setOutput(true, Blockly.Types.NUMBER.output);
     this.setTooltip(Blockly.Msg.ARD_RF2DOT4GHZ_SETUP_TIP);
   },
-  /** @return {!string} The type of return value for the block, an integer. */
-  getBlockType: function() {
-    return Blockly.Types.NUMBER;
-  },
   
+  /**
+   * Modify this block to have the correct output type.
+   * @param {string} newOp Either 'TEXT' or 'NUMBER'.
+   * @private
+   * @this Blockly.Block
+   */
+  updateType_: function(newOp) {
+    if (newOp == Blockly.Types.NUMBER.output) {
+      this.outputConnection.setCheck(Blockly.Types.NUMBER.checkList);
+    } else {
+      this.outputConnection.setCheck(Blockly.Types.TEXT.checkList);
+    }
+  },
+
   /**
    * Updates the content of the the pin related fields.
    * @this Blockly.Block
@@ -297,12 +307,17 @@ Blockly.Blocks['rf2dot4ghz_loop_stage02_rx_value_select_BLOCK'] = {
   domToMutation: function(xmlElement) {
     this.updateType_(xmlElement.getAttribute('type'));
   },
-  /** @return {!string} Type of the block, prompt always returns a string. */
-  getBlockType: function() {
+  // // /** @return {!string} Type of the block, prompt always returns a string. */
+  // // getBlockType: function() {
+    // // // // return (this.getFieldValue('OUTPUT_TYPE_FIELD_ID') == Blockly.Types.TEXT.output) ?
+        // // // // Blockly.Types.TEXT : Blockly.Types.NUMBER;
     // // return (this.getFieldValue('OUTPUT_TYPE_FIELD_ID') == Blockly.Types.TEXT.output) ?
         // // Blockly.Types.TEXT : Blockly.Types.NUMBER;
-    return (this.getFieldValue('OUTPUT_TYPE_FIELD_ID') == Blockly.Types.TEXT.output) ?
-        Blockly.Types.TEXT : Blockly.Types.NUMBER;
-  }
+  // // }
+
+  /** @return {!string} The type of return value for the block, an integer. */
+  getBlockType: function() {
+    return Blockly.Types.NUMBER;
+  },
   
 };
