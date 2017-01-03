@@ -248,7 +248,7 @@ Blockly.Blocks['rf2dot4ghz_loop_stage02_rx_value_select_BLOCK'] = {
     this.setColour(Blockly.Blocks.rf2dot4ghz.HUE);
 
     this.appendDummyInput()
-        .appendField(Blockly.Msg.ARD_RF2DOT4GHZ_READ_BLOCK_NAME);
+        .appendField(Blockly.Msg.ARD_RF2DOT4GHZ_READ_02_BLOCK_NAME);
 
     // Engine intelligently detects differences in text strings and utilizes such differences to form dropdown options        
     var TYPES =
