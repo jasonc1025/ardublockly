@@ -306,8 +306,12 @@ Ardublockly.TOOLBOX_XML =
 '      </value>' +
 '    </block>' +
 
-'    <block type="rf2dot4ghz_rx_BLOCK">' +
+'    <block type="rf2dot4ghz_loop_stage01_rx_values_all_BLOCK">' +
 '    </block>' +
+
+'    <block type="rf2dot4ghz_loop_stage02_rx_value_select_BLOCK">' +
+'    </block>' +
+
 /// jwc <<
 
 // * Seems that naming must be broken with '_', especially for ArduBlockly-Browser to work 

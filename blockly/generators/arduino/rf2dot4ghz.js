@@ -121,7 +121,7 @@ Blockly.Arduino['rf2dot4ghz_setup_BLOCK'] = function(block) {
  * @return {array} Completed code with order of operation.
  */
  
-Blockly.Arduino['rf2dot4ghz_rx_BLOCK'] = function(block) {
+Blockly.Arduino['rf2dot4ghz_loop_stage01_rx_values_all_BLOCK'] = function(block) {
   // Get the first Serial peripheral of arduino board
   // // var returnType = block.getFieldValue('OUTPUT_TYPE_FIELD_ID');
     
@@ -193,4 +193,57 @@ Blockly.Arduino['rf2dot4ghz_rx_BLOCK'] = function(block) {
 
 };
 
+/**
+ * Function for reading an analogue pin value (X).
+ * Arduino code: setup { pinMode(X, INPUT); }
+ *               loop  { analogRead(X)      }
+ * @param {!Blockly.Block} block Block to generate the code from.
+ * @return {array} Completed code with order of operation.
+ */
+Blockly.Arduino['rf2dot4ghz_loop_stage02_rx_value_select_BLOCK'] = function(block) {
+  // Get the first Serial peripheral of arduino board
+  var returnType = block.getFieldValue('OUTPUT_TYPE_FIELD_ID');
+
+  // // var pin = block.getFieldValue('PIN');
+  // // Blockly.Arduino.reservePin(
+      // // block, pin, Blockly.Arduino.PinTypes.INPUT, 'Analogue Read');
+
+  // // var pinSetupCode = 'pinMode(' + pin + ', INPUT);';
+  // // Blockly.Arduino.addSetup('io_' + pin, pinSetupCode, false);
+
+  var code = [];
+
+  // // var code = 'analogRead(' + pin + ')';
+  // // return [code, Blockly.Arduino.ORDER_ATOMIC];
+  
+  if( block.getFieldValue('OUTPUT_TYPE_FIELD_ID') == 'joystick_Int_X' ){
+    code.push('map(joystick_Int[0],0,1023,0,180); // turn value of 0-1023 to 0-180 degrees');
+  } 
+  else if( block.getFieldValue('OUTPUT_TYPE_FIELD_ID') == 'joystick_Int_Y' ){  
+    code.push('map(joystick_Int[1],0,1023,0,180);  // turn value of 0-1023 to 0-180 degrees');      
+  } 
+  else if( block.getFieldValue('OUTPUT_TYPE_FIELD_ID') == 'button_A_Value' ){
+    code.push('joystick_Int[2];');
+  } 
+  else if( block.getFieldValue('OUTPUT_TYPE_FIELD_ID') == 'button_B_Value' ){
+    code.push('joystick_Int[3];');
+  } 
+  else if( block.getFieldValue('OUTPUT_TYPE_FIELD_ID') == 'button_C_Value' ){
+    code.push('joystick_Int[4];');
+  } 
+  else if( block.getFieldValue('OUTPUT_TYPE_FIELD_ID') == 'button_D_Value' ){
+    code.push('joystick_Int[5];');
+  }
+  else{
+    code.push('Serial.print("Invalid <OUTPUT_TYPE_FIELD_ID> = ");');
+    code.push('Serial.println(' + OUTPUT_TYPE_FIELD_ID + ');');      
+  }
+    
+  // // // Join inbetween lines with '.join('\n')' and also end with '\n'
+  // // return code.join('\n') + '\n';
+  // // // * Output Requested Value
+  // // return [code, Blockly.Arduino.ORDER_UNARY_POSTFIX];
+  return [code, Blockly.Arduino.ORDER_ATOMIC];
+  
+};
 

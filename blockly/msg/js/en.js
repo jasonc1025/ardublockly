@@ -580,7 +580,7 @@ Blockly.Msg.ARD_RF2DOT4GHZ_SETUP_NETWORK_NODE_SERVER_BOT =         "Node_Server_
 Blockly.Msg.ARD_RF2DOT4GHZ_SETUP_NETWORK_NODE_CLIENT_UI_JOYSTICK = "Node_Client_UI_Joystick"; 
 Blockly.Msg.ARD_RF2DOT4GHZ_SETUP_TIP = 'Setup for a RF2DOT4GHZ peripheral'; 
 
-Blockly.Msg.ARD_RF2DOT4GHZ_READ_BLOCK_NAME =          "Comms: RF2DOT4GHZ Rx";
+Blockly.Msg.ARD_RF2DOT4GHZ_READ_BLOCK_NAME =          "Comms: RF2DOT4GHZ Loop: Stage-01 Rx Values All";
 Blockly.Msg.ARD_RF2DOT4GHZ_READ_AS_INT_0 =            "   * Output: uint16_t as Type: joystick_Int_X";
 Blockly.Msg.ARD_RF2DOT4GHZ_READ_AS_INT_1 =            "   * Output: uint16_t as Type: joystick_Int_Y";
 Blockly.Msg.ARD_RF2DOT4GHZ_READ_AS_INT_2 =            "   * Output: uint16_t as Type: button_A_Value";
@@ -597,5 +597,7 @@ Blockly.Msg.ARD_RF2DOT4GHZ_READ_WITH_DEBUG_PROMPT_01 =    "   * Optional Debug:"
     Blockly.Msg.ARD_RF2DOT4GHZ_READ_TIP_AS_LARGE_NUMBER_AS_LONG = "Read 'commsInfrared_Rx' for KeyCode as Type: Large-Number-as-LONG";
     Blockly.Msg.ARD_RF2DOT4GHZ_READ_TIP_AS_TEXT_AS_STRING =       "Read 'commsInfrared_Rx' for KeyCode as Type: Text-as-STRING";
 Blockly.Msg.ARD_RF2DOT4GHZ_READ_HELPURL = "https://arduino-info.wikispaces.com/nRF24L01-RF24-Examples";
+
+Blockly.Msg.ARD_RF2DOT4GHZ_READ_02_BLOCK_NAME =          "Comms: RF2DOT4GHZ Loop: Stage-02 Rx Value Select";
 
 /// jwc for rf2dot4ghz.js << 
