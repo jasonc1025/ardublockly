@@ -580,7 +580,7 @@ Blockly.Msg.ARD_RF2DOT4GHZ_SETUP_NETWORK_NODE_SERVER_BOT =         "Node_Server_
 Blockly.Msg.ARD_RF2DOT4GHZ_SETUP_NETWORK_NODE_CLIENT_UI_JOYSTICK = "Node_Client_UI_Joystick"; 
 Blockly.Msg.ARD_RF2DOT4GHZ_SETUP_TIP = 'Setup for a Rf2Dot4Ghz peripheral'; 
 
-Blockly.Msg.ARD_RF2DOT4GHZ_READ_BLOCK_NAME =          "Comms: RF-2.4-GHz: Rx: Loop: Stage-01: Save";
+Blockly.Msg.ARD_RF2DOT4GHZ_READ_BLOCK_NAME =          "Comms: RF-2.4-GHz: Rx: Loop: Stage-01: Rx & Store";
 Blockly.Msg.ARD_RF2DOT4GHZ_READ_AS_INT_0 =            "   * Output: Number-as-INT as Type: joystick_Int_X";
 Blockly.Msg.ARD_RF2DOT4GHZ_READ_AS_INT_1 =            "   * Output: Number-as-INT as Type: joystick_Int_Y";
 Blockly.Msg.ARD_RF2DOT4GHZ_READ_AS_INT_2 =            "   * Output: Number-as-INT as Type: button_A_Value";
