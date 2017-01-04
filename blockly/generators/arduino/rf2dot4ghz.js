@@ -32,8 +32,8 @@ Blockly.Arduino['rf2dot4ghz_setup_BLOCK'] = function(block) {
 
 
   var networkNodeType = block.getFieldValue('NETWORK_NODE_TYPE_FIELD_ID');
-  var networkNodeType_Is_Server_Bot = networkNodeType == 'Node_Server_Bot';
-  var networkNodeType_Is_Client_Ui_Joystick = networkNodeType == 'Node_Client_UI_Joystick';
+  var networkNodeType_Is_Server_Bot = networkNodeType == 'node_Server_Bot';
+  var networkNodeType_Is_Client_Ui_Joystick = networkNodeType == 'node_Client_UI_Joystick';
     
   // * Include is universal for any application of LCD. 
   // *
@@ -59,7 +59,7 @@ Blockly.Arduino['rf2dot4ghz_setup_BLOCK'] = function(block) {
     Blockly.Arduino.addDeclaration('rf2dot4ghz_TAG_08', 'RF24 radio(6,7);');
   }
   else if( networkNodeType_Is_Client_Ui_Joystick ){
-    // For 'Node_Client_UI_Joystick'
+    // For 'node_Client_UI_Joystick'
 // // TODO    
     Blockly.Arduino.addDeclaration('rf2dot4ghz_TAG_08', 'RF24 radio(6,7);');
   }
@@ -159,8 +159,8 @@ Blockly.Arduino['rf2dot4ghz_loop_stage01_rx_values_all_BLOCK'] = function(block)
   code.push('');
   code.push('  Serial.println("");');
   code.push('  Serial.println(lcd_OneRow_StringObject);');
-  code.push('  lcd.setCursor(0,0);');
-  code.push('  lcd.print(lcd_OneRow_StringObject);');  
+  code.push('  myLcd.setCursor(0,0);');
+  code.push('  myLcd.print(lcd_OneRow_StringObject);');  
   }
   
   code.push('');

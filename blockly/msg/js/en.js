@@ -576,8 +576,8 @@ Blockly.Msg.ARD_LCD_PRINT_WARN = "A setup block for %1 must be added to the work
 Blockly.Msg.ARD_RF2DOT4GHZ_SETUP_BLOCK_NAME =                      "Comms: RF-2.4-GHz: Rx: Setup"; 
 Blockly.Msg.ARD_RF2DOT4GHZ_SETUP_CHANNEL_AS_DEC =                  "   * Channel # (0-124 Dec [101])"; 
 Blockly.Msg.ARD_RF2DOT4GHZ_SETUP_NETWORK_NODE_TYPE =               "   * Network Node Type: "; 
-Blockly.Msg.ARD_RF2DOT4GHZ_SETUP_NETWORK_NODE_SERVER_BOT =         "Node_Server_Bot"; 
-Blockly.Msg.ARD_RF2DOT4GHZ_SETUP_NETWORK_NODE_CLIENT_UI_JOYSTICK = "Node_Client_UI_Joystick"; 
+Blockly.Msg.ARD_RF2DOT4GHZ_SETUP_NETWORK_NODE_SERVER_BOT =         "node_Server_Bot"; 
+Blockly.Msg.ARD_RF2DOT4GHZ_SETUP_NETWORK_NODE_CLIENT_UI_JOYSTICK = "node_Client_UI_Joystick"; 
 Blockly.Msg.ARD_RF2DOT4GHZ_SETUP_TIP = 'Setup for a Rf2Dot4Ghz peripheral'; 
 
 Blockly.Msg.ARD_RF2DOT4GHZ_READ_BLOCK_NAME =          "Comms: RF-2.4-GHz: Rx: Loop: Stage-01: Rx & Store";
