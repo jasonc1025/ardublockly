@@ -276,8 +276,10 @@ Blockly.Blocks['rf2dot4ghz_loop_stage02_rx_value_select_BLOCK'] = {
 	    /// jwc good yet redundant, 'Blockly.FieldDropdown' will parse pre/post redundant text to be static-text: .appendField('with outputPromptText as');
 
     this.appendDummyInput()
-        .appendField(Blockly.Msg.ARD_RF2DOT4GHZ_READ_HELP_01) 
-        .appendField(Blockly.Msg.ARD_RF2DOT4GHZ_READ_HELP_02);  
+        .appendField(Blockly.Msg.ARD_RF2DOT4GHZ_READ_HELP_01); 
+
+    this.appendDummyInput()
+        .appendField(Blockly.Msg.ARD_RF2DOT4GHZ_READ_HELP_02); 
 
     this.setOutput(true, Blockly.Types.NUMBER.output);
     this.setTooltip(Blockly.Msg.ARD_RF2DOT4GHZ_SETUP_TIP);

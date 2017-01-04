@@ -1314,7 +1314,7 @@ Blockly.Msg.ARD_RF2DOT4GHZ_SETUP_NETWORK_NODE_SERVER_BOT =         "Node_Server_
 Blockly.Msg.ARD_RF2DOT4GHZ_SETUP_NETWORK_NODE_CLIENT_UI_JOYSTICK = "Node_Client_UI_Joystick"; 
 Blockly.Msg.ARD_RF2DOT4GHZ_SETUP_TIP = 'Setup for a Rf2Dot4Ghz peripheral'; 
 
-Blockly.Msg.ARD_RF2DOT4GHZ_READ_BLOCK_NAME =          "Comms: RF-2.4-GHz: Rx: Loop: Stage-01: Values-Store";
+Blockly.Msg.ARD_RF2DOT4GHZ_READ_BLOCK_NAME =          "Comms: RF-2.4-GHz: Rx: Loop: Stage-01: Save";
 Blockly.Msg.ARD_RF2DOT4GHZ_READ_AS_INT_0 =            "   * Output: Number-as-INT for: joystick_Int_X";
 Blockly.Msg.ARD_RF2DOT4GHZ_READ_AS_INT_1 =            "   * Output: Number-as-INT for: joystick_Int_Y";
 Blockly.Msg.ARD_RF2DOT4GHZ_READ_AS_INT_2 =            "   * Output: Number-as-INT for: button_A_Value";
@@ -1325,12 +1325,12 @@ Blockly.Msg.ARD_RF2DOT4GHZ_READ_DEBUG_ON = "DEBUG_ON";
 Blockly.Msg.ARD_RF2DOT4GHZ_READ_DEBUG_OFF = "DEBUG_OFF";
 Blockly.Msg.ARD_RF2DOT4GHZ_READ_WITH_DEBUG_PROMPT_01 =    "   * Optional Debug:";
     /// Obsolete: Blockly.Msg.ARD_RF2DOT4GHZ_READ_WITH_DEBUG_PROMPT_01A=                         "(May Re-Position This Block to Commit Checkbox)";
-Blockly.Msg.ARD_RF2DOT4GHZ_READ_HELP_01 =                 "      * joystick_Int_X/Y: map 0-1023 to 0-180 degrees";
-Blockly.Msg.ARD_RF2DOT4GHZ_READ_HELP_02 =                 "      * buttons_A-D_Value: 0=Pressed, 1=Not-Pressed";
+Blockly.Msg.ARD_RF2DOT4GHZ_READ_HELP_01 =                 "      * joystick_[X-Y]: maps 0-1023 to 0-180 degrees";
+Blockly.Msg.ARD_RF2DOT4GHZ_READ_HELP_02 =                 "      * button_[A-D]:   0=Pressed, 1=Not-Pressed";
     Blockly.Msg.ARD_RF2DOT4GHZ_READ_TIP_AS_LARGE_NUMBER_AS_LONG = "Read 'commsInfrared_Rx' for KeyCode as Type: Large-Number-as-LONG";
     Blockly.Msg.ARD_RF2DOT4GHZ_READ_TIP_AS_TEXT_AS_STRING =       "Read 'commsInfrared_Rx' for KeyCode as Type: Text-as-STRING";
 Blockly.Msg.ARD_RF2DOT4GHZ_READ_HELPURL = "https://arduino-info.wikispaces.com/nRF24L01-RF24-Examples";
 
-Blockly.Msg.ARD_RF2DOT4GHZ_READ_02_BLOCK_NAME =          "Comms: RF-2.4-GHz: Rx: Loop: Stage-02: Value-Read";
+Blockly.Msg.ARD_RF2DOT4GHZ_READ_02_BLOCK_NAME =          "Comms: RF-2.4-GHz: Rx: Loop: Stage-02: Read";
 
 /// jwc for rf2dot4ghz.js << 
