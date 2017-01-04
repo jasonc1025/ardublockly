@@ -5,7 +5,8 @@
  * @fileoverview XML toolbox embedded into a JavaScript text string.
  */
 
-// 2017-0103 jwc rf2dot4ghz: 1CEBD-E Rx 
+// 2017-0103-2100 jwc rf2dot4ghz: 1CEBD-E Rx: Seems working on RaspPi Chromium 
+// 2017-0104-0130 jwc rf2dot4ghz: 1D Rx: TYJ Seems working from RaspPi Chromium to ArduinoIDE to ArduinoMCU (LCD/SerialMonitor Good)
  
 'use strict';
 
