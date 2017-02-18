@@ -156,6 +156,8 @@ Blockly.Arduino['rf2dot4ghz_JoystickAsClient_Loop_Msg_01_Write_n_Tx'] = function
       
   var debugOn_Flag = (block.getFieldValue('DEBUG_ON_FIELD_ID') == 'DEBUG_ON');
 
+  
+  // Stub out since redefinition conflict with LCD-Setup
   // // if( debugOn_Flag ){
   // // Blockly.Arduino.addDeclaration('rf2dot4ghz_TAG_100', 'String    myLcd_OneRow_StringObject;');
   // // Blockly.Arduino.addDeclaration('rf2dot4ghz_TAG_101', 'const int myLcd_OneRow_Columns_MAX = 16;');
@@ -256,10 +258,11 @@ Blockly.Arduino['rf2dot4ghz_BotAsServer_Loop_Msg_02_Rx'] = function(block) {
       
   var debugOn_Flag = (block.getFieldValue('DEBUG_ON_FIELD_ID') == 'DEBUG_ON');
 
-  if( debugOn_Flag ){
-  Blockly.Arduino.addDeclaration('rf2dot4ghz_TAG_100', 'String    myLcd_OneRow_StringObject;');
-  Blockly.Arduino.addDeclaration('rf2dot4ghz_TAG_101', 'const int myLcd_OneRow_Columns_MAX = 16;');
-  }
+  // Stub out since redefinition conflict with LCD-Setup
+  // // if( debugOn_Flag ){
+  // // Blockly.Arduino.addDeclaration('rf2dot4ghz_TAG_100', 'String    myLcd_OneRow_StringObject;');
+  // // Blockly.Arduino.addDeclaration('rf2dot4ghz_TAG_101', 'const int myLcd_OneRow_Columns_MAX = 16;');
+  // // }
 
   // Add the code
   var code = [];
