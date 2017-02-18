@@ -56,7 +56,10 @@ Blockly.Blocks['rf2dot4ghz_BotOrJoystick_Setup_BLOCK'] = {
             [Blockly.Msg.ARD_RF2DOT4GHZ_SETUP_NETWORK_NODE_JOYSTICK_AS_CLIENT, 'node_Joystick_AsClient']
             ]),
             'NETWORK_NODE_TYPE_FIELD_ID');
-   
+
+    this.appendDummyInput()
+        .appendField(Blockly.Msg.ARD_RF2DOT4GHZ_SETUP_HELP_TIP);
+        
     // * jwc added to allow to fit within "Function: Run First, Loop Forever" Block
     //
     this.setPreviousStatement(true, null);

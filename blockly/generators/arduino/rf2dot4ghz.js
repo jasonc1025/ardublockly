@@ -157,8 +157,8 @@ Blockly.Arduino['rf2dot4ghz_JoystickAsClient_Loop_Msg_01_Write_n_Tx'] = function
   var debugOn_Flag = (block.getFieldValue('DEBUG_ON_FIELD_ID') == 'DEBUG_ON');
 
   if( debugOn_Flag ){
-  Blockly.Arduino.addDeclaration('rf2dot4ghz_TAG_100', 'String    lcd_OneRow_StringObject;');
-  Blockly.Arduino.addDeclaration('rf2dot4ghz_TAG_101', 'const int lcd_OneRow_Columns_MAX = 16;');
+  Blockly.Arduino.addDeclaration('rf2dot4ghz_TAG_100', 'String    myLcd_OneRow_StringObject;');
+  Blockly.Arduino.addDeclaration('rf2dot4ghz_TAG_101', 'const int myLcd_OneRow_Columns_MAX = 16;');
   }
 
   // Add the code
@@ -172,27 +172,27 @@ Blockly.Arduino['rf2dot4ghz_JoystickAsClient_Loop_Msg_01_Write_n_Tx'] = function
   code.push('');
 
   if( debugOn_Flag ){
-  code.push('lcd_OneRow_StringObject = ">";');
+  code.push('myLcd_OneRow_StringObject = ">";');
   code.push('');
   code.push('for( int i = 0; i < (sizeof(joystick_Int)/sizeof(uint16_t)); i++ ){');
   code.push('  if( i <= 1 ){');
-  code.push('    lcd_OneRow_StringObject += String( joystick_Int[i] ) + " ";');
+  code.push('    myLcd_OneRow_StringObject += String( joystick_Int[i] ) + " ";');
   code.push('  }');
   code.push('');
   code.push('  if( i >= 2 && i <= 5 && joystick_Int[i] == 0 ){');
-  code.push('    lcd_OneRow_StringObject += String( i - 1 );  // Convert to base-1 value');
+  code.push('    myLcd_OneRow_StringObject += String( i - 1 );  // Convert to base-1 value');
   code.push('  }');
   code.push('}');
-  code.push('lcd_OneRow_StringObject += " ";');
+  code.push('myLcd_OneRow_StringObject += " ";');
   code.push('');
-  code.push('while( lcd_OneRow_StringObject.length() < lcd_OneRow_Columns_MAX ){');
-  code.push('  lcd_OneRow_StringObject.concat(" ");');
+  code.push('while( myLcd_OneRow_StringObject.length() < myLcd_OneRow_Columns_MAX ){');
+  code.push('  myLcd_OneRow_StringObject.concat(" ");');
   code.push('}');
   code.push('');
   code.push('Serial.println("");');
-  code.push('Serial.println(lcd_OneRow_StringObject);');
+  code.push('Serial.println(myLcd_OneRow_StringObject);');
   code.push('myLcd.setCursor(0,0);');
-  code.push('myLcd.print(lcd_OneRow_StringObject);');  
+  code.push('myLcd.print(myLcd_OneRow_StringObject);');  
   code.push('');
   }
 
@@ -201,31 +201,31 @@ Blockly.Arduino['rf2dot4ghz_JoystickAsClient_Loop_Msg_01_Write_n_Tx'] = function
   code.push('  if(radio.available()){  // If non-blank ACK message received, Then... ');
   code.push('    while( radio.isAckPayloadAvailable() ){ // If an ack with payload was received');
   code.push('      radio.read( &joystick_Ack_Int, sizeof(joystick_Ack_Int) );  // Read it');
-  code.push('      lcd_OneRow_StringObject = "<";');
+  code.push('      myLcd_OneRow_StringObject = "<";');
   code.push('      for( int i = 0; i < (sizeof(joystick_Ack_Int)/sizeof(uint16_t)); i++ ){');
   code.push('        if( i <= 1 ){');
-  code.push('          lcd_OneRow_StringObject += String( joystick_Ack_Int[i] ) + " ";');
+  code.push('          myLcd_OneRow_StringObject += String( joystick_Ack_Int[i] ) + " ";');
   code.push('        }');
   code.push('        if( i >= 2 && i <= 5 && joystick_Ack_Int[i] == 0 ){');
-  code.push('          lcd_OneRow_StringObject += String( i - 1 );  // Convert to base-1 value');
+  code.push('          myLcd_OneRow_StringObject += String( i - 1 );  // Convert to base-1 value');
   code.push('        }');
   code.push('      }');
-  code.push('      lcd_OneRow_StringObject += " ";');
-  code.push('      while( lcd_OneRow_StringObject.length() < lcd_OneRow_Columns_MAX ){ ');
-  code.push('        lcd_OneRow_StringObject.concat(" ");');
+  code.push('      myLcd_OneRow_StringObject += " ";');
+  code.push('      while( myLcd_OneRow_StringObject.length() < myLcd_OneRow_Columns_MAX ){ ');
+  code.push('        myLcd_OneRow_StringObject.concat(" ");');
   code.push('      }');
   code.push('');
   code.push('      Serial.println("");');
-  code.push('      Serial.println(lcd_OneRow_StringObject);');
+  code.push('      Serial.println(myLcd_OneRow_StringObject);');
   code.push('      myLcd.setCursor(0,0);');
-  code.push('      myLcd.print(lcd_OneRow_StringObject);');  
+  code.push('      myLcd.print(myLcd_OneRow_StringObject);');  
   code.push('    }');
   code.push('  }'); 
   code.push('}');
   code.push('');
   
   if( debugOn_Flag ){
-  code.push('delay(1000);  // slow down tx & print of messages for Serial.println');
+  code.push('delay(100);  // slow down tx & print of messages for Serial.println');
   code.push('');
   }
     
@@ -253,8 +253,8 @@ Blockly.Arduino['rf2dot4ghz_BotAsServer_Loop_Msg_02_Rx'] = function(block) {
   var debugOn_Flag = (block.getFieldValue('DEBUG_ON_FIELD_ID') == 'DEBUG_ON');
 
   if( debugOn_Flag ){
-  Blockly.Arduino.addDeclaration('rf2dot4ghz_TAG_100', 'String    lcd_OneRow_StringObject;');
-  Blockly.Arduino.addDeclaration('rf2dot4ghz_TAG_101', 'const int lcd_OneRow_Columns_MAX = 16;');
+  Blockly.Arduino.addDeclaration('rf2dot4ghz_TAG_100', 'String    myLcd_OneRow_StringObject;');
+  Blockly.Arduino.addDeclaration('rf2dot4ghz_TAG_101', 'const int myLcd_OneRow_Columns_MAX = 16;');
   }
 
   // Add the code
@@ -268,28 +268,28 @@ Blockly.Arduino['rf2dot4ghz_BotAsServer_Loop_Msg_02_Rx'] = function(block) {
   code.push('');
 
   if( debugOn_Flag ){
-  code.push('  lcd_OneRow_StringObject = "<";');
+  code.push('  myLcd_OneRow_StringObject = "<";');
   code.push('');
   code.push('  for( int i = 0; i < (sizeof(joystick_Int)/sizeof(uint16_t)); i++ ){');
   code.push('');
   code.push('    if( i <= 1 ){');
-  code.push('      lcd_OneRow_StringObject += String( joystick_Int[i] ) + " ";');
+  code.push('      myLcd_OneRow_StringObject += String( joystick_Int[i] ) + " ";');
   code.push('    }');
   code.push('');
   code.push('    if( i >= 2 && i <= 5 && joystick_Int[i] == 0 ){');
-  code.push('      lcd_OneRow_StringObject += String( i - 1 );  // Convert to base-1 value');
+  code.push('      myLcd_OneRow_StringObject += String( i - 1 );  // Convert to base-1 value');
   code.push('    }');
   code.push('  }');
-  code.push('  lcd_OneRow_StringObject += " ";');
+  code.push('  myLcd_OneRow_StringObject += " ";');
   code.push('');
-  code.push('  while( lcd_OneRow_StringObject.length() < lcd_OneRow_Columns_MAX ){');
-  code.push('    lcd_OneRow_StringObject.concat(" ");');
+  code.push('  while( myLcd_OneRow_StringObject.length() < myLcd_OneRow_Columns_MAX ){');
+  code.push('    myLcd_OneRow_StringObject.concat(" ");');
   code.push('  }');
   code.push('');
   code.push('  Serial.println("");');
-  code.push('  Serial.println(lcd_OneRow_StringObject);');
+  code.push('  Serial.println(myLcd_OneRow_StringObject);');
   code.push('  myLcd.setCursor(0,0);');
-  code.push('  myLcd.print(lcd_OneRow_StringObject);');  
+  code.push('  myLcd.print(myLcd_OneRow_StringObject);');  
   }
   
   code.push('');
