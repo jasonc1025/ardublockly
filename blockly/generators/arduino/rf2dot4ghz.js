@@ -234,7 +234,7 @@ Blockly.Arduino['rf2dot4ghz_JoystickAsClient_Loop_Msg_01_Write_n_Tx'] = function
   // // if( debugOn_Flag ){
   // // code.push('delay(100);  // slow down tx & print of messages for Serial.println');
   // // code.push('');
-  }
+  // // }
     
   // Join inbetween lines with '.join('\n')' and also end with '\n'
   return code.join('\n') + '\n';
