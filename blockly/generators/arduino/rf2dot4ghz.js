@@ -156,10 +156,10 @@ Blockly.Arduino['rf2dot4ghz_JoystickAsClient_Loop_Msg_01_Write_n_Tx'] = function
       
   var debugOn_Flag = (block.getFieldValue('DEBUG_ON_FIELD_ID') == 'DEBUG_ON');
 
-  if( debugOn_Flag ){
-  Blockly.Arduino.addDeclaration('rf2dot4ghz_TAG_100', 'String    myLcd_OneRow_StringObject;');
-  Blockly.Arduino.addDeclaration('rf2dot4ghz_TAG_101', 'const int myLcd_OneRow_Columns_MAX = 16;');
-  }
+  // // if( debugOn_Flag ){
+  // // Blockly.Arduino.addDeclaration('rf2dot4ghz_TAG_100', 'String    myLcd_OneRow_StringObject;');
+  // // Blockly.Arduino.addDeclaration('rf2dot4ghz_TAG_101', 'const int myLcd_OneRow_Columns_MAX = 16;');
+  // // }
 
   // Add the code
   var code = [];
@@ -201,6 +201,8 @@ Blockly.Arduino['rf2dot4ghz_JoystickAsClient_Loop_Msg_01_Write_n_Tx'] = function
   code.push('  if(radio.available()){  // If non-blank ACK message received, Then... ');
   code.push('    while( radio.isAckPayloadAvailable() ){ // If an ack with payload was received');
   code.push('      radio.read( &joystick_Ack_Int, sizeof(joystick_Ack_Int) );  // Read it');
+  
+  if( debugOn_Flag ){
   code.push('      myLcd_OneRow_StringObject = "<";');
   code.push('      for( int i = 0; i < (sizeof(joystick_Ack_Int)/sizeof(uint16_t)); i++ ){');
   code.push('        if( i <= 1 ){');
@@ -218,7 +220,9 @@ Blockly.Arduino['rf2dot4ghz_JoystickAsClient_Loop_Msg_01_Write_n_Tx'] = function
   code.push('      Serial.println("");');
   code.push('      Serial.println(myLcd_OneRow_StringObject);');
   code.push('      myLcd.setCursor(0,0);');
-  code.push('      myLcd.print(myLcd_OneRow_StringObject);');  
+  code.push('      myLcd.print(myLcd_OneRow_StringObject);');
+  }  
+  
   code.push('    }');
   code.push('  }'); 
   code.push('}');
