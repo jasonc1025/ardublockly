@@ -48,7 +48,7 @@ Blockly.Arduino['rf2dot4ghz_BotOrJoystick_Setup_BLOCK'] = function(block) {
   Blockly.Arduino.addDeclaration('rf2dot4ghz_TAG_00', '// * For:: ' + Blockly.Msg.ARD_RF2DOT4GHZ_SETUP_BLOCK_NAME);
 
   Blockly.Arduino.addDeclaration('rf2dot4ghz_TAG_01', 'typedef enum { node_Bot_AsServer = 0, node_Joystick_AsClient = 1 } node_TypeDef;');
-  Blockly.Arduino.addDeclaration('rf2dot4ghz_TAG_02', 'const char* node_Label[] = { "Node_Server_Bot", "Node_Client_UI_Joystick"};');
+  Blockly.Arduino.addDeclaration('rf2dot4ghz_TAG_02', 'const char* node_Label[] = { "node_Bot_AsServer", "node_Joystick_AsClient"};');
   Blockly.Arduino.addDeclaration('rf2dot4ghz_TAG_03', 'node_TypeDef node_Type = ' + networkNodeType + ';');
   Blockly.Arduino.addDeclaration('rf2dot4ghz_TAG_04', 'unsigned int node_Type_AsInt = (unsigned int)( node_Type );');
 
@@ -67,9 +67,15 @@ Blockly.Arduino['rf2dot4ghz_BotOrJoystick_Setup_BLOCK'] = function(block) {
     Blockly.Arduino.addDeclaration('rf2dot4ghz_TAG_09', '#define JOYSTICK_X A0');
     Blockly.Arduino.addDeclaration('rf2dot4ghz_TAG_10', '#define JOYSTICK_Y A1');
     Blockly.Arduino.addDeclaration('rf2dot4ghz_TAG_11', 'int16_t joystick_Ack_Int[6];  // 6 element array holding Joystick reading and 4 buttons');
-  }
-  
-
+    // // Blockly.Arduino.addDeclaration('rf2dot4ghz_TAG_12', 'int joystick_Y_Value = 0;');
+    // // Blockly.Arduino.addDeclaration('rf2dot4ghz_TAG_13', 'int joystick_X_Value = 0;');
+    Blockly.Arduino.addDeclaration('rf2dot4ghz_TAG_12', 'int button_A_PinNum = 2;');
+    Blockly.Arduino.addDeclaration('rf2dot4ghz_TAG_13', 'int button_B_PinNum = 3;');
+    Blockly.Arduino.addDeclaration('rf2dot4ghz_TAG_14', 'int button_C_PinNum = 4;');
+    Blockly.Arduino.addDeclaration('rf2dot4ghz_TAG_15', 'int button_D_PinNum = 5;');
+    Blockly.Arduino.addDeclaration('rf2dot4ghz_TAG_16', 'int buttonDebounceCountdown = 0;');
+    Blockly.Arduino.addDeclaration('rf2dot4ghz_TAG_17', 'int buttonDebounceCountdown_Max = 5;;
+ }
 
   // Allow overwrite by setting last (2nd) arguement as 'true'
   Blockly.Arduino.addSetup('rf2dot4ghz_TAG_00', '// * For:: ' + Blockly.Msg.ARD_RF2DOT4GHZ_SETUP_BLOCK_NAME, true);
@@ -81,6 +87,8 @@ Blockly.Arduino['rf2dot4ghz_BotOrJoystick_Setup_BLOCK'] = function(block) {
   Blockly.Arduino.addSetup('rf2dot4ghz_TAG_04', 'radio.setPALevel(RF24_PA_MAX);', true);
   Blockly.Arduino.addSetup('rf2dot4ghz_TAG_05', 'radio.setChannel(' + rf24Dot4Ghz_Channel_As_Dec + ');', true);
 
+  // Setup for RF2Dot4Ghz-Specific Details
+  //
   if( networkNodeType_Is_BotAsServer ){
     // For 'node_Bot_AsServer'
     Blockly.Arduino.addSetup('rf2dot4ghz_TAG_06', 'radio.openReadingPipe(1,addresses[0]);      // Open a reading pipe 1 (universal reading pipe for any node is pipe 1), as address 0', true);
@@ -93,8 +101,7 @@ Blockly.Arduino['rf2dot4ghz_BotOrJoystick_Setup_BLOCK'] = function(block) {
   }
   else{
     Blockly.Arduino.addSetup('rf2dot4ghz_TAG_06', 'Serial.print(("Invalid <networkNodeType> = "));', true);
-    Blockly.Arduino.addSetup('rf2dot4ghz_TAG_07', 'Serial.println((' + networkNodeType + '));', true);        
-      
+    Blockly.Arduino.addSetup('rf2dot4ghz_TAG_07', 'Serial.println((' + networkNodeType + '));', true);             
   }
 
   Blockly.Arduino.addSetup('rf2dot4ghz_TAG_08', 'radio.enableAckPayload();', true);
@@ -103,7 +110,27 @@ Blockly.Arduino['rf2dot4ghz_BotOrJoystick_Setup_BLOCK'] = function(block) {
   Blockly.Arduino.addSetup('rf2dot4ghz_TAG_11', 'radio.startListening();', true);
   Blockly.Arduino.addSetup('rf2dot4ghz_TAG_12', 'radio.printDetails();', true);
 
-
+  // Setup for Non-RF2Dot4Ghz-Specific Details
+  // 
+  if( networkNodeType_Is_BotAsServer ){
+    // For 'node_Bot_AsServer'
+    }
+  else if( networkNodeType_Is_JoystickAsClient ){
+    // For 'node_Joystick_AsClient'
+    Blockly.Arduino.addSetup('rf2dot4ghz_TAG_13', 'pinMode(button_A_PinNum,INPUT);', true);
+    Blockly.Arduino.addSetup('rf2dot4ghz_TAG_14', 'digitalWrite(button_A_PinNum,LOW);', true);
+    Blockly.Arduino.addSetup('rf2dot4ghz_TAG_15', 'pinMode(button_B_PinNum,INPUT);', true);
+    Blockly.Arduino.addSetup('rf2dot4ghz_TAG_16', 'digitalWrite(button_B_PinNum,LOW);', true);
+    Blockly.Arduino.addSetup('rf2dot4ghz_TAG_17', 'pinMode(button_C_PinNum,INPUT);', true);
+    Blockly.Arduino.addSetup('rf2dot4ghz_TAG_18', 'digitalWrite(button_C_PinNum,LOW);', true);
+    Blockly.Arduino.addSetup('rf2dot4ghz_TAG_19', 'pinMode(button_D_PinNum,INPUT);', true);
+    Blockly.Arduino.addSetup('rf2dot4ghz_TAG_20', 'digitalWrite(button_D_PinNum,LOW);', true);
+  }
+  else{
+    // Can now print error statements, since in 'Setup'  
+    Blockly.Arduino.addSetup('rf2dot4ghz_TAG_13', 'Serial.print(("Invalid <networkNodeType> = "));', true);
+    Blockly.Arduino.addSetup('rf2dot4ghz_TAG_14', 'Serial.println((' + networkNodeType + '));', true);             
+  }
   
   // Add the code
   var code = [];
@@ -114,6 +141,102 @@ Blockly.Arduino['rf2dot4ghz_BotOrJoystick_Setup_BLOCK'] = function(block) {
 
 };
 
+/**
+ * Code generator to prompt the user with a string (X) and request input.
+ * Serial info: http://arduino.cc/en/Reference/Serial
+ * Arduino code: getUserInputPrompt(...) { ... }
+ *               loop { getUserInputPrompt("X")) }
+ * @param {!Blockly.Block} block Block to generate the code from.
+ * @return {array} Completed code with order of operation.
+ */
+ 
+Blockly.Arduino['rf2dot4ghz_JoystickAsClient_Loop_Msg_01_Write_n_Tx'] = function(block) {
+  // Get the first Serial peripheral of arduino board
+  // // var returnType = block.getFieldValue('OUTPUT_TYPE_FIELD_ID');
+      
+  var debugOn_Flag = (block.getFieldValue('DEBUG_ON_FIELD_ID') == 'DEBUG_ON');
+
+  if( debugOn_Flag ){
+  Blockly.Arduino.addDeclaration('rf2dot4ghz_TAG_100', 'String    lcd_OneRow_StringObject;');
+  Blockly.Arduino.addDeclaration('rf2dot4ghz_TAG_101', 'const int lcd_OneRow_Columns_MAX = 16;');
+  }
+
+  // Add the code
+  var code = [];
+  code.push('joystick_Int[0] = analogRead(JOYSTICK_X);');
+  code.push('joystick_Int[1] = analogRead(JOYSTICK_Y);');
+  code.push('joystick_Int[2] = digitalRead(button_A_PinNum);');
+  code.push('joystick_Int[3] = digitalRead(button_B_PinNum);');
+  code.push('joystick_Int[4] = digitalRead(button_C_PinNum);');
+  code.push('joystick_Int[5] = digitalRead(button_D_PinNum);');
+  code.push('');
+
+  if( debugOn_Flag ){
+  code.push('  lcd_OneRow_StringObject = ">";');
+  code.push('');
+  code.push('  for( int i = 0; i < (sizeof(joystick_Int)/sizeof(uint16_t)); i++ ){');
+  code.push('');
+  code.push('    if( i <= 1 ){');
+  code.push('      lcd_OneRow_StringObject += String( joystick_Int[i] ) + " ";');
+  code.push('    }');
+  code.push('');
+  code.push('    if( i >= 2 && i <= 5 && joystick_Int[i] == 0 ){');
+  code.push('      lcd_OneRow_StringObject += String( i - 1 );  // Convert to base-1 value');
+  code.push('    }');
+  code.push('  }');
+  code.push('  lcd_OneRow_StringObject += " ";');
+  code.push('');
+  code.push('  while( lcd_OneRow_StringObject.length() < lcd_OneRow_Columns_MAX ){');
+  code.push('    lcd_OneRow_StringObject.concat(" ");');
+  code.push('  }');
+  code.push('');
+  code.push('  Serial.println("");');
+  code.push('  Serial.println(lcd_OneRow_StringObject);');
+  code.push('  myLcd.setCursor(0,0);');
+  code.push('  myLcd.print(lcd_OneRow_StringObject);');  
+  code.push('');
+  }
+
+  code.push('radio.stopListening();  // First, stop listening so we can talk.');
+  code.push('if( radio.write( &joystick_Int, sizeof(joystick_Int) )){ // Send the message to the other radio and waits till ACK msg received or Timeout.  Default Timeout is 60-70ms.');
+  code.push('  if(radio.available()){  // If non-blank ACK message received, Then... ');
+  code.push('    while( radio.isAckPayloadAvailable() ){ // If an ack with payload was received');
+  code.push('      radio.read( &joystick_Ack_Int, sizeof(joystick_Ack_Int) );  // Read it');
+  code.push('      lcd_OneRow_StringObject = "<";');
+  code.push('      for( int i = 0; i < (sizeof(joystick_Ack_Int)/sizeof(uint16_t)); i++ ){');
+  code.push('        if( i <= 1 ){');
+  code.push('          lcd_OneRow_StringObject += String( joystick_Ack_Int[i] ) + " ";');
+  code.push('        }');
+  code.push('        if( i >= 2 && i <= 5 && joystick_Ack_Int[i] == 0 ){');
+  code.push('          lcd_OneRow_StringObject += String( i - 1 );  // Convert to base-1 value');
+  code.push('        }');
+  code.push('      }');
+  code.push('      lcd_OneRow_StringObject += " ";');
+  code.push('      while( lcd_OneRow_StringObject.length() < lcd_OneRow_Columns_MAX ){ ');
+  code.push('        lcd_OneRow_StringObject.concat(" ");');
+  code.push('      }');
+  code.push('');
+  code.push('');
+  code.push('      Serial.println("");');
+  code.push('      Serial.println(lcd_OneRow_StringObject);');
+  code.push('      myLcd.setCursor(0,0);');
+  code.push('      myLcd.print(lcd_OneRow_StringObject);');  
+  code.push('    }');
+  code.push('  }'); 
+  code.push('}');
+  code.push('');
+  
+  if( debugOn_Flag ){
+  code.push('delay(1000);  // slow down tx & print of messages for Serial.println');
+  code.push('');
+  }
+    
+  // Join inbetween lines with '.join('\n')' and also end with '\n'
+  return code.join('\n') + '\n';
+  // // // * Output Requested Value
+  // // return [code, Blockly.Arduino.ORDER_UNARY_POSTFIX];
+
+};
 
 /**
  * Code generator to prompt the user with a string (X) and request input.

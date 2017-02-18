@@ -62,7 +62,7 @@ Blockly.Blocks['rf2dot4ghz_BotOrJoystick_Setup_BLOCK'] = {
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     
-    this.setTooltip('Setup for a RF2DOT4GHZ peripheral');
+    this.setTooltip(Blockly.Msg.ARD_RF2DOT4GHZ_SETUP_TIP);
   },
   // // /**
    // // * Returns the rf2dot4ghz instance name.
@@ -204,6 +204,44 @@ Blockly.Blocks['rf2dot4ghz_BotOrJoystick_Setup_BLOCK'] = {
   // // // // }
 // // };
 
+Blockly.Blocks['rf2dot4ghz_JoystickAsClient_Loop_Msg_01_Write_n_Tx'] = {
+  /**
+   * Block for setting the lcd connection.
+   * @this Blockly.Block
+   */
+  init: function() {
+   // Assign 'this' to a variable for use in the closures below.
+   var thisBlock = this;
+
+    this.setInputsInline(false);
+    this.setHelpUrl(Blockly.Msg.ARD_RF2DOT4GHZ_WRITE_HELPURL);
+    this.setColour(Blockly.Blocks.rf2dot4ghz.HUE);
+    
+    this.appendDummyInput()
+        .appendField(Blockly.Msg.ARD_RF2DOT4GHZ_WRITE_BLOCK_NAME);
+   
+    this.appendDummyInput()
+        .appendField(Blockly.Msg.ARD_RF2DOT4GHZ_WRITE_WITH_DEBUG_PROMPT_01)
+        .appendField(new Blockly.FieldDropdown(
+            [[Blockly.Msg.ARD_RF2DOT4GHZ_WRITE_DEBUG_OFF, 'DEBUG_OFF'],
+            [Blockly.Msg.ARD_RF2DOT4GHZ_WRITE_DEBUG_ON, 'DEBUG_ON']]),
+            'DEBUG_ON_FIELD_ID');
+
+            // * jwc added to allow to fit within "Function: Run First, Loop Forever" Block
+    //
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    
+    this.setTooltip(Blockly.Msg.ARD_RF2DOT4GHZ_SETUP_TIP);
+  },
+  /**
+   * Updates the content of the the 'Boards' related fields.
+   * @this Blockly.Block
+   */
+  updateFields: function() {
+  }
+};
+
 // // Blockly.Blocks['rf2dot4ghz_loop_stage01_rx_values_all_BLOCK'] = {
 Blockly.Blocks['rf2dot4ghz_BotAsServer_Loop_Msg_02_Rx'] = {
   /**
@@ -233,7 +271,7 @@ Blockly.Blocks['rf2dot4ghz_BotAsServer_Loop_Msg_02_Rx'] = {
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     
-    this.setTooltip('Setup for a Rf2Dot4Ghz peripheral');
+    this.setTooltip(Blockly.Msg.ARD_RF2DOT4GHZ_SETUP_TIP);
   },
   /**
    * Updates the content of the the 'Boards' related fields.

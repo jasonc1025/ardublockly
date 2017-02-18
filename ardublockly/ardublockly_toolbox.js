@@ -310,6 +310,9 @@ Ardublockly.TOOLBOX_XML =
 '      </value>' +
 '    </block>' +
 
+'    <block type="rf2dot4ghz_JoystickAsClient_Loop_Msg_01_Write_n_Tx">' +
+'    </block>' +
+
 '    <block type="rf2dot4ghz_BotAsServer_Loop_Msg_02_Rx">' +
 '    </block>' +
 
