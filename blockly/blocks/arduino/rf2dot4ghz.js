@@ -52,8 +52,8 @@ Blockly.Blocks['rf2dot4ghz_BotOrJoystick_Setup_BLOCK'] = {
         .appendField(Blockly.Msg.ARD_RF2DOT4GHZ_SETUP_NETWORK_NODE_TYPE)
         .appendField(new Blockly.FieldDropdown(
             [
-            [Blockly.Msg.ARD_RF2DOT4GHZ_SETUP_NETWORK_NODE_SERVER_BOT, 'node_Bot_AsServer'],
-            [Blockly.Msg.ARD_RF2DOT4GHZ_SETUP_NETWORK_NODE_CLIENT_UI_JOYSTICK, 'node_Joystick_AsClient']
+            [Blockly.Msg.ARD_RF2DOT4GHZ_SETUP_NETWORK_NODE_BOT_AS_SERVER, 'node_Bot_AsServer'],
+            [Blockly.Msg.ARD_RF2DOT4GHZ_SETUP_NETWORK_NODE_JOYSTICK_AS_CLIENT, 'node_Joystick_AsClient']
             ]),
             'NETWORK_NODE_TYPE_FIELD_ID');
    
