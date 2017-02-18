@@ -35,8 +35,8 @@ Blockly.Arduino['rf2dot4ghz_BotOrJoystick_Setup_BLOCK'] = function(block) {
 
 
   var networkNodeType = block.getFieldValue('NETWORK_NODE_TYPE_FIELD_ID');
-  var networkNodeType_Is_Server_Bot = networkNodeType == 'node_Server_Bot';
-  var networkNodeType_Is_Client_Ui_Joystick = networkNodeType == 'node_Client_UI_Joystick';
+  var networkNodeType_Is_BotAsServer = networkNodeType == 'node_Bot_AsServer';
+  var networkNodeType_Is_JoystickAsClient = networkNodeType == 'node_Joystick_AsClient';
     
   // * Include is universal for any application of LCD. 
   // *
@@ -47,7 +47,7 @@ Blockly.Arduino['rf2dot4ghz_BotOrJoystick_Setup_BLOCK'] = function(block) {
 
   Blockly.Arduino.addDeclaration('rf2dot4ghz_TAG_00', '// * For:: ' + Blockly.Msg.ARD_RF2DOT4GHZ_SETUP_BLOCK_NAME);
 
-  Blockly.Arduino.addDeclaration('rf2dot4ghz_TAG_01', 'typedef enum { node_Server_Bot = 0, node_Client_UI_Joystick = 1 } node_TypeDef;');
+  Blockly.Arduino.addDeclaration('rf2dot4ghz_TAG_01', 'typedef enum { node_Bot_AsServer = 0, node_Joystick_AsClient = 1 } node_TypeDef;');
   Blockly.Arduino.addDeclaration('rf2dot4ghz_TAG_02', 'const char* node_Label[] = { "Node_Server_Bot", "Node_Client_UI_Joystick"};');
   Blockly.Arduino.addDeclaration('rf2dot4ghz_TAG_03', 'node_TypeDef node_Type = ' + networkNodeType + ';');
   Blockly.Arduino.addDeclaration('rf2dot4ghz_TAG_04', 'unsigned int node_Type_AsInt = (unsigned int)( node_Type );');
@@ -57,12 +57,12 @@ Blockly.Arduino['rf2dot4ghz_BotOrJoystick_Setup_BLOCK'] = function(block) {
   Blockly.Arduino.addDeclaration('rf2dot4ghz_TAG_06', 'int16_t joystick_Int[6];  // 6 element array holding Joystick reading and 4 buttons');
   Blockly.Arduino.addDeclaration('rf2dot4ghz_TAG_07', 'uint8_t pipePortNum_Int;');
   
-  if( networkNodeType_Is_Server_Bot ){
-    // For 'node_Server_Bot'
+  if( networkNodeType_Is_BotAsServer ){
+    // For 'node_Bot_AsServer'
     Blockly.Arduino.addDeclaration('rf2dot4ghz_TAG_08', 'RF24 radio(6,7);');
   }
-  else if( networkNodeType_Is_Client_Ui_Joystick ){
-    // For 'node_Client_UI_Joystick'
+  else if( networkNodeType_Is_JoystickAsClient ){
+    // For 'node_Joystick_AsClient'
     Blockly.Arduino.addDeclaration('rf2dot4ghz_TAG_08', 'RF24 radio(9,10);');
     Blockly.Arduino.addDeclaration('rf2dot4ghz_TAG_09', '#define JOYSTICK_X A0');
     Blockly.Arduino.addDeclaration('rf2dot4ghz_TAG_09', '#define JOYSTICK_Y A1');
@@ -81,13 +81,13 @@ Blockly.Arduino['rf2dot4ghz_BotOrJoystick_Setup_BLOCK'] = function(block) {
   Blockly.Arduino.addSetup('rf2dot4ghz_TAG_04', 'radio.setPALevel(RF24_PA_MAX);', true);
   Blockly.Arduino.addSetup('rf2dot4ghz_TAG_05', 'radio.setChannel(' + rf24Dot4Ghz_Channel_As_Dec + ');', true);
 
-  if( networkNodeType_Is_Server_Bot ){
-    // For 'node_Server_Bot'
+  if( networkNodeType_Is_BotAsServer ){
+    // For 'node_Bot_AsServer'
     Blockly.Arduino.addSetup('rf2dot4ghz_TAG_06', 'radio.openReadingPipe(1,addresses[0]);      // Open a reading pipe 1 (universal reading pipe for any node is pipe 1), as address 0', true);
     Blockly.Arduino.addSetup('rf2dot4ghz_TAG_07', 'radio.openWritingPipe(addresses[1]);        // Both radios listen on the same pipes by default (universal writing pipe for any node is pipe 0), but write to address specified here', true);    
   }
-  else if( networkNodeType_Is_Client_Ui_Joystick ){
-    // For 'node_Client_UI_Joystick'
+  else if( networkNodeType_Is_JoystickAsClient ){
+    // For 'node_Joystick_AsClient'
     Blockly.Arduino.addSetup('rf2dot4ghz_TAG_06', 'radio.openReadingPipe(1,addresses[1]);      // Open a reading pipe 1 (universal reading pipe for any node is pipe 1), as address 1', true);
     Blockly.Arduino.addSetup('rf2dot4ghz_TAG_07', 'radio.openWritingPipe(addresses[0]);        // Both radios listen on the same pipes by default (universal writing pipe for any node is pipe 0), but write to address specified here', true);        
   }
