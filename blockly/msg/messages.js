@@ -1310,11 +1310,11 @@ Blockly.Msg.ARD_LCD_PRINT_WARN = "A setup block for %1 must be added to the work
 Blockly.Msg.ARD_RF2DOT4GHZ_SETUP_BLOCK_NAME =                      "Comms: RF: Bot-or-Joystick: Setup"; 
 Blockly.Msg.ARD_RF2DOT4GHZ_SETUP_CHANNEL_AS_DEC =                  "   * Channel # (0-124 Dec [101])"; 
 Blockly.Msg.ARD_RF2DOT4GHZ_SETUP_NETWORK_NODE_TYPE =               "   * Network Node Type: "; 
-Blockly.Msg.ARD_RF2DOT4GHZ_SETUP_NETWORK_NODE_SERVER_BOT =         "node_Server_Bot"; 
-Blockly.Msg.ARD_RF2DOT4GHZ_SETUP_NETWORK_NODE_CLIENT_UI_JOYSTICK = "node_Client_UI_Joystick"; 
+Blockly.Msg.ARD_RF2DOT4GHZ_SETUP_NETWORK_NODE_BOT_AS_SERVER =      "node_Bot_AsServer"; 
+Blockly.Msg.ARD_RF2DOT4GHZ_SETUP_NETWORK_NODE_JOYSTICK_AS_CLIENT = "node_Joystick_AsClient"; 
 Blockly.Msg.ARD_RF2DOT4GHZ_SETUP_TIP =                             "Requires 'Comms: LCD Setup' BLOCK within 'Setup'"; 
 
-Blockly.Msg.ARD_RF2DOT4GHZ_WRITE_BLOCK_NAME =         "Comms: RF: Joystick-As-Client: Loop: Msg-01: Write & Tx";
+Blockly.Msg.ARD_RF2DOT4GHZ_WRITE_BLOCK_NAME =         "Comms: RF: Joystick-As-Client: Loop: Msg-01: Tx";
 Blockly.Msg.ARD_RF2DOT4GHZ_WRITE_DEBUG_ON = "DEBUG_ON";
 Blockly.Msg.ARD_RF2DOT4GHZ_WRITE_DEBUG_OFF = "DEBUG_OFF";
 Blockly.Msg.ARD_RF2DOT4GHZ_WRITE_WITH_DEBUG_PROMPT_01 =    "   * Optional Debug:";

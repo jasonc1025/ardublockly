@@ -75,7 +75,7 @@ Blockly.Arduino['rf2dot4ghz_BotOrJoystick_Setup_BLOCK'] = function(block) {
     Blockly.Arduino.addDeclaration('rf2dot4ghz_TAG_15', 'int button_D_PinNum = 5;');
     // // Blockly.Arduino.addDeclaration('rf2dot4ghz_TAG_16', 'int buttonDebounceCountdown = 0;');
     // // Blockly.Arduino.addDeclaration('rf2dot4ghz_TAG_17', 'int buttonDebounceCountdown_Max = 5;');
- }
+  }
 
   // Allow overwrite by setting last (2nd) arguement as 'true'
   Blockly.Arduino.addSetup('rf2dot4ghz_TAG_00', '// * For:: ' + Blockly.Msg.ARD_RF2DOT4GHZ_SETUP_BLOCK_NAME, true);
@@ -172,28 +172,27 @@ Blockly.Arduino['rf2dot4ghz_JoystickAsClient_Loop_Msg_01_Write_n_Tx'] = function
   code.push('');
 
   if( debugOn_Flag ){
-  code.push('  lcd_OneRow_StringObject = ">";');
+  code.push('lcd_OneRow_StringObject = ">";');
   code.push('');
-  code.push('  for( int i = 0; i < (sizeof(joystick_Int)/sizeof(uint16_t)); i++ ){');
-  code.push('');
-  code.push('    if( i <= 1 ){');
-  code.push('      lcd_OneRow_StringObject += String( joystick_Int[i] ) + " ";');
-  code.push('    }');
-  code.push('');
-  code.push('    if( i >= 2 && i <= 5 && joystick_Int[i] == 0 ){');
-  code.push('      lcd_OneRow_StringObject += String( i - 1 );  // Convert to base-1 value');
-  code.push('    }');
-  code.push('  }');
-  code.push('  lcd_OneRow_StringObject += " ";');
-  code.push('');
-  code.push('  while( lcd_OneRow_StringObject.length() < lcd_OneRow_Columns_MAX ){');
-  code.push('    lcd_OneRow_StringObject.concat(" ");');
+  code.push('for( int i = 0; i < (sizeof(joystick_Int)/sizeof(uint16_t)); i++ ){');
+  code.push('  if( i <= 1 ){');
+  code.push('    lcd_OneRow_StringObject += String( joystick_Int[i] ) + " ";');
   code.push('  }');
   code.push('');
-  code.push('  Serial.println("");');
-  code.push('  Serial.println(lcd_OneRow_StringObject);');
-  code.push('  myLcd.setCursor(0,0);');
-  code.push('  myLcd.print(lcd_OneRow_StringObject);');  
+  code.push('  if( i >= 2 && i <= 5 && joystick_Int[i] == 0 ){');
+  code.push('    lcd_OneRow_StringObject += String( i - 1 );  // Convert to base-1 value');
+  code.push('  }');
+  code.push('}');
+  code.push('lcd_OneRow_StringObject += " ";');
+  code.push('');
+  code.push('while( lcd_OneRow_StringObject.length() < lcd_OneRow_Columns_MAX ){');
+  code.push('  lcd_OneRow_StringObject.concat(" ");');
+  code.push('}');
+  code.push('');
+  code.push('Serial.println("");');
+  code.push('Serial.println(lcd_OneRow_StringObject);');
+  code.push('myLcd.setCursor(0,0);');
+  code.push('myLcd.print(lcd_OneRow_StringObject);');  
   code.push('');
   }
 
@@ -215,7 +214,6 @@ Blockly.Arduino['rf2dot4ghz_JoystickAsClient_Loop_Msg_01_Write_n_Tx'] = function
   code.push('      while( lcd_OneRow_StringObject.length() < lcd_OneRow_Columns_MAX ){ ');
   code.push('        lcd_OneRow_StringObject.concat(" ");');
   code.push('      }');
-  code.push('');
   code.push('');
   code.push('      Serial.println("");');
   code.push('      Serial.println(lcd_OneRow_StringObject);');
