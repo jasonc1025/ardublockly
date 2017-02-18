@@ -26,7 +26,7 @@ goog.require('Blockly.Arduino');
  * @param {!Blockly.Block} block Block to generate the code from.
  * @return {array} Completed code.
  */
-Blockly.Arduino['rf2dot4ghz_setup_BLOCK'] = function(block) {
+Blockly.Arduino['rf2dot4ghz_BotOrJoystick_Setup_BLOCK'] = function(block) {
   // // var lcdId = block.getFieldValue('LCD_FIELD_ID');  
   
   // Convert from number to text
@@ -124,7 +124,8 @@ Blockly.Arduino['rf2dot4ghz_setup_BLOCK'] = function(block) {
  * @return {array} Completed code with order of operation.
  */
  
-Blockly.Arduino['rf2dot4ghz_loop_stage01_rx_values_all_BLOCK'] = function(block) {
+// // Blockly.Arduino['rf2dot4ghz_loop_stage01_rx_values_all_BLOCK'] = function(block) {
+Blockly.Arduino['rf2dot4ghz_BotAsServer_Loop_Msg_02_Rx'] = function(block) {
   // Get the first Serial peripheral of arduino board
   // // var returnType = block.getFieldValue('OUTPUT_TYPE_FIELD_ID');
       
@@ -211,7 +212,9 @@ Blockly.Arduino['rf2dot4ghz_loop_stage01_rx_values_all_BLOCK'] = function(block)
  * @param {!Blockly.Block} block Block to generate the code from.
  * @return {array} Completed code with order of operation.
  */
-Blockly.Arduino['rf2dot4ghz_loop_stage02_rx_value_select_BLOCK'] = function(block) {
+// // Blockly.Arduino['rf2dot4ghz_loop_stage02_rx_value_select_BLOCK'] = function(block) {
+Blockly.Arduino['rf2dot4ghz_BotAsServer_Loop_Msg_03_Read'] = function(block) {
+    
   // Get the first Serial peripheral of arduino board
   var returnType = block.getFieldValue('OUTPUT_TYPE_FIELD_ID');
 
