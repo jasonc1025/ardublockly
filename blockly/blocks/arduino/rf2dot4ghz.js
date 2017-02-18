@@ -204,7 +204,8 @@ Blockly.Blocks['rf2dot4ghz_setup_BLOCK'] = {
   // // // // }
 // // };
 
-Blockly.Blocks['rf2dot4ghz_loop_stage01_rx_values_all_BLOCK'] = {
+// // Blockly.Blocks['rf2dot4ghz_loop_stage01_rx_values_all_BLOCK'] = {
+Blockly.Blocks['rf2dot4ghz_JoystickAsClient_Loop_Msg_02_Rx_n_Store'] = {
   /**
    * Block for setting the lcd connection.
    * @this Blockly.Block
@@ -242,7 +243,8 @@ Blockly.Blocks['rf2dot4ghz_loop_stage01_rx_values_all_BLOCK'] = {
   }
 };
 
-Blockly.Blocks['rf2dot4ghz_loop_stage02_rx_value_select_BLOCK'] = {
+// // Blockly.Blocks['rf2dot4ghz_loop_stage02_rx_value_select_BLOCK'] = {
+Blockly.Blocks['rf2dot4ghz_JoystickAsClient_Loop_Msg_03_Select_n_Read'] = {
   /**
    * Block for reading an analogue input.
    * @this Blockly.Block

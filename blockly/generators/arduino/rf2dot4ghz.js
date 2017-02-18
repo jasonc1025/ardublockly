@@ -10,6 +10,9 @@
  */
  
 // Modeled after 'Serial Setup & Print'
+// Tag Numbering
+//   Setup: Tag_xx
+//   Loop: Tag_1xx
 
 'use strict';
 
@@ -60,10 +63,14 @@ Blockly.Arduino['rf2dot4ghz_setup_BLOCK'] = function(block) {
   }
   else if( networkNodeType_Is_Client_Ui_Joystick ){
     // For 'node_Client_UI_Joystick'
-// // TODO    
-    Blockly.Arduino.addDeclaration('rf2dot4ghz_TAG_08', 'RF24 radio(6,7);');
+    Blockly.Arduino.addDeclaration('rf2dot4ghz_TAG_08', 'RF24 radio(9,10);');
+    Blockly.Arduino.addDeclaration('rf2dot4ghz_TAG_09', '#define JOYSTICK_X A0');
+    Blockly.Arduino.addDeclaration('rf2dot4ghz_TAG_09', '#define JOYSTICK_Y A1');
+    Blockly.Arduino.addDeclaration('rf2dot4ghz_TAG_06', 'int16_t joystick_Ack_Int[6];  // 6 element array holding Joystick reading and 4 buttons');
   }
   
+
+
   // Allow overwrite by setting last (2nd) arguement as 'true'
   Blockly.Arduino.addSetup('rf2dot4ghz_TAG_00', '// * For:: ' + Blockly.Msg.ARD_RF2DOT4GHZ_SETUP_BLOCK_NAME, true);
 
@@ -124,8 +131,8 @@ Blockly.Arduino['rf2dot4ghz_loop_stage01_rx_values_all_BLOCK'] = function(block)
   var debugOn_Flag = (block.getFieldValue('DEBUG_ON_FIELD_ID') == 'DEBUG_ON');
 
   if( debugOn_Flag ){
-  Blockly.Arduino.addDeclaration('rf2dot4ghz_TAG_09', 'String    lcd_OneRow_StringObject;');
-  Blockly.Arduino.addDeclaration('rf2dot4ghz_TAG_10', 'const int lcd_OneRow_Columns_MAX = 16;');
+  Blockly.Arduino.addDeclaration('rf2dot4ghz_TAG_100', 'String    lcd_OneRow_StringObject;');
+  Blockly.Arduino.addDeclaration('rf2dot4ghz_TAG_101', 'const int lcd_OneRow_Columns_MAX = 16;');
   }
 
   // Add the code

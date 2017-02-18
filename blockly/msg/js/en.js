@@ -573,14 +573,14 @@ Blockly.Msg.ARD_LCD_PRINT_WARN = "A setup block for %1 must be added to the work
 /// jwc for lcd.js << 
 
 /// jwc for rf2dot4ghz.js >> 
-Blockly.Msg.ARD_RF2DOT4GHZ_SETUP_BLOCK_NAME =                      "Comms: RF-2.4-GHz: Rx: Setup"; 
+Blockly.Msg.ARD_RF2DOT4GHZ_SETUP_BLOCK_NAME =                      "Comms: RF-2.4-GHz: Setup"; 
 Blockly.Msg.ARD_RF2DOT4GHZ_SETUP_CHANNEL_AS_DEC =                  "   * Channel # (0-124 Dec [101])"; 
 Blockly.Msg.ARD_RF2DOT4GHZ_SETUP_NETWORK_NODE_TYPE =               "   * Network Node Type: "; 
 Blockly.Msg.ARD_RF2DOT4GHZ_SETUP_NETWORK_NODE_SERVER_BOT =         "node_Server_Bot"; 
 Blockly.Msg.ARD_RF2DOT4GHZ_SETUP_NETWORK_NODE_CLIENT_UI_JOYSTICK = "node_Client_UI_Joystick"; 
 Blockly.Msg.ARD_RF2DOT4GHZ_SETUP_TIP = 'Setup for a Rf2Dot4Ghz peripheral'; 
 
-Blockly.Msg.ARD_RF2DOT4GHZ_READ_BLOCK_NAME =          "Comms: RF-2.4-GHz: Rx: Loop: Stage-01: Rx & Store";
+Blockly.Msg.ARD_RF2DOT4GHZ_READ_BLOCK_NAME =          "Comms: RF-2.4-GHz: Joystick-As-Client: Loop: Msg-02: Rx & Store";
 Blockly.Msg.ARD_RF2DOT4GHZ_READ_AS_INT_0 =            "   * Output: Number-as-INT for: Joystick_X";
 Blockly.Msg.ARD_RF2DOT4GHZ_READ_AS_INT_1 =            "   * Output: Number-as-INT for: Joystick_Y";
 Blockly.Msg.ARD_RF2DOT4GHZ_READ_AS_INT_2 =            "   * Output: Number-as-INT for: Button_A";
@@ -597,6 +597,6 @@ Blockly.Msg.ARD_RF2DOT4GHZ_READ_HELP_02 =                 "      * button_[A-D]:
     Blockly.Msg.ARD_RF2DOT4GHZ_READ_TIP_AS_TEXT_AS_STRING =       "Read 'commsInfrared_Rx' for KeyCode as Type: Text-as-STRING";
 Blockly.Msg.ARD_RF2DOT4GHZ_READ_HELPURL = "https://arduino-info.wikispaces.com/nRF24L01-RF24-Examples";
 
-Blockly.Msg.ARD_RF2DOT4GHZ_READ_02_BLOCK_NAME =          "Comms: RF-2.4-GHz: Rx: Loop: Stage-02: Read";
+Blockly.Msg.ARD_RF2DOT4GHZ_READ_02_BLOCK_NAME =          "Comms: RF-2.4-GHz: Joystick-As-Client: Loop: Msg-03: Select & Read";
 
 /// jwc for rf2dot4ghz.js << 
