@@ -73,8 +73,8 @@ Blockly.Arduino['rf2dot4ghz_BotOrJoystick_Setup_BLOCK'] = function(block) {
     Blockly.Arduino.addDeclaration('rf2dot4ghz_TAG_13', 'int button_B_PinNum = 3;');
     Blockly.Arduino.addDeclaration('rf2dot4ghz_TAG_14', 'int button_C_PinNum = 4;');
     Blockly.Arduino.addDeclaration('rf2dot4ghz_TAG_15', 'int button_D_PinNum = 5;');
-    Blockly.Arduino.addDeclaration('rf2dot4ghz_TAG_16', 'int buttonDebounceCountdown = 0;');
-    Blockly.Arduino.addDeclaration('rf2dot4ghz_TAG_17', 'int buttonDebounceCountdown_Max = 5;;
+    // // Blockly.Arduino.addDeclaration('rf2dot4ghz_TAG_16', 'int buttonDebounceCountdown = 0;');
+    // // Blockly.Arduino.addDeclaration('rf2dot4ghz_TAG_17', 'int buttonDebounceCountdown_Max = 5;');
  }
 
   // Allow overwrite by setting last (2nd) arguement as 'true'
