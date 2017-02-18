@@ -65,8 +65,8 @@ Blockly.Arduino['rf2dot4ghz_BotOrJoystick_Setup_BLOCK'] = function(block) {
     // For 'node_Joystick_AsClient'
     Blockly.Arduino.addDeclaration('rf2dot4ghz_TAG_08', 'RF24 radio(9,10);');
     Blockly.Arduino.addDeclaration('rf2dot4ghz_TAG_09', '#define JOYSTICK_X A0');
-    Blockly.Arduino.addDeclaration('rf2dot4ghz_TAG_09', '#define JOYSTICK_Y A1');
-    Blockly.Arduino.addDeclaration('rf2dot4ghz_TAG_06', 'int16_t joystick_Ack_Int[6];  // 6 element array holding Joystick reading and 4 buttons');
+    Blockly.Arduino.addDeclaration('rf2dot4ghz_TAG_10', '#define JOYSTICK_Y A1');
+    Blockly.Arduino.addDeclaration('rf2dot4ghz_TAG_11', 'int16_t joystick_Ack_Int[6];  // 6 element array holding Joystick reading and 4 buttons');
   }
   
 
