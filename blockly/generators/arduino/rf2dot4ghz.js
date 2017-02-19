@@ -200,11 +200,9 @@ Blockly.Arduino['rf2dot4ghz_JoystickAsClient_Loop_Msg_01_Write_n_Tx'] = function
 
   code.push('radio.stopListening();  // First, stop listening so we can talk.');
   code.push('if( radio.write( &joystick_Int, sizeof(joystick_Int) )){ // Send the message to the other radio and waits till ACK msg received or Timeout.  Default Timeout is 60-70ms.');
-  code.push('  if(!radio.available()){  // If non-blank ACK message received, Then... ');
+  code.push('  if(!radio.available()){  // If blank ACK message received, Then... ');
 
-  code.push('    Serial.print(F("< Got blank response. round-trip delay: "));');
-  code.push('    Serial.print(micros()-roundTrip_StartTx_InUsec_LOCAL);');
-  code.push('    Serial.println(F(" microseconds"));');     
+  code.push('    Serial.print(F("< Got blank response."));');
   code.push('  }else{');      
   code.push('    // Check for Ack with Payload for send from previous cycle-loop');
   code.push('    while( radio.isAckPayloadAvailable() ){ // If an Ack with Payload was received');
@@ -227,7 +225,7 @@ Blockly.Arduino['rf2dot4ghz_JoystickAsClient_Loop_Msg_01_Write_n_Tx'] = function
   code.push('');
   code.push('      Serial.println("");');
   code.push('      Serial.println(myLcd_OneRow_StringObject);');
-  code.push('      myLcd.setCursor(0,0);');
+  code.push('      myLcd.setCursor(0,1);');
   code.push('      myLcd.print(myLcd_OneRow_StringObject);');
   }  
   
@@ -235,8 +233,8 @@ Blockly.Arduino['rf2dot4ghz_JoystickAsClient_Loop_Msg_01_Write_n_Tx'] = function
   code.push('  }'); 
   code.push('}');
   
-  code.push('}else{'); 
-  code.push('   // If no ack response, sending failed'};       
+  code.push('else{'); 
+  code.push('   // If no ack response, sending failed');       
   code.push('   Serial.println(F("Sending failed."));');
   code.push('}');  
 
