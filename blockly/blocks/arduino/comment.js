@@ -21,7 +21,9 @@ goog.require('Blockly.Types');
 
 
 /** Common HSV hue for all blocks in this category. */
-Blockly.Blocks.comment.HUE = 160;
+// // Blockly.Blocks.comment.HUE = 45;
+// // Blockly.Blocks.comment.HUE = 20;
+Blockly.Blocks.comment.HUE = 15;
 
 Blockly.Blocks['comment_BLOCK'] = {
   /**
