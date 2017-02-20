@@ -59,7 +59,10 @@ Blockly.Blocks['lcd_setup_BLOCK'] = {
             [[Blockly.Msg.ARD_LCD_SETUP_ROWS_2, '2'],
             [Blockly.Msg.ARD_LCD_SETUP_ROWS_4, '4']]),
                 'ROWS_MAX_FIELD_ID');
-   
+
+    this.appendDummyInput()
+        .appendField(Blockly.Msg.ARD_LCD_SETUP_HELP_TIP);
+        
     // * jwc added to allow to fit within "Function: Run First, Loop Forever" Block
     //
     this.setPreviousStatement(true, null);
@@ -73,7 +76,7 @@ Blockly.Blocks['lcd_setup_BLOCK'] = {
    * @this Blockly.Block
    */
   getLcdSetupInstance: function() {
-    return this.getFieldValue('LCD_ID');
+    return this.getFieldValue('LCD_FIELD_ID');
   },
   /**
    * Updates the content of the the 'Boards' related fields.
@@ -93,7 +96,7 @@ Blockly.Blocks['lcd_print_BLOCK'] = {
     this.setColour(Blockly.Blocks.lcd.HUE);
     this.appendDummyInput()
         .appendField(Blockly.Msg.ARD_LCD_PRINT)
-        .appendField(new Blockly.FieldDropdown(Blockly.Arduino.Boards.selected.lcd), 'LCD_ID');
+        .appendField(new Blockly.FieldDropdown(Blockly.Arduino.Boards.selected.lcd), 'LCD_FIELD_ID');
     this.appendValueInput('PRINT_FOR_STRING_AND_CHAR_FIELD_ID')
         .appendField(Blockly.Msg.ARD_LCD_PRINT_PROMPT)
         .setCheck(Blockly.Types.TEXT.checkList);

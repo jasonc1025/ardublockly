@@ -560,6 +560,7 @@ Blockly.Msg.ARD_LCD_SETUP_COLUMNS_MAX =                 "   * Columns Max (Base 
 Blockly.Msg.ARD_LCD_SETUP_ROWS_2 = "2"; 
 Blockly.Msg.ARD_LCD_SETUP_ROWS_4 = "4"; 
 Blockly.Msg.ARD_LCD_SETUP_ROWS_MAX =                    "   * Rows Max (Base 1):"; 
+Blockly.Msg.ARD_LCD_SETUP_HELP_TIP =                    "   * Wiring Tip: SDA(Data) = A4, SCL(Clock) = A5"; 
 Blockly.Msg.ARD_LCD_SETUP_TIP = 'Setup for a LCD peripheral'; 
  
 Blockly.Msg.ARD_LCD_PRINT =                                     "Comms: LCD Print"; 
@@ -571,6 +572,9 @@ Blockly.Msg.ARD_LCD_PRINT_TIP_CONVERSION_TO_TEXT_OR_CHARACTER = "      * Can Use
 Blockly.Msg.ARD_LCD_PRINT_TIP = "Prints data to the console/lcd port as human-readable ASCII text."; 
 Blockly.Msg.ARD_LCD_PRINT_WARN = "A setup block for %1 must be added to the workspace to use this block!" 
 /// jwc for lcd.js << 
+
+Blockly.Msg.ARD_COMMENT =                                     "Comment:"; 
+Blockly.Msg.ARD_COMMENT_TIP = "Important Note as Comment"; 
 
 /// jwc for rf2dot4ghz.js >> 
 Blockly.Msg.ARD_RF2DOT4GHZ_SETUP_BLOCK_NAME =                      "Comms: RF: Bot-or-Joystick: Setup"; 

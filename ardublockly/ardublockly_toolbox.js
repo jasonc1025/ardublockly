@@ -111,6 +111,14 @@ Ardublockly.TOOLBOX_XML =
 '    <block type="text_isEmpty"></block>' +
 //'    <!--block type="text_trim"></block Need to update block -->' +
 //'    <!--block type="text_print"></block Part of the serial comms -->' +
+
+'    <block type="comment_BLOCK">' +
+'      <value name="COMMENT_FIELD_ID">' +
+'        <block type="text">' +
+'        </block>' +
+'      </value>' +
+'    </block>' +
+
 '  </category>' +
 '  <sep></sep>' +
 '  <category id="catVariables" name="Variables">' +

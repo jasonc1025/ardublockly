@@ -70,7 +70,7 @@ Blockly.Arduino['lcd_setup_BLOCK'] = function(block) {
  * @return {string} Completed code.
  */
 Blockly.Arduino['lcd_print_BLOCK'] = function(block) {
-  var lcdId = block.getFieldValue('LCD_ID');
+  var lcdId = block.getFieldValue('LCD_FIELD_ID');
   var printForStringAndChar_FieldId = Blockly.Arduino.valueToCode(
       block, 'PRINT_FOR_STRING_AND_CHAR_FIELD_ID', Blockly.Arduino.ORDER_ATOMIC) || '0';
   var columnNum_Base0_FieldId = Blockly.Arduino.valueToCode(block, 'COLUMN_NUM_BASE0_FIELD_ID',
@@ -81,7 +81,7 @@ Blockly.Arduino['lcd_print_BLOCK'] = function(block) {
       Blockly.Arduino.ORDER_ATOMIC) || '0';
 
       
-      
+  // Internally reserve pins exclusively for this device usage    
   var lcdPins = Blockly.Arduino.Boards.selected.lcdPins[lcdId];
   for (var i = 0; i < lcdPins.length; i++) {
     Blockly.Arduino.reservePin(block, lcdPins[i][1],
