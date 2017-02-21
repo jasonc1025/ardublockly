@@ -309,6 +309,9 @@ Ardublockly.TOOLBOX_XML =
 '      </value>' +
 '    </block>' +
 
+'    <block type="lcd_background_light_BLOCK">' +
+'    </block>' +
+
 '    <block type="rf2dot4ghz_BotOrJoystick_Setup_BLOCK">' +
 '      <value name="RF2DOT4GHZ_CHANNEL_AS_DEC_FIELD_ID">' +
 '        <block type="math_number">' +

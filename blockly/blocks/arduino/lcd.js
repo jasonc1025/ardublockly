@@ -120,3 +120,42 @@ Blockly.Blocks['lcd_print_BLOCK'] = {
   }
   
 };
+
+Blockly.Blocks['lcd_background_light_BLOCK'] = {
+  /**
+   * Block for setting the lcd connection.
+   * @this Blockly.Block
+   */
+  init: function() {
+    // Assign 'this' to a variable for use in the closures below.
+    var thisBlock = this;
+
+    this.setHelpUrl('https://www.arduino.cc/en/Reference/LiquidCrystal');
+    this.setInputsInline(false);
+    this.setColour(Blockly.Blocks.lcd.HUE);
+    
+    this.appendDummyInput()
+        .appendField(Blockly.Msg.ARD_LCD_BACKGROUND_LIGHT)
+        .appendField(new Blockly.FieldDropdown(Blockly.Arduino.Boards.selected.lcd), 'LCD_FIELD_ID');
+   
+    this.appendDummyInput()
+        .appendField(Blockly.Msg.ARD_LCD_BACKGROUND_LIGHT_PROMPT)
+        .appendField(new Blockly.FieldDropdown(
+            [[Blockly.Msg.ARD_LCD_BACKGROUND_LIGHT_PROMPT_ON, 'ON'],
+            [Blockly.Msg.ARD_LCD_BACKGROUND_LIGHT_PROMPT_OFF, 'OFF']]),
+            'ARD_LCD_BACKGROUND_LIGHT_PROMPT_FIELD_ID');
+
+            // * jwc added to allow to fit within "Function: Run First, Loop Forever" Block
+    //
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    
+    this.setTooltip(Blockly.Msg.ARD_LCD_BACKGROUND_LIGHT_SETUP_TIP);
+  },
+  /**
+   * Updates the content of the the 'Boards' related fields.
+   * @this Blockly.Block
+   */
+  updateFields: function() {
+  }
+};

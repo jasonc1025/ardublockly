@@ -52,13 +52,14 @@ Blockly.Arduino['lcd_setup_BLOCK'] = function(block) {
   Blockly.Arduino.addSetup('lcd_TAG_03', 'myLcd.clear();', true);
   Blockly.Arduino.addSetup('lcd_TAG_04', 'myLcd.setCursor(0,0);', true);
   Blockly.Arduino.addSetup('lcd_TAG_05', 'myLcd.print("TACHnology Bot");', true);
+  Blockly.Arduino.addSetup('lcd_TAG_06', 'myLcd.setCursor(0,1);', true);
+  Blockly.Arduino.addSetup('lcd_TAG_07', 'myLcd.print("Robotics");', true);
 
   // Add the code
   var code = [];
-  code.push('myLcd.setCursor(0,1);');
-  code.push('myLcd.print("Robotics");');
   // Join inbetween lines with '.join('\n')' and also end with '\n'
-  return code.join('\n') + '\n';
+  // // BAD: Appears to add 3 blank lines at end of Setup: return code.join('\n') + '\n';
+  return code.join('\n');
 
 };
 
@@ -79,8 +80,7 @@ Blockly.Arduino['lcd_print_BLOCK'] = function(block) {
       Blockly.Arduino.ORDER_ATOMIC) || '0';
   var erasePrepWNumOfBlanks_Base1_FieldId = Blockly.Arduino.valueToCode(block, 'ERASE_PREP_W_NUM_OF_BLANKS_BASE1_FIELD_ID',
       Blockly.Arduino.ORDER_ATOMIC) || '0';
-
-      
+    
   // Internally reserve pins exclusively for this device usage    
   var lcdPins = Blockly.Arduino.Boards.selected.lcdPins[lcdId];
   for (var i = 0; i < lcdPins.length; i++) {
@@ -96,4 +96,35 @@ Blockly.Arduino['lcd_print_BLOCK'] = function(block) {
              lcdId + '.print(myLcd_OneRow_StringObject);\n';
 
   return code;
+};
+
+
+/**
+ * Code generator of block for writing to the lcd com.
+ * Arduino code: loop { Lcd.backlight(X); }
+ * @param {!Blockly.Block} block Block to generate the code from.
+ * @return {string} Completed code.
+ */
+ Blockly.Arduino['lcd_background_light_BLOCK'] = function(block) {
+  var lcdId = block.getFieldValue('LCD_FIELD_ID');
+      
+  var lcdBackgroundLightOn_Flag = (block.getFieldValue('ARD_LCD_BACKGROUND_LIGHT_PROMPT_FIELD_ID') == 'ON');
+
+  // Add the code
+  var code = [];
+
+  if( lcdBackgroundLightOn_Flag ){
+  code.push('myLcd.backlight();');
+  }
+  else{
+  code.push('myLcd.noBacklight();');
+  }
+  code.push('');
+    
+  // Join inbetween lines with '.join('\n')' and also end with '\n'
+  // // NOT NEEDED: an extra blank line: return code.join('\n') + '\n';
+  return code.join('\n');
+  // // // * Output Requested Value
+  // // return [code, Blockly.Arduino.ORDER_UNARY_POSTFIX];
+
 };

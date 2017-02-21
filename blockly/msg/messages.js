@@ -1248,7 +1248,7 @@ Blockly.Msg.RENAME_INSTANCE_TITLE = 'Rename all "%1" instances to:';
 //
 
 /// jwc for infrared.js >>
-Blockly.Msg.ARD_INFRARED_READ_BLOCK_NAME =              "Comms: Infrared Rx";
+Blockly.Msg.ARD_INFRARED_READ_BLOCK_NAME =              "Comms: Infrared: Rx";
 Blockly.Msg.ARD_INFRARED_READ_FROM_PIN =                "   * Input: Read PIN#";
 Blockly.Msg.ARD_INFRARED_READ_AS_LARGE_NUMBER_AS_LONG = "   * Output: 8-HEX-Digits as Type: Large-Number-as-LONG";
 Blockly.Msg.ARD_INFRARED_READ_AS_TEXT_AS_STRING =       "   * Output: 8-HEX-Digits as Type: Text-as-STRING";
@@ -1286,7 +1286,7 @@ Blockly.Msg.ARD_INFRARED_READ_WITH_DEBUG_PROMPT_01_BASIC =    " Note: Use 'Comms
 // // Blockly.Msg.ARD_LCD_COMPONENT = 'lcd';
 
 /// jwc for lcd.js >> 
-Blockly.Msg.ARD_LCD_SETUP_BLOCK_NAME =                  "Comms: LCD Setup"; 
+Blockly.Msg.ARD_LCD_SETUP_BLOCK_NAME =                  "Comms: LCD: Setup"; 
 Blockly.Msg.ARD_LCD_SETUP_I2C_CONTROLLER_DEC_ADDRESS =  "   * I2C Controller Address (0-127 Dec [39])"; 
 Blockly.Msg.ARD_LCD_SETUP_COLUMNS_16 = "16"; 
 Blockly.Msg.ARD_LCD_SETUP_COLUMNS_20 = "20"; 
@@ -1297,7 +1297,7 @@ Blockly.Msg.ARD_LCD_SETUP_ROWS_MAX =                    "   * Rows Max (Base 1):
 Blockly.Msg.ARD_LCD_SETUP_HELP_TIP =                    "   * Wiring Tip: SDA(Data) = A4, SCL(Clock) = A5"; 
 Blockly.Msg.ARD_LCD_SETUP_TIP = 'Setup for a LCD peripheral'; 
  
-Blockly.Msg.ARD_LCD_PRINT =                                     "Comms: LCD Print"; 
+Blockly.Msg.ARD_LCD_PRINT =                                     "Comms: LCD: Print"; 
 Blockly.Msg.ARD_LCD_PRINT_PROMPT =                              "   * Print for Text(String) & Character(char):"; 
 Blockly.Msg.ARD_LCD_PRINT_COLUMN_NUM_BASE0 =                    "      * @ Column# (Base 0):"; 
 Blockly.Msg.ARD_LCD_PRINT_ROW_NUM_BASE0 =                       "      * @ Row# (Base 0):"; 
@@ -1306,6 +1306,12 @@ Blockly.Msg.ARD_LCD_PRINT_TIP_CONVERSION_TO_TEXT_OR_CHARACTER = "      * Can Use
 Blockly.Msg.ARD_LCD_PRINT_TIP = "Prints data to the console/lcd port as human-readable ASCII text."; 
 Blockly.Msg.ARD_LCD_PRINT_WARN = "A setup block for %1 must be added to the workspace to use this block!" 
 /// jwc for lcd.js << 
+
+Blockly.Msg.ARD_LCD_BACKGROUND_LIGHT =                          "Comms: LCD: Background Light"; 
+Blockly.Msg.ARD_LCD_BACKGROUND_LIGHT_PROMPT =                   "   * Switch:";
+Blockly.Msg.ARD_LCD_BACKGROUND_LIGHT_PROMPT_ON =  "ON";
+Blockly.Msg.ARD_LCD_BACKGROUND_LIGHT_PROMPT_OFF = "OFF";
+Blockly.Msg.ARD_LCD_BACKGROUND_LIGHT_SETUP_TIP =                "Requires 'Comms: LCD Setup' BLOCK within 'Setup'"; 
 
 Blockly.Msg.ARD_COMMENT =                                     "Comment:"; 
 Blockly.Msg.ARD_COMMENT_TIP = "Important Note as Comment"; 
@@ -1319,13 +1325,13 @@ Blockly.Msg.ARD_RF2DOT4GHZ_SETUP_NETWORK_NODE_JOYSTICK_AS_CLIENT = "node_Joystic
 Blockly.Msg.ARD_RF2DOT4GHZ_SETUP_HELP_TIP =                        "   * Debug requires 'Comms: LCD Setup' in 'Setup'"; 
 Blockly.Msg.ARD_RF2DOT4GHZ_SETUP_TIP =                             "Requires 'Comms: LCD Setup' BLOCK within 'Setup'"; 
 
-Blockly.Msg.ARD_RF2DOT4GHZ_WRITE_BLOCK_NAME =         "Comms: RF: Joystick-As-Client: Loop: Msg-01: Tx";
+Blockly.Msg.ARD_RF2DOT4GHZ_WRITE_BLOCK_NAME =         "Comms: RF: Joystick-As-Client: Loop: Msg-01A: Tx";
 Blockly.Msg.ARD_RF2DOT4GHZ_WRITE_DEBUG_ON = "DEBUG_ON";
 Blockly.Msg.ARD_RF2DOT4GHZ_WRITE_DEBUG_OFF = "DEBUG_OFF";
 Blockly.Msg.ARD_RF2DOT4GHZ_WRITE_WITH_DEBUG_PROMPT_01 =    "   * Optional Debug:";
 Blockly.Msg.ARD_RF2DOT4GHZ_WRITE_HELPURL = "https://arduino-info.wikispaces.com/nRF24L01-RF24-Examples";
 
-Blockly.Msg.ARD_RF2DOT4GHZ_READ_BLOCK_NAME =          "Comms: RF: Bot-AsServer: Loop: Msg-02: Rx";
+Blockly.Msg.ARD_RF2DOT4GHZ_READ_BLOCK_NAME =          "Comms: RF: Bot-AsServer: Loop: Msg-01B: Rx";
 Blockly.Msg.ARD_RF2DOT4GHZ_READ_AS_INT_0 =            "   * Output: Number-as-INT for: Joystick_X";
 Blockly.Msg.ARD_RF2DOT4GHZ_READ_AS_INT_1 =            "   * Output: Number-as-INT for: Joystick_Y";
 Blockly.Msg.ARD_RF2DOT4GHZ_READ_AS_INT_2 =            "   * Output: Number-as-INT for: Button_A";
@@ -1342,6 +1348,6 @@ Blockly.Msg.ARD_RF2DOT4GHZ_READ_HELP_02 =                 "      * button_[A-D]:
     Blockly.Msg.ARD_RF2DOT4GHZ_READ_TIP_AS_TEXT_AS_STRING =       "Read 'commsInfrared_Rx' for KeyCode as Type: Text-as-STRING";
 Blockly.Msg.ARD_RF2DOT4GHZ_READ_HELPURL = "https://arduino-info.wikispaces.com/nRF24L01-RF24-Examples";
 
-Blockly.Msg.ARD_RF2DOT4GHZ_READ_02_BLOCK_NAME =          "Comms: RF: Bot-AsServer: Loop: Msg-03: Read";
+Blockly.Msg.ARD_RF2DOT4GHZ_READ_02_BLOCK_NAME =          "Comms: RF: Bot-or-Joystick: Loop: Msg-02: Read";
 
 /// jwc for rf2dot4ghz.js << 

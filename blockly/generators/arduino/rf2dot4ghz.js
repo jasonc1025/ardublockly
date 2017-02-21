@@ -108,7 +108,7 @@ Blockly.Arduino['rf2dot4ghz_BotOrJoystick_Setup_BLOCK'] = function(block) {
   Blockly.Arduino.addSetup('rf2dot4ghz_TAG_09', 'radio.enableDynamicPayloads();', true);
   Blockly.Arduino.addSetup('rf2dot4ghz_TAG_10', 'radio.powerUp();', true);
   Blockly.Arduino.addSetup('rf2dot4ghz_TAG_11', 'radio.startListening();', true);
-  Blockly.Arduino.addSetup('rf2dot4ghz_TAG_12', 'radio.printDetails();', true);
+  // // Avoid since interferes with Arduino Setup/Loop runtime: Blockly.Arduino.addSetup('rf2dot4ghz_TAG_12', 'radio.printDetails();', true);
 
   // Setup for Non-RF2Dot4Ghz-Specific Details
   // 
@@ -137,7 +137,8 @@ Blockly.Arduino['rf2dot4ghz_BotOrJoystick_Setup_BLOCK'] = function(block) {
   // // code.push('// code here');
   
   // Join inbetween lines with '.join('\n')' and also end with '\n'
-  return code.join('\n') + '\n';
+  // // BAD: Appears to add 3 blank lines at end of Setup: return code.join('\n') + '\n';
+  return code.join('\n');
 
 };
 
