@@ -24,6 +24,14 @@ Ardublockly.TOOLBOX_XML =
 '    <block type="logic_boolean"></block>' +
 '    <block type="logic_null"></block>' +
 '    <block type="logic_ternary"></block>' +
+
+'    <block type="comment_BLOCK">' +
+'      <value name="COMMENT_FIELD_ID">' +
+'        <block type="text">' +
+'        </block>' +
+'      </value>' +
+'    </block>' +
+
 '  </category>' +
 '  <sep></sep>' +
 '  <category id="catLoops" name="Loops">' +
@@ -111,13 +119,6 @@ Ardublockly.TOOLBOX_XML =
 '    <block type="text_isEmpty"></block>' +
 //'    <!--block type="text_trim"></block Need to update block -->' +
 //'    <!--block type="text_print"></block Part of the serial comms -->' +
-
-'    <block type="comment_BLOCK">' +
-'      <value name="COMMENT_FIELD_ID">' +
-'        <block type="text">' +
-'        </block>' +
-'      </value>' +
-'    </block>' +
 
 '  </category>' +
 '  <sep></sep>' +
