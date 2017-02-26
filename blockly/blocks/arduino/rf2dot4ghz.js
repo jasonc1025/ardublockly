@@ -23,7 +23,8 @@ goog.require('Blockly.Types');
 
 
 /** Common HSV hue for all blocks in this category. */
-Blockly.Blocks.rf2dot4ghz.HUE = 160;
+// // Blockly.Blocks.rf2dot4ghz.HUE = 160;
+Blockly.Blocks.rf2dot4ghz.HUE = 270;  // unique dark color for this special EandE Block
 
 Blockly.Blocks['rf2dot4ghz_BotOrJoystick_Setup_BLOCK'] = {
   /**

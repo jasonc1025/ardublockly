@@ -21,7 +21,8 @@ goog.require('Blockly.Types');
 
 
 /** Common HSV hue for all blocks in this category. */
-Blockly.Blocks.lcd.HUE = 160;
+// // Blockly.Blocks.lcd.HUE = 160;
+Blockly.Blocks.lcd.HUE = 180;  // unique light color for this special EandE Block
 
 Blockly.Blocks['lcd_setup_BLOCK'] = {
   /**
