@@ -483,72 +483,85 @@
 	"NEW_INSTANCE": "New instance...",
 	"RENAME_INSTANCE": "Rename instance...",
 	"NEW_INSTANCE_TITLE": "New instance name:",
-	"RENAME_INSTANCE_TITLE": "Rename all '%1' instances to:"
+	"RENAME_INSTANCE_TITLE": "Rename all '%1' instances to:",
 
-//
-//
-// EandE Customization: New Blocks
-//
-//
+"ARD_INFRARED_READ_BLOCK_NAME": "Comms: Infrared: Rx",
+"ARD_INFRARED_READ_FROM_PIN": "   * Input: Read PIN#",
+"ARD_INFRARED_READ_AS_LARGE_NUMBER_AS_LONG": "   * Output: 8-HEX-Digits as Type: Large-Number-as-LONG",
+"ARD_INFRARED_READ_AS_TEXT_AS_STRING": "   * Output: 8-HEX-Digits as Type: Text-as-STRING",
+"ARD_INFRARED_READ_DEBUG_ON": "DEBUG_ON",
+"ARD_INFRARED_READ_DEBUG_OFF": "DEBUG_OFF",
+"ARD_INFRARED_READ_WITH_DEBUG_PROMPT_01": "   * Optional Debug:",
 
-/// jwc for infrared.js >>
-	"ARD_INFRARED_READ_BLOCK_NAME":              "Comms: Infrared Rx";
-	"ARD_INFRARED_READ_FROM_PIN":                "   * Input: Read PIN#";
-	"ARD_INFRARED_READ_AS_LARGE_NUMBER_AS_LONG": "   * Output: 8-HEX-Digits as Type: Large-Number-as-LONG";
-	"ARD_INFRARED_READ_AS_TEXT_AS_STRING":       "   * Output: 8-HEX-Digits as Type: Text-as-STRING";
-	"ARD_INFRARED_READ_DEBUG_ON": "DEBUG_ON";
-	"ARD_INFRARED_READ_DEBUG_OFF": "DEBUG_OFF";
-	"ARD_INFRARED_READ_WITH_DEBUG_PROMPT_01":    "   * Optional Debug:";
-/// Obsolete: 	"ARD_INFRARED_READ_WITH_DEBUG_PROMPT_01A=                         "(May Re-Position This Block to Commit Checkbox)";
-	"ARD_INFRARED_READ_WITH_DEBUG_PROMPT_02":    "      * Use 'Comms: Setup Serial' Block @9600bps+";
-	"ARD_INFRARED_READ_WITH_DEBUG_PROMPT_03":    "      * Set 'prompt_ForSerialMonitor' (i.e. \">\"):";
-	"ARD_INFRARED_READ_WITH_DEBUG_PROMPT_04":    "      * Later Set Serial-Monitor @[SAME]bps";
-	"ARD_INFRARED_READ_TIP_AS_LARGE_NUMBER_AS_LONG": "Read 'commsInfrared_Rx' for KeyCode as Type: Large-Number-as-LONG";
-	"ARD_INFRARED_READ_TIP_AS_TEXT_AS_STRING":       "Read 'commsInfrared_Rx' for KeyCode as Type: Text-as-STRING";
-	"ARD_INFRARED_READ_HELPURL": "https://www.arduino.cc/en/Tutorial/RobotRemoteControl";
+"ARD_INFRARED_READ_WITH_DEBUG_PROMPT_02": "      * Use 'Comms: Setup Serial' Block @9600bps+",
+"ARD_INFRARED_READ_WITH_DEBUG_PROMPT_03": "      * Set 'prompt_ForSerialMonitor' (i.e. \">\"):",
+"ARD_INFRARED_READ_WITH_DEBUG_PROMPT_04": "      * Later Set Serial-Monitor @[SAME]bps",
+"ARD_INFRARED_READ_TIP_AS_LARGE_NUMBER_AS_LONG": "Read 'commsInfrared_Rx' for KeyCode as Type: Large-Number-as-LONG",
+"ARD_INFRARED_READ_TIP_AS_TEXT_AS_STRING": "Read 'commsInfrared_Rx' for KeyCode as Type: Text-as-STRING",
+"ARD_INFRARED_READ_HELPURL": "https://www.arduino.cc/en/Tutorial/RobotRemoteControl",
 
-	"ARD_INFRARED_READ_FROM_PIN_BASIC":                "Read Infrared Rx from PIN#";
-	"ARD_INFRARED_READ_AS_LARGE_NUMBER_AS_LONG_BASIC": " with HEX-output as: Large-Number-as-LONG";
-	"ARD_INFRARED_READ_AS_TEXT_AS_STRING_BASIC":       " with HEX-output as: Text-as-STRING";
-	"ARD_INFRARED_READ_WITH_DEBUG_PROMPT_01_BASIC":    " Note: Use 'Comms: Setup Serial' Block @9600bps+";
+"ARD_INFRARED_READ_FROM_PIN_BASIC": "Read Infrared Rx from PIN#",
+"ARD_INFRARED_READ_AS_LARGE_NUMBER_AS_LONG_BASIC": " with HEX-output as: Large-Number-as-LONG",
+"ARD_INFRARED_READ_AS_TEXT_AS_STRING_BASIC": " with HEX-output as: Text-as-STRING",
+"ARD_INFRARED_READ_WITH_DEBUG_PROMPT_01_BASIC": " Note: Use 'Comms: Setup Serial' Block @9600bps+",
 
-/// jwc for infrared.js <<
+"ARD_LCD_SETUP_BLOCK_NAME": "Comms: LCD: Setup", 
+"ARD_LCD_SETUP_I2C_CONTROLLER_DEC_ADDRESS": "   * I2C Controller Address (0-127 Dec [39])", 
+"ARD_LCD_SETUP_COLUMNS_16": "16", 
+"ARD_LCD_SETUP_COLUMNS_20": "20", 
+"ARD_LCD_SETUP_COLUMNS_MAX": "   * Columns Max (Base 1):", 
+"ARD_LCD_SETUP_ROWS_2": "2", 
+"ARD_LCD_SETUP_ROWS_4": "4", 
+"ARD_LCD_SETUP_ROWS_MAX": "   * Rows Max (Base 1):", 
+"ARD_LCD_SETUP_HELP_TIP": "   * Wiring Tip: SDA(Data) = A4, SCL(Clock) = A5", 
+"ARD_LCD_SETUP_TIP": "Setup for a LCD peripheral",
+"ARD_LCD_PRINT": "Comms: LCD: Print", 
+"ARD_LCD_PRINT_PROMPT": "   * Print for Text(String) & Character(char):", 
+"ARD_LCD_PRINT_COLUMN_NUM_BASE0": "      * @ Column# (Base 0):", 
+"ARD_LCD_PRINT_ROW_NUM_BASE0": "      * @ Row# (Base 0):", 
+"ARD_LCD_PRINT_ERASE_PREP_W_NUM_OF_BLANKS_BASE1": "      * Prep Erase w/ # Blanks (Base 1):", 
+"ARD_LCD_PRINT_TIP_CONVERSION_TO_TEXT_OR_CHARACTER": "      * Can Use 'Vars: <Sets Value> as Text/Char'",
+"ARD_LCD_PRINT_TIP": "Prints data to the console/lcd port as human-readable ASCII text.", 
+"ARD_LCD_PRINT_WARN": "A setup block for %1 must be added to the workspace to use this block!",
+"ARD_LCD_BACKGROUND_LIGHT": "Comms: LCD: Background Light", 
+"ARD_LCD_BACKGROUND_LIGHT_PROMPT": "   * Switch:",
+"ARD_LCD_BACKGROUND_LIGHT_PROMPT_ON": "ON",
+"ARD_LCD_BACKGROUND_LIGHT_PROMPT_OFF": "OFF",
+"ARD_LCD_BACKGROUND_LIGHT_SETUP_TIP": "Requires 'Comms: LCD Setup' BLOCK within 'Setup'", 
 
-// LCD
-// // Not Needed Anymore
-// // 	"ARD_LCD_SETUP": 'Setup LCD';
-// // 	"ARD_LCD_MOTOR": 'lcd:';
-// // 	"ARD_LCD_DEFAULT_NAME": 'MyLcd';
-// // 	"ARD_LCD_PIN1": 'pin1#';
-// // 	"ARD_LCD_PIN2": 'pin2#';
-// // 	"ARD_LCD_REVOLVS": 'how many steps per revolution';
-// // 	"ARD_LCD_SPEED": 'set speed (rpm) to';
-// // 	"ARD_LCD_SETUP_TIP": 'Configures a lcd motor pinout and other settings.';
-// // 	"ARD_LCD_STEP": 'move lcd';
-// // 	"ARD_LCD_STEPS": 'steps';
-// // 	"ARD_LCD_STEP_TIP": 'Turns the lcd motor a specific number of steps.';
-// // 	"ARD_LCD_COMPONENT": 'lcd';
+"ARD_COMMENT": "Comment:", 
+"ARD_COMMENT_TIP": "Important Note as Comment", 
 
-/// jwc for lcd.js >> 
-	"ARD_LCD_SETUP_BLOCK_NAME":                  "Comms: LCD Setup"; 
-	"ARD_LCD_SETUP_I2C_CONTROLLER_DEC_ADDRESS":  "   * I2C Controller Address (0-127 Dec [39])"; 
-	"ARD_LCD_SETUP_COLUMNS_16": "16"; 
-	"ARD_LCD_SETUP_COLUMNS_20": "20"; 
-	"ARD_LCD_SETUP_COLUMNS_MAX":                 "   * Columns Max:"; 
-	"ARD_LCD_SETUP_ROWS_2": "2"; 
-	"ARD_LCD_SETUP_ROWS_4": "4"; 
-	"ARD_LCD_SETUP_ROWS_MAX":                    "   * Rows Max:"; 
-	"ARD_LCD_SETUP_TIP
-    ": 'Setup for a LCD peripheral'; 
- 
-	"ARD_LCD_PRINT": 'print'; 
-    "ARD_LCD_PRINT_COLUMN_NUM_BASE0": = 'COLUMN # (BASE-0):'; 
-    "ARD_LCD_PRINT_ROW_NUM_BASE0": = 'ROW # (BASE-0):'; 	
-    "ARD_LCD_PRINT_NEWLINE": 'add new line'; 
-	"ARD_LCD_PRINT_TIP": 'Prints data to the console/lcd port as human-readable ASCII text.'; 
-	"ARD_LCD_PRINT_WARN": 'A setup block for %1 must be added to the workspace to use this block!' 
-/// jwc for lcd.js << 
-    
-/// temp change to trigger git    
+"ARD_RF2DOT4GHZ_SETUP_BLOCK_NAME": "Comms: RF: Bot-or-Joystick: Setup", 
+"ARD_RF2DOT4GHZ_SETUP_CHANNEL_AS_DEC": "   * Channel # (0-124 Dec [101])", 
+"ARD_RF2DOT4GHZ_SETUP_NETWORK_NODE_TYPE": "   * Network Node Type: ", 
+"ARD_RF2DOT4GHZ_SETUP_NETWORK_NODE_BOT_AS_SERVER": "node_Bot_AsServer", 
+"ARD_RF2DOT4GHZ_SETUP_NETWORK_NODE_JOYSTICK_AS_CLIENT": "node_Joystick_AsClient", 
+"ARD_RF2DOT4GHZ_SETUP_HELP_TIP": "   * Debug requires 'Comms: LCD Setup' in 'Setup'", 
+"ARD_RF2DOT4GHZ_SETUP_TIP": "Requires 'Comms: LCD Setup' BLOCK within 'Setup'", 
+
+"ARD_RF2DOT4GHZ_WRITE_BLOCK_NAME": "Comms: RF: Joystick-As-Client: Loop: Msg-01A: Tx",
+"ARD_RF2DOT4GHZ_WRITE_DEBUG_ON": "DEBUG_ON",
+"ARD_RF2DOT4GHZ_WRITE_DEBUG_OFF": "DEBUG_OFF",
+"ARD_RF2DOT4GHZ_WRITE_WITH_DEBUG_PROMPT_01": "   * Optional Debug:",
+"ARD_RF2DOT4GHZ_WRITE_HELPURL": "https://arduino-info.wikispaces.com/nRF24L01-RF24-Examples",
+
+"ARD_RF2DOT4GHZ_READ_BLOCK_NAME": "Comms: RF: Bot-AsServer: Loop: Msg-01B: Rx",
+"ARD_RF2DOT4GHZ_READ_AS_INT_0": "   * Output: Number-as-INT for: Joystick_X",
+"ARD_RF2DOT4GHZ_READ_AS_INT_1": "   * Output: Number-as-INT for: Joystick_Y",
+"ARD_RF2DOT4GHZ_READ_AS_INT_2": "   * Output: Number-as-INT for: Button_A",
+"ARD_RF2DOT4GHZ_READ_AS_INT_3": "   * Output: Number-as-INT for: Button_B",
+"ARD_RF2DOT4GHZ_READ_AS_INT_4": "   * Output: Number-as-INT for: Button_C",
+"ARD_RF2DOT4GHZ_READ_AS_INT_5": "   * Output: Number-as-INT for: Button_D",
+"ARD_RF2DOT4GHZ_READ_DEBUG_ON": "DEBUG_ON",
+"ARD_RF2DOT4GHZ_READ_DEBUG_OFF": "DEBUG_OFF",
+"ARD_RF2DOT4GHZ_READ_WITH_DEBUG_PROMPT_01": "   * Optional Debug:",
+"ARD_RF2DOT4GHZ_READ_HELP_01": "      * joystick_[X-Y]: maps 0-1023 to 0-180 deg",
+"ARD_RF2DOT4GHZ_READ_HELP_02": "      * button_[A-D]:   0=Pressed, 1=Not-Pressed",
+    "ARD_RF2DOT4GHZ_READ_TIP_AS_LARGE_NUMBER_AS_LONG": "Read 'commsInfrared_Rx' for KeyCode as Type: Large-Number-as-LONG",
+    "ARD_RF2DOT4GHZ_READ_TIP_AS_TEXT_AS_STRING": "Read 'commsInfrared_Rx' for KeyCode as Type: Text-as-STRING",
+"ARD_RF2DOT4GHZ_READ_HELPURL": "https://arduino-info.wikispaces.com/nRF24L01-RF24-Examples",
+
+"ARD_RF2DOT4GHZ_READ_02_BLOCK_NAME": "Comms: RF: Bot-or-Joystick: Loop: Msg-02: Read"
 
 }
