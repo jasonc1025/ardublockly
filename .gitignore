@@ -108,3 +108,17 @@ package/ardublocklydocs/site
 
 # The electron package needs the build folder (to be changed in the near future)
 !/package/electron/tasks/build/
+
+blockly/arduino_compressed\.js
+
+blockly/blockly_compressed\.js
+
+blockly/blocks_compressed\.js
+
+*.js
+
+blockly/msg/json/99Z-ARCHIVE-JWC/
+
+blockly/msg/json/qqq\.json
+
+blockly/msg/js/
