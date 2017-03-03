@@ -38,21 +38,22 @@ Blockly.Arduino['rf2dot4ghz_BotOrJoystick_Setup_BLOCK'] = function(block) {
   var networkNodeType_Is_BotAsServer = networkNodeType == 'node_Bot_AsServer';
   var networkNodeType_Is_JoystickAsClient = networkNodeType == 'node_Joystick_AsClient';
     
-  // * Include is universal for any application of LCD. 
+  // * Include is universal for any application fo this device. 
   // *
+  Blockly.Arduino.addInclude('rf2dot4ghz_TAG_00', '//');
   if( networkNodeType_Is_BotAsServer ){
     // For 'node_Bot_AsServer'
-    Blockly.Arduino.addInclude('rf2dot4ghz_TAG_00', '// Network Node Type: node_Bot_AsServer');
+    Blockly.Arduino.addInclude('rf2dot4ghz_TAG_01', '// Network Node Type: node_Bot_AsServer');
   }
   else if( networkNodeType_Is_JoystickAsClient ){
     // For 'node_Joystick_AsClient'
-    Blockly.Arduino.addInclude('rf2dot4ghz_TAG_00', '// Network Node Type: node_Joystick_AsClient');
+    Blockly.Arduino.addInclude('rf2dot4ghz_TAG_01', '// Network Node Type: node_Joystick_AsClient');
   }
-  Blockly.Arduino.addInclude('rf2dot4ghz_TAG_01', '//');
-  Blockly.Arduino.addInclude('rf2dot4ghz_TAG_02', '// For:: ' + Blockly.Msg.ARD_RF2DOT4GHZ_SETUP_BLOCK_NAME);
-  Blockly.Arduino.addInclude('rf2dot4ghz_TAG_03', '#include <SPI.h>');
-  Blockly.Arduino.addInclude('rf2dot4ghz_TAG_04', '#include <nRF24L01.h>');
-  Blockly.Arduino.addInclude('rf2dot4ghz_TAG_05', '#include <RF24.h>');
+  Blockly.Arduino.addInclude('rf2dot4ghz_TAG_02', '//');
+  Blockly.Arduino.addInclude('rf2dot4ghz_TAG_03', '// For:: ' + Blockly.Msg.ARD_RF2DOT4GHZ_SETUP_BLOCK_NAME);
+  Blockly.Arduino.addInclude('rf2dot4ghz_TAG_04', '#include <SPI.h>');
+  Blockly.Arduino.addInclude('rf2dot4ghz_TAG_05', '#include <nRF24L01.h>');
+  Blockly.Arduino.addInclude('rf2dot4ghz_TAG_06', '#include <RF24.h>');
 
   Blockly.Arduino.addDeclaration('rf2dot4ghz_TAG_00', '// For:: ' + Blockly.Msg.ARD_RF2DOT4GHZ_SETUP_BLOCK_NAME);
 
