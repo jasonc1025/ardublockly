@@ -176,6 +176,7 @@ Blockly.Arduino['rf2dot4ghz_JoystickAsClient_Loop_Msg_01_Write_n_Tx'] = function
 
   // Add the code
   var code = [];
+  code.push('// For:: ' + Blockly.Msg.ARD_RF2DOT4GHZ_WRITE_BLOCK_NAME);
   code.push('joystick_Int[0] = analogRead(JOYSTICK_X);');
   code.push('joystick_Int[1] = analogRead(JOYSTICK_Y);');
   code.push('joystick_Int[2] = digitalRead(button_A_PinNum);');
@@ -289,6 +290,7 @@ Blockly.Arduino['rf2dot4ghz_BotAsServer_Loop_Msg_02_Rx'] = function(block) {
   // Add the code
   var code = [];
   // // code.push('uint8_t pipeNum_Local;');
+  code.push('// For:: ' + Blockly.Msg.ARD_RF2DOT4GHZ_READ_BLOCK_NAME);
   code.push('while( radio.available( &pipePortNum_Int )){              // Read all available payloads');
   code.push('');
 
@@ -376,6 +378,8 @@ Blockly.Arduino['rf2dot4ghz_BotAsServer_Loop_Msg_03_Read'] = function(block) {
   // // Blockly.Arduino.addSetup('io_' + pin, pinSetupCode, false);
 
   var code = [];
+
+  code.push('// For:: ' + Blockly.Msg.ARD_RF2DOT4GHZ_READ_02_BLOCK_NAME);
 
   // // var code = 'analogRead(' + pin + ')';
   // // return [code, Blockly.Arduino.ORDER_ATOMIC];
