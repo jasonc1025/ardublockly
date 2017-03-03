@@ -122,13 +122,12 @@ Blockly.Blocks['commsInfrared_Rx_BLOCK'] = {
             
     this.appendDummyInput()
         .appendField(Blockly.Msg.ARD_INFRARED_READ_WITH_DEBUG_PROMPT_02);  
-        //// jwc Blockly.Msg not work: fix: .appendField("      * Use 'Comms: Setup Serial' Block @9600bps+");  
     this.appendValueInput('PROMPT_TEXT_FIELD_ID')
         .appendField(Blockly.Msg.ARD_INFRARED_READ_WITH_DEBUG_PROMPT_03);
-        //// jwc Blockly.Msg not work: fix: .appendField("      * Set 'prompt_ForSerialMonitor' (i.e. \">\"):");
+    // to force a new line between each prompt, use a new 'this.appendDummyInput()'
     this.appendDummyInput()
         .appendField(Blockly.Msg.ARD_INFRARED_READ_WITH_DEBUG_PROMPT_04); 
-        //// jwc Blockly.Msg not work: fix: .appendField("      * Later Set Serial-Monitor @[SAME]bps");  
+    // to force a new line between each prompt, use a new 'this.appendDummyInput()'
     this.appendDummyInput()
         .appendField(Blockly.Msg.ARD_INFRARED_READ_WITH_DEBUG_PROMPT_05);  
 

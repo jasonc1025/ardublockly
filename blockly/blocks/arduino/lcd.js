@@ -62,8 +62,11 @@ Blockly.Blocks['lcd_setup_BLOCK'] = {
             [Blockly.Msg.ARD_LCD_SETUP_ROWS_4, '4']]),
                 'ROWS_MAX_FIELD_ID');
 
+    // to force a new line between each prompt, use a new 'this.appendDummyInput()'
     this.appendDummyInput()
-        .appendField(Blockly.Msg.ARD_LCD_SETUP_HELP_TIP)
+        .appendField(Blockly.Msg.ARD_LCD_SETUP_HELP_TIP);
+    // to force a new line between each prompt, use a new 'this.appendDummyInput()'
+    this.appendDummyInput()
         .appendField(Blockly.Msg.ARD_LCD_SETUP_HELP_TIP_02);
         
     // * jwc added to allow to fit within "Function: Run First, Loop Forever" Block
