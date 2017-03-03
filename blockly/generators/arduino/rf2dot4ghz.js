@@ -381,7 +381,6 @@ Blockly.Arduino['rf2dot4ghz_BotAsServer_Loop_Msg_03_Read'] = function(block) {
 
   // // BAD: code.push('// For:: ' + Blockly.Msg.ARD_RF2DOT4GHZ_READ_02_BLOCK_NAME + '\n');
   code.push('// For:: ' + Blockly.Msg.ARD_RF2DOT4GHZ_READ_02_BLOCK_NAME);
-  code.push('');
 
   // // var code = 'analogRead(' + pin + ')';
   // // return [code, Blockly.Arduino.ORDER_ATOMIC];
@@ -418,7 +417,7 @@ Blockly.Arduino['rf2dot4ghz_BotAsServer_Loop_Msg_03_Read'] = function(block) {
   // // GOOD: return [code, Blockly.Arduino.ORDER_ATOMIC];
   // Output Requested Value
   // Use 'ORDER_UNARY_POSTFIX' since 'spi_transfer_return' does
-  // // orig: return [code, Blockly.Arduino.ORDER_UNARY_POSTFIX];
+  // // WAS GOOD BUT NOW BAD: return [code, Blockly.Arduino.ORDER_UNARY_POSTFIX];
   return code.join('\n');  
 };
 
