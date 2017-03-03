@@ -57,7 +57,7 @@ Blockly.Arduino['commsInfrared_Rx_BLOCK'] = function(block) {
   /// jwc good: func.push('  /// * 2016-0706-0300 This is a test: jwc');
   /// jwc good: func.push('// * 2016-0710-2000 For "commsInfrared_Rx_BLOCK"');
   /// jwc good: func.push('// * For \'commsInfrared_Rx_BLOCK\'');
-  func.push('// * For:: ' + Blockly.Msg.ARD_INFRARED_READ_BLOCK_NAME );
+  func.push('// For:: ' + Blockly.Msg.ARD_INFRARED_READ_BLOCK_NAME );
 
   var toNumber = returnType == Blockly.Types.NUMBER.output;
   var toText = returnType == Blockly.Types.TEXT.output;
@@ -154,7 +154,7 @@ Blockly.Arduino['commsInfrared_Rx_BLOCK'] = function(block) {
   /// jwc good: Blockly.Arduino.addInclude('infraredComms', '#include <IRremote.h>');
   /// jwc good: Blockly.Arduino.addInclude('infrared_Comms', '#include <IRremote.h>');
   /// jwc good: Blockly.Arduino.addInclude('commsInfrared_TAG_00', '// * For \'commsInfrared_Rx_BLOCK\': 2016-0711-1130');
-  Blockly.Arduino.addInclude('commsInfrared_TAG_00', '// * For:: ' + Blockly.Msg.ARD_INFRARED_READ_BLOCK_NAME + ': 2016-0723-1330');
+  Blockly.Arduino.addInclude('commsInfrared_TAG_00', '// For:: ' + Blockly.Msg.ARD_INFRARED_READ_BLOCK_NAME);
   Blockly.Arduino.addInclude('commsInfrared_TAG_01', '#include <IRremote.h>');
 
   /// GOOD jwc: Blockly.Arduino.addInclude('serial', '#include <IRremote2.h>');
@@ -183,7 +183,7 @@ Blockly.Arduino['commsInfrared_Rx_BLOCK'] = function(block) {
 
   /// jwc good: Blockly.Arduino.addDeclaration('commsInfrared_Rx'         + '_TAG', 'const int       irRx_Pin_INT_CONST = 2;');
   /// jwc good: Blockly.Arduino.addDeclaration('commsInfrared_Rx' + '_00' + '_TAG', '// * For \'commsInfrared_Rx_BLOCK\'');
-  Blockly.Arduino.addDeclaration('commsInfrared_Rx' + '_00' + '_TAG', '// * For:: ' + Blockly.Msg.ARD_INFRARED_READ_BLOCK_NAME);
+  Blockly.Arduino.addDeclaration('commsInfrared_Rx' + '_00' + '_TAG', '// For:: ' + Blockly.Msg.ARD_INFRARED_READ_BLOCK_NAME);
   Blockly.Arduino.addDeclaration('commsInfrared_Rx' + '_01' + '_TAG', 'const int       irRx_Pin_INT_CONST = ' + pinKey + ';');
   Blockly.Arduino.addDeclaration('commsInfrared_Rx' + '_02' + '_TAG', 'IRrecv          irRx_Main_OBJECT( irRx_Pin_INT_CONST );');
 
@@ -197,7 +197,7 @@ Blockly.Arduino['commsInfrared_Rx_BLOCK'] = function(block) {
   /// jwc good: Blockly.Arduino.addSetup('infraredComms_Rx', 'irRx_Main_OBJECT.enableIRIn();', false);
   /// jwc good: Blockly.Arduino.addSetup('infrared_Comms_Rx', 'irRx_Main_OBJECT.enableIRIn();', false);
   /// jwc good: Blockly.Arduino.addSetup('commsInfrared_Rx_TAG_00', '// * For \'commsInfrared_Rx_BLOCK\'', false);
-  Blockly.Arduino.addSetup('commsInfrared_Rx_TAG_00', '// * For:: ' + Blockly.Msg.ARD_INFRARED_READ_BLOCK_NAME, false);
+  Blockly.Arduino.addSetup('commsInfrared_Rx_TAG_00', '// For:: ' + Blockly.Msg.ARD_INFRARED_READ_BLOCK_NAME, false);
   Blockly.Arduino.addSetup('commsInfrared_Rx_TAG_01', 'irRx_Main_OBJECT.enableIRIn();', false);
 
   /// jwc ?: var prompt_ForSerialMonitor_STRING = Blockly.Arduino.valueToCode(block, 'PROMPT_TEXT_FIELD_ID',
@@ -206,7 +206,8 @@ Blockly.Arduino['commsInfrared_Rx_BLOCK'] = function(block) {
   /// jwc good:   var code = funcName + '(' + prompt_ForSerialMonitor_STRING + ')';
   /// jwc ok but not great since an input-block and not a complete statement: var code = '// * 2016-0711-1100 For \'commsInfrared_Rx_BLOCK\' \n' + 
   /// jwc ok but not great since an input-block and not a complete statement:    funcName + '(' + prompt_ForSerialMonitor_STRING + ')';
-  var code = funcName + '(' + prompt_ForSerialMonitor_STRING + ')';
+  var code = '// For:: ' + Blockly.Msg.ARD_INFRARED_READ_BLOCK_NAME + '\n' +
+             funcName + '(' + prompt_ForSerialMonitor_STRING + ')';
 
   // * Output Requested Value
   return [code, Blockly.Arduino.ORDER_UNARY_POSTFIX];
@@ -231,7 +232,7 @@ Blockly.Arduino['commsInfrared_Rx_BLOCK_BASIC'] = function(block) {
   /// jwc good: func.push('  /// * 2016-0706-0300 This is a test: jwc');
   /// jwc good: func.push('// * 2016-0710-2000 For "commsInfrared_Rx_BLOCK"');
   /// jwc good: func.push('// * For \'commsInfrared_Rx_BLOCK\'');
-  func.push('// * For:: ' + Blockly.Msg.ARD_INFRARED_READ_BLOCK_NAME );
+  func.push('// For:: ' + Blockly.Msg.ARD_INFRARED_READ_BLOCK_NAME );
 
   var toNumber = returnType == Blockly.Types.NUMBER.output;
   var toText = returnType == Blockly.Types.TEXT.output;
@@ -328,7 +329,7 @@ Blockly.Arduino['commsInfrared_Rx_BLOCK_BASIC'] = function(block) {
   /// jwc good: Blockly.Arduino.addInclude('infraredComms', '#include <IRremote.h>');
   /// jwc good: Blockly.Arduino.addInclude('infrared_Comms', '#include <IRremote.h>');
   /// jwc good: Blockly.Arduino.addInclude('commsInfrared_TAG_00', '// * For \'commsInfrared_Rx_BLOCK\': 2016-0711-1130');
-  Blockly.Arduino.addInclude('commsInfrared_TAG_00', '// * For:: ' + Blockly.Msg.ARD_INFRARED_READ_BLOCK_NAME + ': 2016-0723-1330');
+  Blockly.Arduino.addInclude('commsInfrared_TAG_00', '// For:: ' + Blockly.Msg.ARD_INFRARED_READ_BLOCK_NAME);
   Blockly.Arduino.addInclude('commsInfrared_TAG_01', '#include <IRremote.h>');
 
   /// GOOD jwc: Blockly.Arduino.addInclude('serial', '#include <IRremote2.h>');
@@ -357,7 +358,7 @@ Blockly.Arduino['commsInfrared_Rx_BLOCK_BASIC'] = function(block) {
 
   /// jwc good: Blockly.Arduino.addDeclaration('commsInfrared_Rx'         + '_TAG', 'const int       irRx_Pin_INT_CONST = 2;');
   /// jwc good: Blockly.Arduino.addDeclaration('commsInfrared_Rx' + '_00' + '_TAG', '// * For \'commsInfrared_Rx_BLOCK\'');
-  Blockly.Arduino.addDeclaration('commsInfrared_Rx' + '_00' + '_TAG', '// * For:: ' + Blockly.Msg.ARD_INFRARED_READ_BLOCK_NAME);
+  Blockly.Arduino.addDeclaration('commsInfrared_Rx' + '_00' + '_TAG', '// For:: ' + Blockly.Msg.ARD_INFRARED_READ_BLOCK_NAME);
   Blockly.Arduino.addDeclaration('commsInfrared_Rx' + '_01' + '_TAG', 'const int       irRx_Pin_INT_CONST = ' + pinKey + ';');
   Blockly.Arduino.addDeclaration('commsInfrared_Rx' + '_02' + '_TAG', 'IRrecv          irRx_Main_OBJECT( irRx_Pin_INT_CONST );');
 
@@ -371,7 +372,7 @@ Blockly.Arduino['commsInfrared_Rx_BLOCK_BASIC'] = function(block) {
   /// jwc good: Blockly.Arduino.addSetup('infraredComms_Rx', 'irRx_Main_OBJECT.enableIRIn();', false);
   /// jwc good: Blockly.Arduino.addSetup('infrared_Comms_Rx', 'irRx_Main_OBJECT.enableIRIn();', false);
   /// jwc good: Blockly.Arduino.addSetup('commsInfrared_Rx_TAG_00', '// * For \'commsInfrared_Rx_BLOCK\'', false);
-  Blockly.Arduino.addSetup('commsInfrared_Rx_TAG_00', '// * For:: ' + Blockly.Msg.ARD_INFRARED_READ_BLOCK_NAME, false);
+  Blockly.Arduino.addSetup('commsInfrared_Rx_TAG_00', '// For:: ' + Blockly.Msg.ARD_INFRARED_READ_BLOCK_NAME, false);
   Blockly.Arduino.addSetup('commsInfrared_Rx_TAG_01', 'irRx_Main_OBJECT.enableIRIn();', false);
 
   /// jwc ?: var prompt_ForSerialMonitor_STRING = Blockly.Arduino.valueToCode(block, 'PROMPT_TEXT_FIELD_ID',
@@ -382,7 +383,9 @@ Blockly.Arduino['commsInfrared_Rx_BLOCK_BASIC'] = function(block) {
   /// jwc ok but not great since an input-block and not a complete statement: var code = '// * 2016-0711-1100 For \'commsInfrared_Rx_BLOCK\' \n' + 
   /// jwc ok but not great since an input-block and not a complete statement:    funcName + '(' + prompt_ForSerialMonitor_STRING + ')';
   // IMPORTANT: Since a return function, no need to end with ';' since it will be added automatically
-  var code = funcName + '(' + prompt_ForSerialMonitor_STRING + ')';
+  // // var code = funcName + '(' + prompt_ForSerialMonitor_STRING + ')';
+  var code = '// For:: ' + Blockly.Msg.ARD_INFRARED_READ_BLOCK_NAME + '\n' +
+             funcName + '(' + prompt_ForSerialMonitor_STRING + ')';
 
   // Output Requested Value
   // Use 'ORDER_UNARY_POSTFIX' since 'spi_transfer_return' does

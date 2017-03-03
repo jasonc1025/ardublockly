@@ -1259,6 +1259,7 @@ Blockly.Msg.ARD_INFRARED_READ_WITH_DEBUG_PROMPT_01 =    "   * Optional Debug:";
 Blockly.Msg.ARD_INFRARED_READ_WITH_DEBUG_PROMPT_02 =    "      * Use 'Comms: Setup Serial' Block @9600bps+";
 Blockly.Msg.ARD_INFRARED_READ_WITH_DEBUG_PROMPT_03 =    "      * Set 'prompt_ForSerialMonitor' (i.e. \">\"):";
 Blockly.Msg.ARD_INFRARED_READ_WITH_DEBUG_PROMPT_04 =    "      * Later Set Serial-Monitor @[SAME]bps";
+Blockly.Msg.ARD_INFRARED_READ_WITH_DEBUG_PROMPT_05 =    "      * Arduino IDE Library: 'IRremote' by shirriff";
 Blockly.Msg.ARD_INFRARED_READ_TIP_AS_LARGE_NUMBER_AS_LONG = "Read 'commsInfrared_Rx' for KeyCode as Type: Large-Number-as-LONG";
 Blockly.Msg.ARD_INFRARED_READ_TIP_AS_TEXT_AS_STRING =       "Read 'commsInfrared_Rx' for KeyCode as Type: Text-as-STRING";
 Blockly.Msg.ARD_INFRARED_READ_HELPURL = "https://www.arduino.cc/en/Tutorial/RobotRemoteControl";
@@ -1295,9 +1296,10 @@ Blockly.Msg.ARD_LCD_SETUP_ROWS_2 = "2";
 Blockly.Msg.ARD_LCD_SETUP_ROWS_4 = "4"; 
 Blockly.Msg.ARD_LCD_SETUP_ROWS_MAX =                    "   * Rows Max (Base 1):"; 
 Blockly.Msg.ARD_LCD_SETUP_HELP_TIP =                    "   * Wiring Tip: SDA(Data) = A4, SCL(Clock) = A5"; 
+Blockly.Msg.ARD_LCD_SETUP_HELP_TIP_02 =                 "   * Arduino IDE Library: 'LiquidCrystal I2C' by Brabander"; 
 Blockly.Msg.ARD_LCD_SETUP_TIP = 'Setup for a LCD peripheral'; 
  
-Blockly.Msg.ARD_LCD_PRINT =                                     "Comms: LCD: Print"; 
+Blockly.Msg.ARD_LCD_PRINT_BLOCK_NAME =                          "Comms: LCD: Print"; 
 Blockly.Msg.ARD_LCD_PRINT_PROMPT =                              "   * Print for Text(String) & Character(char):"; 
 Blockly.Msg.ARD_LCD_PRINT_COLUMN_NUM_BASE0 =                    "      * @ Column# (Base 0):"; 
 Blockly.Msg.ARD_LCD_PRINT_ROW_NUM_BASE0 =                       "      * @ Row# (Base 0):"; 
@@ -1323,6 +1325,7 @@ Blockly.Msg.ARD_RF2DOT4GHZ_SETUP_NETWORK_NODE_TYPE =               "   * Network
 Blockly.Msg.ARD_RF2DOT4GHZ_SETUP_NETWORK_NODE_BOT_AS_SERVER =      "node_Bot_AsServer"; 
 Blockly.Msg.ARD_RF2DOT4GHZ_SETUP_NETWORK_NODE_JOYSTICK_AS_CLIENT = "node_Joystick_AsClient"; 
 Blockly.Msg.ARD_RF2DOT4GHZ_SETUP_HELP_TIP =                        "   * Debug requires 'Comms: LCD Setup' in 'Setup'"; 
+Blockly.Msg.ARD_RF2DOT4GHZ_SETUP_HELP_TIP_02 =                     "   * Arduino IDE Library: 'RF24' by TMRh20"; 
 Blockly.Msg.ARD_RF2DOT4GHZ_SETUP_TIP =                             "Requires 'Comms: LCD Setup' BLOCK within 'Setup'"; 
 
 Blockly.Msg.ARD_RF2DOT4GHZ_WRITE_BLOCK_NAME =         "Comms: RF: Joystick-As-Client: Loop: Msg-01A: Tx";

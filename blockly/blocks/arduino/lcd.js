@@ -22,7 +22,8 @@ goog.require('Blockly.Types');
 
 /** Common HSV hue for all blocks in this category. */
 // // Blockly.Blocks.lcd.HUE = 160;
-Blockly.Blocks.lcd.HUE = 180;  // unique light color for this special EandE Block
+// // Blockly.Blocks.lcd.HUE = 180;  // unique light color for this special EandE Block
+Blockly.Blocks.lcd.HUE = 100;  // unique light color for this special EandE Block
 
 Blockly.Blocks['lcd_setup_BLOCK'] = {
   /**
@@ -62,7 +63,8 @@ Blockly.Blocks['lcd_setup_BLOCK'] = {
                 'ROWS_MAX_FIELD_ID');
 
     this.appendDummyInput()
-        .appendField(Blockly.Msg.ARD_LCD_SETUP_HELP_TIP);
+        .appendField(Blockly.Msg.ARD_LCD_SETUP_HELP_TIP)
+        .appendField(Blockly.Msg.ARD_LCD_SETUP_HELP_TIP_02);
         
     // * jwc added to allow to fit within "Function: Run First, Loop Forever" Block
     //
@@ -96,7 +98,7 @@ Blockly.Blocks['lcd_print_BLOCK'] = {
     this.setHelpUrl('https://www.arduino.cc/en/Reference/LiquidCrystal');
     this.setColour(Blockly.Blocks.lcd.HUE);
     this.appendDummyInput()
-        .appendField(Blockly.Msg.ARD_LCD_PRINT)
+        .appendField(Blockly.Msg.ARD_LCD_PRINT_BLOCK_NAME)
         .appendField(new Blockly.FieldDropdown(Blockly.Arduino.Boards.selected.lcd), 'LCD_FIELD_ID');
     this.appendValueInput('PRINT_FOR_STRING_AND_CHAR_FIELD_ID')
         .appendField(Blockly.Msg.ARD_LCD_PRINT_PROMPT)

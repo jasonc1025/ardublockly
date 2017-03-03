@@ -201,19 +201,19 @@ Ardublockly.TOOLBOX_XML =
 '    <block type="servo_write">' +
 '      <value name="SERVO_ANGLE">' +
 '        <block type="math_number">' +
-/// jwc 2016-0608-0900 '          <field name="NUM">90</field>' +
-'          <field name="NUM">10</field>' +
+'          <field name="NUM">90</field>' +
 '        </block>' +
 '      </value>' +
 '    </block>' +
+// NOT NEEDED ANYMORE, JUST FOR TEST
 /// jwc 2016-0519-1000 >>
-'    <block type="servo_write_jwc">' +
-'      <value name="SERVO_ANGLE">' +
-'        <block type="math_number">' +
-'          <field name="NUM">60</field>' +
-'        </block>' +
-'      </value>' +
-'    </block>' +
+// // '    <block type="servo_write_jwc">' +
+// // '      <value name="SERVO_ANGLE">' +
+// // '        <block type="math_number">' +
+// // '          <field name="NUM">60</field>' +
+// // '        </block>' +
+// // '      </value>' +
+// // '    </block>' +
 /// jwc <<
 '    <block type="servo_read"></block>' +
 '    <block type="stepper_config">' +

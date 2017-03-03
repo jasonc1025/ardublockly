@@ -47,36 +47,37 @@ Blockly.Arduino['servo_write'] = function(block) {
   return code;
 };
 
-/**
- * Code generator to set an angle (Y) value to a servo PWM pin (X).
- * Arduino code: #include <Servo.h>
- *               Servo myServoX;
- *               setup { myServoX.attach(X); }
- *               loop  { myServoX.write(Y);  }
- * @param {!Blockly.Block} block Block to generate the code from.
- * @return {string} Completed code.
- */
-/// Temp Test Line jwc 
-Blockly.Arduino['servo_write_jwc'] = function(block) {
-  var pinKey = block.getFieldValue('SERVO_PIN');
-  var servoAngle = Blockly.Arduino.valueToCode(
-//// jwc test good:      block, 'SERVO_ANGLE', Blockly.Arduino.ORDER_ATOMIC) || '180';
-      block, 'SERVO_ANGLE', Blockly.Arduino.ORDER_ATOMIC) || '90';
-  var servoName = 'myServo' + pinKey;
+// NOT NEEDED ANYMORE, JUST FOR TEST
+// // /**
+ // // * Code generator to set an angle (Y) value to a servo PWM pin (X).
+ // // * Arduino code: #include <Servo.h>
+ // // *               Servo myServoX;
+ // // *               setup { myServoX.attach(X); }
+ // // *               loop  { myServoX.write(Y);  }
+ // // * @param {!Blockly.Block} block Block to generate the code from.
+ // // * @return {string} Completed code.
+ // // */
+// // /// Temp Test Line jwc 
+// // Blockly.Arduino['servo_write_jwc'] = function(block) {
+  // // var pinKey = block.getFieldValue('SERVO_PIN');
+  // // var servoAngle = Blockly.Arduino.valueToCode(
+// // //// jwc test good:      block, 'SERVO_ANGLE', Blockly.Arduino.ORDER_ATOMIC) || '180';
+      // // block, 'SERVO_ANGLE', Blockly.Arduino.ORDER_ATOMIC) || '90';
+  // // var servoName = 'myServo' + pinKey;
 
-  // Prevents conflict of re-selecting pin for another purpose within ArduBlockly
-  Blockly.Arduino.reservePin(
-      block, pinKey, Blockly.Arduino.PinTypes.SERVO, 'Servo Write');
+  // // // Prevents conflict of re-selecting pin for another purpose within ArduBlockly
+  // // Blockly.Arduino.reservePin(
+      // // block, pinKey, Blockly.Arduino.PinTypes.SERVO, 'Servo Write');
 
-  Blockly.Arduino.addInclude('servo', '#include <Servo.h>');
-  Blockly.Arduino.addDeclaration('servo_' + pinKey, 'Servo ' + servoName + ';');
+  // // Blockly.Arduino.addInclude('servo', '#include <Servo.h>');
+  // // Blockly.Arduino.addDeclaration('servo_' + pinKey, 'Servo ' + servoName + ';');
 
-  var setupCode = servoName + '.attach(' + pinKey + ');';
-  Blockly.Arduino.addSetup('servo_' + pinKey, setupCode, true);
+  // // var setupCode = servoName + '.attach(' + pinKey + ');';
+  // // Blockly.Arduino.addSetup('servo_' + pinKey, setupCode, true);
 
-  var code = servoName + '.write(' + servoAngle + ');\n';
-  return code;
-};
+  // // var code = servoName + '.write(' + servoAngle + ');\n';
+  // // return code;
+// // };
 
 /**
  * Code generator to read an angle value from a servo PWM pin (X).

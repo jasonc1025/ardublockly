@@ -36,17 +36,17 @@ Blockly.Arduino['lcd_setup_BLOCK'] = function(block) {
     
   // * Include is universal for any application of LCD. 
   // *
-  Blockly.Arduino.addInclude('lcd_TAG_00', '// * For:: ' + Blockly.Msg.ARD_LCD_SETUP_BLOCK_NAME + ': 2016-1119-1700');
+  Blockly.Arduino.addInclude('lcd_TAG_00', '// For:: ' + Blockly.Msg.ARD_LCD_SETUP_BLOCK_NAME);
   Blockly.Arduino.addInclude('lcd_TAG_01', '#include <Wire.h>');
   Blockly.Arduino.addInclude('lcd_TAG_02', '#include <LiquidCrystal_I2C.h>');
 
-  Blockly.Arduino.addDeclaration('lcd_TAG_00', '// * For:: ' + Blockly.Msg.ARD_LCD_SETUP_BLOCK_NAME);
+  Blockly.Arduino.addDeclaration('lcd_TAG_00', '// For:: ' + Blockly.Msg.ARD_LCD_SETUP_BLOCK_NAME);
   Blockly.Arduino.addDeclaration('lcd_TAG_01', 'LiquidCrystal_I2C myLcd(' + i2cControllerDecAddress + ',' + columnsMax + ',' + rowsMax + ');');
   Blockly.Arduino.addDeclaration('lcd_TAG_02', 'String    myLcd_OneRow_StringObject;');
   Blockly.Arduino.addDeclaration('lcd_TAG_03', 'const int myLcd_OneRow_Columns_MAX = ' + columnsMax + ';');
 
   // Allow overwrite by setting last arguement as 'true'
-  Blockly.Arduino.addSetup('lcd_TAG_00', '// * For:: ' + Blockly.Msg.ARD_LCD_SETUP_BLOCK_NAME, true);
+  Blockly.Arduino.addSetup('lcd_TAG_00', '// For:: ' + Blockly.Msg.ARD_LCD_SETUP_BLOCK_NAME, true);
   Blockly.Arduino.addSetup('lcd_TAG_01', 'myLcd.init();', true);
   Blockly.Arduino.addSetup('lcd_TAG_02', 'myLcd.backlight();', true);
   Blockly.Arduino.addSetup('lcd_TAG_03', 'myLcd.clear();', true);
@@ -88,7 +88,8 @@ Blockly.Arduino['lcd_print_BLOCK'] = function(block) {
         Blockly.Arduino.PinTypes.LCD, 'LCD ' + lcdPins[i][0]);
   }
 
-  var code = 'myLcd_OneRow_StringObject = ' + printForStringAndChar_FieldId + ';\n' +
+  var code = '// For:: ' + Blockly.Msg.ARD_LCD_PRINT_BLOCK_NAME + '\n' +
+             'myLcd_OneRow_StringObject = ' + printForStringAndChar_FieldId + ';\n' +
              'while( myLcd_OneRow_StringObject.length() < ' + erasePrepWNumOfBlanks_Base1_FieldId + ' ){\n' +
              '  myLcd_OneRow_StringObject.concat(" ");\n' +
              '}\n' +

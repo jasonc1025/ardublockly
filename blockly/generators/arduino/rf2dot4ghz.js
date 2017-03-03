@@ -40,12 +40,21 @@ Blockly.Arduino['rf2dot4ghz_BotOrJoystick_Setup_BLOCK'] = function(block) {
     
   // * Include is universal for any application of LCD. 
   // *
-  Blockly.Arduino.addInclude('rf2dot4ghz_TAG_00', '// * For:: ' + Blockly.Msg.ARD_RF2DOT4GHZ_SETUP_BLOCK_NAME + ': 2016-1225-1930');
-  Blockly.Arduino.addInclude('rf2dot4ghz_TAG_01', '#include <SPI.h>');
-  Blockly.Arduino.addInclude('rf2dot4ghz_TAG_02', '#include <nRF24L01.h>');
-  Blockly.Arduino.addInclude('rf2dot4ghz_TAG_03', '#include <RF24.h>');
+  if( networkNodeType_Is_BotAsServer ){
+    // For 'node_Bot_AsServer'
+    Blockly.Arduino.addInclude('rf2dot4ghz_TAG_00', '// Network Node Type: 'node_Bot_AsServer');
+  }
+  else if( networkNodeType_Is_JoystickAsClient ){
+    // For 'node_Joystick_AsClient'
+    Blockly.Arduino.addInclude('rf2dot4ghz_TAG_00', '// Network Node Type: 'node_Joystick_AsClient');
+  }
+  Blockly.Arduino.addInclude('rf2dot4ghz_TAG_01', '//');
+  Blockly.Arduino.addInclude('rf2dot4ghz_TAG_02', '// For:: ' + Blockly.Msg.ARD_RF2DOT4GHZ_SETUP_BLOCK_NAME);
+  Blockly.Arduino.addInclude('rf2dot4ghz_TAG_03', '#include <SPI.h>');
+  Blockly.Arduino.addInclude('rf2dot4ghz_TAG_04', '#include <nRF24L01.h>');
+  Blockly.Arduino.addInclude('rf2dot4ghz_TAG_05', '#include <RF24.h>');
 
-  Blockly.Arduino.addDeclaration('rf2dot4ghz_TAG_00', '// * For:: ' + Blockly.Msg.ARD_RF2DOT4GHZ_SETUP_BLOCK_NAME);
+  Blockly.Arduino.addDeclaration('rf2dot4ghz_TAG_00', '// For:: ' + Blockly.Msg.ARD_RF2DOT4GHZ_SETUP_BLOCK_NAME);
 
   Blockly.Arduino.addDeclaration('rf2dot4ghz_TAG_01', 'typedef enum { node_Bot_AsServer = 0, node_Joystick_AsClient = 1 } node_TypeDef;');
   Blockly.Arduino.addDeclaration('rf2dot4ghz_TAG_02', 'const char* node_Label[] = { "node_Bot_AsServer", "node_Joystick_AsClient"};');
@@ -78,7 +87,7 @@ Blockly.Arduino['rf2dot4ghz_BotOrJoystick_Setup_BLOCK'] = function(block) {
   }
 
   // Allow overwrite by setting last (2nd) arguement as 'true'
-  Blockly.Arduino.addSetup('rf2dot4ghz_TAG_00', '// * For:: ' + Blockly.Msg.ARD_RF2DOT4GHZ_SETUP_BLOCK_NAME, true);
+  Blockly.Arduino.addSetup('rf2dot4ghz_TAG_00', '// For:: ' + Blockly.Msg.ARD_RF2DOT4GHZ_SETUP_BLOCK_NAME, true);
 
   Blockly.Arduino.addSetup('rf2dot4ghz_TAG_01', 'Serial.println(( node_Label[ node_Type_AsInt ] ));', true);
 

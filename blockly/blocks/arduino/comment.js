@@ -23,7 +23,8 @@ goog.require('Blockly.Types');
 /** Common HSV hue for all blocks in this category. */
 // // Blockly.Blocks.comment.HUE = 45;
 // // Blockly.Blocks.comment.HUE = 20;
-Blockly.Blocks.comment.HUE = 15;  // Dark Orange to stand out for viewing
+// // Blockly.Blocks.comment.HUE = 60;  // Gold-Yellow for Lighter Color
+Blockly.Blocks.comment.HUE = 40;  // Tan-Yellow for Lighter Color
 
 Blockly.Blocks['comment_BLOCK'] = {
   /**
