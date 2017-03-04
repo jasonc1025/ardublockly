@@ -380,7 +380,7 @@ Blockly.Arduino['rf2dot4ghz_BotAsServer_Loop_Msg_03_Read'] = function(block) {
   var code = [];
 
   // // BAD: code.push('// For:: ' + Blockly.Msg.ARD_RF2DOT4GHZ_READ_02_BLOCK_NAME + '\n');
-  code.push('// For:: ' + Blockly.Msg.ARD_RF2DOT4GHZ_READ_02_BLOCK_NAME);
+  // // SEEMS BUGGY: code.push('// For:: ' + Blockly.Msg.ARD_RF2DOT4GHZ_READ_02_BLOCK_NAME);
 
   // // var code = 'analogRead(' + pin + ')';
   // // return [code, Blockly.Arduino.ORDER_ATOMIC];
