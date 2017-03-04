@@ -206,8 +206,7 @@ Blockly.Arduino['commsInfrared_Rx_BLOCK'] = function(block) {
   /// jwc good:   var code = funcName + '(' + prompt_ForSerialMonitor_STRING + ')';
   /// jwc ok but not great since an input-block and not a complete statement: var code = '// * 2016-0711-1100 For \'commsInfrared_Rx_BLOCK\' \n' + 
   /// jwc ok but not great since an input-block and not a complete statement:    funcName + '(' + prompt_ForSerialMonitor_STRING + ')';
-  var code = '// For:: ' + Blockly.Msg.ARD_INFRARED_READ_BLOCK_NAME + '\n' +
-             funcName + '(' + prompt_ForSerialMonitor_STRING + ')';
+  var code = funcName + '(' + prompt_ForSerialMonitor_STRING + ')';
 
   // * Output Requested Value
   return [code, Blockly.Arduino.ORDER_UNARY_POSTFIX];
