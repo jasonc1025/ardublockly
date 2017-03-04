@@ -418,6 +418,8 @@ Blockly.Arduino['rf2dot4ghz_BotAsServer_Loop_Msg_03_Read'] = function(block) {
   // Output Requested Value
   // Use 'ORDER_UNARY_POSTFIX' since 'spi_transfer_return' does
   // // WAS GOOD BUT NOW BAD: return [code, Blockly.Arduino.ORDER_UNARY_POSTFIX];
-  return code.join('\n');  
+  // // MADE WORST, NO LONGER RETURN FUNCTION: return code.join('\n');
+  return [code, Blockly.Arduino.ORDER_UNARY_POSTFIX];
+  
 };
 
