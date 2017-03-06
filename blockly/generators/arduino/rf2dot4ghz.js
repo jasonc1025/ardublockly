@@ -179,10 +179,11 @@ Blockly.Arduino['rf2dot4ghz_JoystickAsClient_Loop_Msg_01_Write_n_Tx'] = function
   code.push('// For:: ' + Blockly.Msg.ARD_RF2DOT4GHZ_WRITE_BLOCK_NAME);
   code.push('joystick_Int[0] = analogRead(JOYSTICK_X);');
   code.push('joystick_Int[1] = analogRead(JOYSTICK_Y);');
-  code.push('joystick_Int[2] = digitalRead(button_A_PinNum);');
-  code.push('joystick_Int[3] = digitalRead(button_B_PinNum);');
-  code.push('joystick_Int[4] = digitalRead(button_C_PinNum);');
-  code.push('joystick_Int[5] = digitalRead(button_D_PinNum);');
+  code.push('// Convert Arduino Button Values from Reverse-Logic to Normal-Logic');
+  code.push('joystick_Int[2] = !digitalRead(button_A_PinNum);');
+  code.push('joystick_Int[3] = !digitalRead(button_B_PinNum);');
+  code.push('joystick_Int[4] = !digitalRead(button_C_PinNum);');
+  code.push('joystick_Int[5] = !digitalRead(button_D_PinNum);');
   code.push('');
 
   if( debugOn_Flag ){
@@ -193,7 +194,7 @@ Blockly.Arduino['rf2dot4ghz_JoystickAsClient_Loop_Msg_01_Write_n_Tx'] = function
   code.push('    myLcd_OneRow_StringObject += String( joystick_Int[i] ) + " ";');
   code.push('  }');
   code.push('');
-  code.push('  if( i >= 2 && i <= 5 && joystick_Int[i] == 0 ){');
+  code.push('  if( i >= 2 && i <= 5 && joystick_Int[i] == 1 ){');
   code.push('    myLcd_OneRow_StringObject += String( i - 1 );  // Convert to base-1 value');
   code.push('  }');
   code.push('}');
@@ -226,7 +227,7 @@ Blockly.Arduino['rf2dot4ghz_JoystickAsClient_Loop_Msg_01_Write_n_Tx'] = function
   code.push('        if( i <= 1 ){');
   code.push('          myLcd_OneRow_StringObject += String( joystick_Ack_Int[i] ) + " ";');
   code.push('        }');
-  code.push('        if( i >= 2 && i <= 5 && joystick_Ack_Int[i] == 0 ){');
+  code.push('        if( i >= 2 && i <= 5 && joystick_Ack_Int[i] == 1 ){');
   code.push('          myLcd_OneRow_StringObject += String( i - 1 );  // Convert to base-1 value');
   code.push('        }');
   code.push('      }');
@@ -307,7 +308,7 @@ Blockly.Arduino['rf2dot4ghz_BotAsServer_Loop_Msg_02_Rx'] = function(block) {
   code.push('      myLcd_OneRow_StringObject += String( joystick_Int[i] ) + " ";');
   code.push('    }');
   code.push('');
-  code.push('    if( i >= 2 && i <= 5 && joystick_Int[i] == 0 ){');
+  code.push('    if( i >= 2 && i <= 5 && joystick_Int[i] == 1 ){');
   code.push('      myLcd_OneRow_StringObject += String( i - 1 );  // Convert to base-1 value');
   code.push('    }');
   code.push('  }');
