@@ -560,7 +560,7 @@
 "ARD_RF2DOT4GHZ_READ_DEBUG_OFF": "DEBUG_OFF",
 "ARD_RF2DOT4GHZ_READ_WITH_DEBUG_PROMPT_01": "   * Optional Debug:",
 "ARD_RF2DOT4GHZ_READ_HELP_01": "      * joystick_[X-Y]: maps 0-1023 to 0-180 deg",
-"ARD_RF2DOT4GHZ_READ_HELP_02": "      * button_[A-D]:   0=Pressed, 1=Not-Pressed",
+"ARD_RF2DOT4GHZ_READ_HELP_02": "      * button_[A-D]:   0=Not-Pressed, 1=Pressed",
 "ARD_RF2DOT4GHZ_READ_TIP_AS_LARGE_NUMBER_AS_LONG": "Read 'commsInfrared_Rx' for KeyCode as Type: Large-Number-as-LONG",
 "ARD_RF2DOT4GHZ_READ_TIP_AS_TEXT_AS_STRING": "Read 'commsInfrared_Rx' for KeyCode as Type: Text-as-STRING",
 "ARD_RF2DOT4GHZ_READ_HELPURL": "https://arduino-info.wikispaces.com/nRF24L01-RF24-Examples",
