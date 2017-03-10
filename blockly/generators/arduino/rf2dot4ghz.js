@@ -69,7 +69,9 @@ Blockly.Arduino['rf2dot4ghz_BotOrJoystick_Setup_BLOCK'] = function(block) {
   
   if( networkNodeType_Is_BotAsServer ){
     // For 'node_Bot_AsServer'
-    Blockly.Arduino.addDeclaration('rf2dot4ghz_TAG_08', 'RF24 radio(6,7);');
+    // // Blockly.Arduino.addDeclaration('rf2dot4ghz_TAG_08', 'RF24 radio(6,7);');
+    // Move from Pins 6 & 7 to 2 & 4 since needed by other devices
+    Blockly.Arduino.addDeclaration('rf2dot4ghz_TAG_08', 'RF24 radio(2,4);');
   }
   else if( networkNodeType_Is_JoystickAsClient ){
     // For 'node_Joystick_AsClient'
